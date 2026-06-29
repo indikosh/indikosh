@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+        }
+
+        .orange-gradient {
+            background: linear-gradient(135deg, #fe7528 0%, #a14000 100%);
+        }
+
+        @keyframes success-pop {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .animate-success {
+            animation: success-pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffdbcc",
+                        "surface-dim": "#d9dadb",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#43474f",
+                        "inverse-on-surface": "#f0f1f2",
+                        "secondary": "#a14000",
+                        "background": "#f8f9fa",
+                        "outline": "#737780",
+                        "status-success": "#10B981",
+                        "tertiary-container": "#003657",
+                        "surface-dark": "#1A1A1A",
+                        "tertiary": "#002037",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#004a76",
+                        "surface-container-high": "#e7e8e9",
+                        "tertiary-fixed": "#cee5ff",
+                        "on-tertiary-fixed": "#001d32",
+                        "surface-container-lowest": "#ffffff",
+                        "status-urgent": "#EA2330",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#96ccff",
+                        "secondary-fixed-dim": "#ffb694",
+                        "surface": "#f8f9fa",
+                        "on-secondary-fixed": "#351000",
+                        "primary-container": "#003366",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#799dd6",
+                        "on-background": "#191c1d",
+                        "surface-container-low": "#f3f4f5",
+                        "inverse-primary": "#a7c8ff",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#d5e3ff",
+                        "elite-gold": "#C5A059",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-container": "#5aa1dd",
+                        "on-secondary-fixed-variant": "#7b2f00",
+                        "surface-container": "#edeeef",
+                        "surface-tint": "#3a5f94",
+                        "secondary-container": "#fe7528",
+                        "on-secondary-container": "#5e2300",
+                        "on-primary-fixed": "#001b3c",
+                        "on-error-container": "#93000a",
+                        "primary": "#001e40",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#191c1d",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "outline-variant": "#c3c6d1",
+                        "inverse-surface": "#2e3132"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "price-display": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "price-display": ["22px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+    <!-- TopNavBar -->
+    <header
+        class="bg-surface dark:bg-surface-dark border-b border-outline-variant dark:border-outline shadow-sm sticky top-0 z-50">
+        <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div class="flex items-center gap-base">
+                <img alt="Indikosh Travels" class="h-8 md:h-10 object-contain"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnr8mo-RONI_cYp4uk9Yo3fmMoH33wVadzBzRRkD5I0Yn0R1-pqLN6xqFrtK0n4EqDxyUAGmoSUfyHueavlOuAK7-STTRpiHPbxAs8ev5mciFr_ZFjX_68xZ-2JwbN4OelJ6DBgESIo5R7DK0QyTCGdHFFE08ley1Stjl1T8tHsbRaE9BdYTXKhW6b3PQa2KOwGpivbu9j2W-5PSZBG2p2lrV3QFoNF_NpDOOTq7vMkGfpwdrqxfPsAMqSTr5mUkOtWQGrM71k7Gg">
+            </div>
+            <nav class="hidden md:flex gap-8 items-center">
+                <a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors"
+                    href="#">Flights</a>
+                <a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors"
+                    href="#">Hotels</a>
+
+                <a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors"
+                    href="#">Tour Packages</a>
+
+            </nav>
+            <div class="flex items-center gap-6">
+                <span class="hidden md:block font-body-md text-body-md text-primary font-semibold">Support</span>
+                <span
+                    class="material-symbols-outlined text-on-surface-variant hover:text-secondary cursor-pointer">notifications</span>
+                <span class="material-symbols-outlined text-on-surface-variant hover:text-secondary cursor-pointer"
+                    style="font-variation-settings: &quot;FILL&quot; 1;">account_circle</span>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+        <!-- Success Header -->
+        <section class="text-center mb-12 animate-success">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-status-success/10 rounded-full mb-6">
+                <span class="material-symbols-outlined text-status-success text-5xl"
+                    style="font-variation-settings: &quot;wght&quot; 700;">check_circle</span>
+            </div>
+            <h1 class="font-headline-xl text-headline-xl text-primary mb-2 md:text-headline-xl text-headline-lg-mobile">
+                Booking Confirmed!</h1>
+            <p class="text-on-surface-variant font-body-lg text-body-lg">Your stay at The Grand Oberoi Udaivilas is
+                officially confirmed.</p>
+            <div class="mt-8 inline-block px-8 py-4 bg-surface-container-high rounded-xl border border-outline-variant">
+                <p class="text-label-caps font-label-caps text-on-surface-variant mb-1">Your stay at The Grand Oberoi
+                    Udaivilas is officially confirmed.</p>
+                <p class="font-price-display text-price-display text-primary tracking-widest uppercase">IND987654321</p>
+            </div>
+        </section>
+        <!-- Main Content Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+            <!-- Left Column: Booking Details -->
+            <div class="lg:col-span-8 space-y-gutter">
+                <!-- Primary Actions -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button
+                        class="flex-1 orange-gradient text-white py-4 rounded-lg font-headline-md text-headline-md flex items-center justify-center gap-2 shadow-lg hover:opacity-90 transition-opacity"><span
+                            class="material-symbols-outlined">download</span>Download Voucher</button>
+                    <button
+                        class="flex-1 bg-white border-2 border-primary text-primary py-4 rounded-lg font-headline-md text-headline-md flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors">
+                        <span class="material-symbols-outlined">receipt_long</span>
+                        Download Invoice
+                    </button>
+                </div>
+                <!-- Flight Summary Card -->
+                <div class="bg-white rounded-xl border border-outline-variant overflow-hidden shadow-sm">
+                    <div class="bg-primary px-6 py-4 flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-white">hotel</span>
+                            <span class="text-white font-headline-md text-headline-md">Stay Details</span>
+                        </div>
+                        <span
+                            class="bg-elite-gold text-on-primary-fixed px-3 py-1 rounded font-label-caps text-label-caps">CONFIRMED</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="w-full">
+                            <h3 class="font-headline-lg text-headline-lg text-primary mb-2">The Grand Oberoi Udaivilas,
+                                Udaipur</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                                <div class="p-4 bg-surface-container-low rounded-lg border border-outline-variant">
+                                    <div>
+                                        <p class="text-label-caps text-on-surface-variant">CHECK-IN</p>
+                                        <p class="font-bold text-primary text-lg">24 Oct, 2024</p>
+                                        <p class="text-body-md text-on-surface-variant">From 02:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="p-4 bg-surface-container-low rounded-lg border border-outline-variant">
+                                    <div>
+                                        <p class="text-label-caps text-on-surface-variant">CHECK-OUT</p>
+                                        <p class="font-bold text-primary text-lg">27 Oct, 2024</p>
+                                        <p class="text-body-md text-on-surface-variant">Until 11:00 AM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-10 pt-10 border-t border-outline-variant grid grid-cols-1 sm:grid-cols-3 gap-6">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">bed</span></div>
+                                <div>
+                                    <p class="text-label-caps text-on-surface-variant">ROOM TYPE</p>
+                                    <p class="font-bold text-primary">Premier Pool View</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">group</span></div>
+                                <div>
+                                    <p class="text-label-caps text-on-surface-variant">GUESTS</p>
+                                    <p class="font-bold text-primary">2 Adults</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">restaurant</span></div>
+                                <div>
+                                    <p class="text-label-caps text-on-surface-variant">PLAN</p>
+                                    <p class="font-bold text-primary">Buffet Breakfast</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Passenger Information -->
+                <div class="bg-white rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+                    <div class="p-6 border-b border-outline-variant">
+                        <h3 class="font-headline-md text-headline-md text-primary">Guest Information</h3>
+                    </div>
+                    <div class="p-6">
+                        <div
+                            class="flex items-center justify-between py-4 border-b border-outline-variant last:border-0">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 bg-primary/5 rounded-full flex items-center justify-center text-primary font-bold">
+                                    JD</div>
+                                <div>
+                                    <p class="font-bold text-primary">John Doe</p>
+                                    <p class="text-label-caps text-on-surface-variant">ADULT • ECONOMY</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-on-surface-variant">verified</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between py-4 border-b border-outline-variant last:border-0">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 bg-primary/5 rounded-full flex items-center justify-center text-primary font-bold">
+                                    JD</div>
+                                <div>
+                                    <p class="font-bold text-primary">Jane Doe</p>
+                                    <p class="text-label-caps text-on-surface-variant">ADULT • ECONOMY</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-on-surface-variant">verified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Column: Sidebar -->
+            <div class="lg:col-span-4 space-y-gutter">
+                <!-- Travel Advisory -->
+                <div class="rounded-xl p-6 shadow-lg bg-white border border-outline-variant text-on-surface">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="material-symbols-outlined text-secondary-container">info</span>
+                        <h3 class="font-headline-md text-headline-md text-primary">Stay Advisory</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3"><span
+                                class="material-symbols-outlined text-sm mt-1 text-secondary">schedule</span>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Check-in begins at 2:00 PM.
+                                Early check-in is subject to availability.</p>
+                        </li>
+                        <li class="flex gap-3"><span
+                                class="material-symbols-outlined text-sm mt-1 text-secondary">badge</span>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Please carry a valid government
+                                photo ID (Aadhar/Passport/Voter ID) for all guests.</p>
+                        </li>
+                        <li class="flex gap-3"><span
+                                class="material-symbols-outlined text-sm mt-1 text-secondary">airport_shuttle</span>
+                            <p class="font-body-md text-body-md text-on-surface-variant">The hotel provides
+                                complimentary airport transfers for Indikosh Elite members.</p>
+                        </li>
+                        <li class="flex gap-3"><span
+                                class="material-symbols-outlined text-sm mt-1 text-secondary">local_parking</span>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Valet parking is available at
+                                the property.</p>
+                        </li>
+                    </ul>
+                    <div class="mt-6 p-4 bg-surface-container rounded-lg border border-outline-variant">
+                        <p class="text-label-caps mb-2 text-on-surface-variant">NEED HELP?</p>
+                        <p class="font-bold text-primary">24/7 Concierge Support</p>
+                        <p class="text-body-md text-on-surface-variant">+1 800 INDIKOSH</p>
+                    </div>
+                </div>
+                <!-- Complete Your Trip / Upsell -->
+                <div class="bg-white rounded-xl border border-outline-variant p-6 shadow-sm">
+                    <h3 class="font-headline-md text-headline-md text-primary mb-6">Complete Your Trip</h3>
+                    <div class="space-y-4">
+                        <!-- Hotel Card -->
+                        <div class="group cursor-pointer">
+                            <div class="relative rounded-lg overflow-hidden h-32 mb-2">
+                                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    data-alt="A luxurious high-end hotel lobby in Mumbai featuring expansive floor-to-ceiling windows, marble floors, and contemporary gold lighting fixtures. The atmosphere is opulent and serene, illuminated by soft golden hour sunlight filtering through the glass. The decor is minimalist yet rich, using a palette of creams, whites, and deep navy accents to convey ultimate luxury and travel comfort."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgbFNQ4DzAsg6Ffh1JljPpNyuQ6i-sT7PSgK7hjgmxxaWplKPVeI1BzPCpIPsFB3c1NR5BwTE2umhl6DJmSY3COLSN7rTvbEB7caiUo9SXcqZs7FoXnmnvyj2PRDaStcpcN__JYhTCbyQWKezYUqVE8xOEKQM4kpjgwoAZ9QLqMfgjT6Iuoy2zNq_svMDOfXxanBDPu57addRTPoQ8tjFQ6YW-orr6cX_BBq3TlEQyD1t9kXBw_iwfm_O-4lRlBcGbzxy1aEN8o5Q">
+                                <div class="absolute top-2 left-2">
+                                    <span
+                                        class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded">SAVE
+                                        20%</span>
+                                </div>
+                            </div>
+                            <h4 class="font-bold text-primary group-hover:text-secondary transition-colors">Book Airport
+                                Transfer</h4>
+                            <p class="text-label-caps text-on-surface-variant">COMPLIMENTARY FOR ELITE</p>
+                        </div>
+                        <!-- Tour Card -->
+                        <div class="group cursor-pointer">
+                            <div class="relative rounded-lg overflow-hidden h-32 mb-2">
+                                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    data-alt="A professional guided city tour of the Gateway of India in Mumbai during a bright, clear morning. The scene captures tourists interacting with a local guide, with the majestic historical monument in the background. The lighting is crisp and natural, highlighting the intricate stonework of the gateway and the vibrant energy of the city's harbor. The overall feel is educational, exciting, and welcoming."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr4w_uzJHYdgxOEyXawbbZJHeUI8S6fKL6s8HoV0eIKHpycm-PoSGoxTIZzLFPyhD_qs-RnDpjXoU9ouB0QsR4ffrRE-45Yu-c7-VEeUiSrfMW-s_WGmC36wh8iVBe07DKE-iVM0wmLe3WyK3V7wWHwl6ZpXopsB4EyYCbYLNDtLaD0LqcwXxCy1Y_IeMoyQzExGATbmffC0P05aQeisF6CZGivYKu_XMlEOvbjwLnWImfRT_PFK9ZnB9CmLYecvEkvv1Xm2jc2Sw">
+                                <div class="absolute top-2 left-2">
+                                    <span class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded">ELITE
+                                        PICK</span>
+                                </div>
+                            </div>
+                            <h4 class="font-bold text-primary group-hover:text-secondary transition-colors">Local
+                                Sightseeing Tours</h4>
+                            <p class="text-label-caps text-on-surface-variant">FROM $25/PERSON</p>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full mt-6 py-3 text-secondary font-bold text-body-md hover:bg-surface-container transition-colors rounded-lg flex items-center justify-center gap-2">
+                        View All Experiences
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+                <!-- Trust Signal -->
+
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="bg-surface-container-low dark:bg-inverse-surface border-t border-outline-variant dark:border-outline">
+        <div
+            class="w-full px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center gap-base max-w-container-max mx-auto">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <img alt="Indikosh Logo" class="h-8 object-contain"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnr8mo-RONI_cYp4uk9Yo3fmMoH33wVadzBzRRkD5I0Yn0R1-pqLN6xqFrtK0n4EqDxyUAGmoSUfyHueavlOuAK7-STTRpiHPbxAs8ev5mciFr_ZFjX_68xZ-2JwbN4OelJ6DBgESIo5R7DK0QyTCGdHFFE08ley1Stjl1T8tHsbRaE9BdYTXKhW6b3PQa2KOwGpivbu9j2W-5PSZBG2p2lrV3QFoNF_NpDOOTq7vMkGfpwdrqxfPsAMqSTr5mUkOtWQGrM71k7Gg">
+                <p
+                    class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md max-w-xs text-center md:text-left">
+                    Your sophisticated partner for exploring the world's most breathtaking destinations.
+                </p>
+            </div>
+            <nav class="flex flex-wrap justify-center gap-8 my-8 md:my-0">
+                <a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors font-body-md text-body-md"
+                    href="#">About Us</a>
+                <a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors font-body-md text-body-md"
+                    href="#">Terms of Service</a>
+                <a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors font-body-md text-body-md"
+                    href="#">Privacy Policy</a>
+                <a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors font-body-md text-body-md"
+                    href="#">Contact Us</a>
+                <a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors font-body-md text-body-md"
+                    href="#">Partner with Us</a>
+            </nav>
+            <div class="text-center md:text-right">
+                <p class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md">
+                    © 2024 Indikosh Travels. All rights reserved.
+                </p>
+                <div class="flex justify-center md:justify-end gap-4 mt-4">
+                    <span
+                        class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-secondary transition-colors">language</span>
+                    <span
+                        class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-secondary transition-colors">share</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Mobile BottomNavBar (Active: My Bookings) -->
+    <div
+        class="fixed bottom-0 left-0 w-full flex justify-around items-center py-3 bg-surface dark:bg-surface-dark border-t border-outline-variant dark:border-outline shadow-lg z-50 md:hidden">
+        <div
+            class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant active:bg-surface-container-high scale-95 active:scale-90 transition-transform">
+            <span class="material-symbols-outlined">home</span>
+            <span class="font-label-caps text-label-caps">Home</span>
+        </div>
+        <div
+            class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant active:bg-surface-container-high scale-95 active:scale-90 transition-transform">
+            <span class="material-symbols-outlined">search</span>
+            <span class="font-label-caps text-label-caps">Search</span>
+        </div>
+        <div
+            class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim font-bold active:bg-surface-container-high scale-95 active:scale-90 transition-transform">
+            <span class="material-symbols-outlined"
+                style="font-variation-settings: &quot;FILL&quot; 1;">confirmation_number</span>
+            <span class="font-label-caps text-label-caps">My Bookings</span>
+        </div>
+        <div
+            class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant active:bg-surface-container-high scale-95 active:scale-90 transition-transform">
+            <span class="material-symbols-outlined">person</span>
+            <span class="font-label-caps text-label-caps">Profile</span>
+        </div>
+    </div>
+    <script>
+        // Simple micro-interaction for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function () {
+                this.classList.add('opacity-80', 'scale-95');
+                setTimeout(() => {
+                    this.classList.remove('opacity-80', 'scale-95');
+                }, 150);
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

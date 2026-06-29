@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html class="light" lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Bali: The Island of Gods | Indikosh Travels</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d9dadb",
+                        "inverse-surface": "#2e3132",
+                        "background": "#f8f9fa",
+                        "surface-bright": "#f8f9fa",
+                        "on-error": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "surface-dark": "#1A1A1A",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#d5e3ff",
+                        "on-tertiary-container": "#5aa1dd",
+                        "secondary": "#a14000",
+                        "outline": "#737780",
+                        "inverse-on-surface": "#f0f1f2",
+                        "outline-variant": "#c3c6d1",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#cee5ff",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-secondary-fixed-variant": "#7b2f00",
+                        "secondary-fixed": "#ffdbcc",
+                        "on-primary-fixed": "#001b3c",
+                        "surface-variant": "#e1e3e4",
+                        "on-surface-variant": "#43474f",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "on-background": "#191c1d",
+                        "inverse-primary": "#a7c8ff",
+                        "secondary-fixed-dim": "#ffb694",
+                        "on-surface": "#191c1d",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#002037",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#003657",
+                        "on-secondary-fixed": "#351000",
+                        "surface-container": "#edeeef",
+                        "elite-gold": "#C5A059",
+                        "primary-container": "#003366",
+                        "status-urgent": "#EA2330",
+                        "primary": "#001e40",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary-fixed-dim": "#96ccff",
+                        "on-secondary-container": "#5e2300",
+                        "on-primary-container": "#799dd6",
+                        "surface-tint": "#3a5f94",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary-container": "#fe7528",
+                        "status-success": "#10B981",
+                        "on-tertiary-fixed-variant": "#004a76"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "price-display": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "price-display": ["22px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(0, 30, 64, 0.4) 0%, rgba(0, 30, 64, 0.7) 100%);
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            gap: 16px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #fe7528;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+    <!-- TopNavBar -->
+    <header
+        class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto bg-surface dark:bg-surface-dark shadow-sm">
+        <div class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed"><img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeIwfEciwYZK2bF-OWbU-SqHSUsgHH4Te9u1LqGIPLLCez8aJRQaPqQiys_aja-tCRgPSFqEsvbKN4dFccJIS96cJDvt6bz2M3wtG0cdGMdkHQpd_52CtDW5Vfjk8blT6h0tjFXSt_u6b8LISNSR7hY3wNq4X-IXaFLLs7MnL_gPDPxI4gJ4AHOtWzCarCOntN22IGCygHKxG_4Xh3SVPQ_0joHv4p4EEbCi7CSDJTpMdgqrZ2bR9EPJ0GUk-jMEWvFsEdd2Cgdmc"
+                alt="Indikosh Travels" class="h-10 w-auto object-contain"></div>
+        <nav class="hidden md:flex gap-8 items-center">
+            <a class="text-secondary dark:text-secondary-fixed-dim font-bold border-b-2 border-secondary font-body-md text-body-md transition-colors duration-200"
+                href="#">Destinations</a>
+            <a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary transition-colors duration-200"
+                href="#">Packages</a>
+            <a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary transition-colors duration-200"
+                href="#">Experiences</a>
+            <a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary transition-colors duration-200"
+                href="#">Elite Club</a>
+            <a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary transition-colors duration-200"
+                href="#">Offers</a>
+        </nav>
+        <button
+            class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-full font-bold hover:scale-95 transition-transform">
+            Plan My Trip
+        </button>
+    </header>
+    <main class="pt-[72px]">
+        <!-- Hero Section -->
+        <section class="relative h-[85vh] w-full overflow-hidden">
+            <div class="absolute inset-0">
+                <img class="w-full h-full object-cover"
+                    data-alt="A breathtaking wide-angle shot of the Ulun Danu Beratan Temple in Bali during sunrise. The iconic multi-tiered pagoda stands serenely on the calm waters of Lake Bratan, surrounded by lush green mountains partially shrouded in mist. The lighting is ethereal and soft, reflecting golden hues on the water. This cinematic image captures the spiritual and tranquil essence of the Island of Gods with vibrant tropical greens and deep blue water."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUBxvKoq067cG4zOU6Spvq-Zm-1sVMRl_cgLgvMppI3TFSAAkjZVwthPwJGMpKxJxDZd9FVgdHnGLiTHg_G4a_HswWFUjXH1cf5ucauCh7icoeoEJAqyWlvnWDayMLT4c74Byq6rcpLxhzNMXM0etklOLQnCJxf_ctZKKhNfNMUYkRgL3f5joVdl3GHmgtTB7kKEVl-ZrggL2wUb0-7k1hhJ7RFhNAmbiACtbtOO5tbSO980UOVF20ZcL1ZjW60HXu2qv4PbI6q9M">
+                <div class="absolute inset-0 hero-gradient"></div>
+            </div>
+            <div
+                class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto">
+                <span class="font-label-caps text-label-caps text-elite-gold mb-4 tracking-[0.2em]">INDONESIA
+                    UNVEILED</span>
+                <h1 class="font-headline-xl text-headline-xl text-white mb-6">Bali: The Island of Gods</h1>
+                <p class="font-body-lg text-body-lg text-surface-variant mb-10 leading-relaxed">
+                    Where ancient spiritual heritage meets crystalline shores and emerald rice terraces. Bali is more
+                    than a destination; it's a mood, an aspiration, and a tropical sanctuary that invites you to lose
+                    yourself in its vibrant culture and find your inner peace.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button
+                        class="bg-secondary-container text-on-secondary-container px-10 py-4 rounded-lg font-bold text-lg hover:shadow-xl transition-all flex items-center gap-2">
+                        Explore Itineraries <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <button
+                        class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-white/20 transition-all flex items-center gap-2">
+                        Customise Trip <span class="material-symbols-outlined">edit_note</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Visual Gallery Bento -->
+        <section class="py-20 px-margin-desktop max-w-container-max mx-auto">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Moments from Bali</h2>
+                    <p class="text-on-surface-variant">A visual journey through the soul of Indonesia</p>
+                </div>
+                <button class="group text-secondary font-bold flex items-center gap-2">
+                    View Full Gallery <span
+                        class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </button>
+            </div>
+            <div class="bento-grid">
+                <div class="col-span-2 row-span-2 relative rounded-xl overflow-hidden group">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        data-alt="A cinematic medium shot of the Tegallalang Rice Terrace in Ubud, Bali, at dawn. The intricate layers of vibrant green paddy fields are illuminated by long, horizontal rays of golden morning sun filtering through coconut palms. A thin veil of mist hangs in the valley, creating a layered, dreamlike atmosphere. The composition emphasizes the stunning geometry of traditional Balinese subak irrigation systems."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8_WNvhpct-xr2m6ySTZ0wm1BrAW2tt5y6DN8KMveL9o_VRXtHsqE1pU5tKeX-j_B2RqqqDrsDsO0jzAeMAWhmBdzjUtCX0NvTGO3vKSR42hos-8kDN3IxWpRl8eEjwE6qCWHmCEejLartWKaXefSsaSvVa_1WydxdEUKOxOfYzsB7CZyoIVKMeB1t3k-buSWI6sl145qZ3gKbaRsvxvEocDniR_1auXJDmWPL-dYwFZh9g7Ps_TRGaklyJnsHzAwb8t44_3cNmTc">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+                        <div>
+                            <p class="text-white font-headline-md">Tegallalang Rice Terraces</p>
+                            <span class="text-white/80 text-sm">Ubud, Central Bali</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-2 row-span-1 relative rounded-xl overflow-hidden group bg-primary-container">
+                    <img class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
+                        data-alt="A vibrant landscape photograph of a traditional Balinese gateway or Candi Bentar at Pura Lempuyang, often called the Gateway to Heaven. The stone architecture is intricately carved and perfectly frames the massive Mount Agung volcano in the distance under a clear blue sky. The lighting is bright and crisp, highlighting the textures of the volcanic rock and the majestic scale of the mountain."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaZ-adIDjZriUe7CNeIJOohTYmrxiTTke8ATjPww8dDbeliQvQib-y-gs5HRIRv8Skk43XrRw02yuu6ivm6HrEnWLLSG0Emu4QlNdmzTZCzX1JHYRVWQ1KSf8o_HrYkC3hm-6GNMY_Wgxx9kXS7PGy2Hkqm6Ioqwd5LEQ2QdKdTXMq6kbbUtGFZoFHrjx2qmCfCgWo8XGPAORZiKh4ey26idyx1sVnHwkpYRQhk1WYOdveF35-Yj2ha4OXL1_et-pBHeG9W5EGmiw">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <button
+                            class="bg-white/20 backdrop-blur-xl p-4 rounded-full border border-white/30 text-white hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-4xl"
+                                style="font-variation-settings: &quot;FILL&quot; 1;">play_circle</span>
+                        </button>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="font-label-caps text-white">Watch Bali Experiences</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1 row-span-1 relative rounded-xl overflow-hidden group">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        data-alt="A close-up shot of Kelingking Beach on Nusa Penida, Bali, showing the famous T-Rex shaped limestone cliff plunging into turquoise ocean waters. White foam from crashing waves contrasts with the deep blue sea. The lighting is high-noon bright, emphasizing the intense tropical colors and the dramatic vertical scale of the jagged coastline."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQki9IyZzG8qUQh4ImnUMau-jXzM6f78rpMkE0ciMDhUihhQ-8-MKBCsqYjyYNWZH9sgxMPsS_vI-c92Ga_IcO3iUgWD51wBxFwyG1wfZDkRfrjpCk21rJBpYe5-OXEgCxJR7LH7zBNyZpB7EMDz_Zo6IeFbIC8YN_gFgtvke7vWAq5qAQ9SC9IS3AaNboPru6Amo7chCAczBcgjezTI9NZ3mNXkLm49xp_w7IK59OIrmtHsr1LJN4lae1uKr-apC9wVSQ5pHUIYc">
+                </div>
+                <div class="col-span-1 row-span-1 relative rounded-xl overflow-hidden group">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        data-alt="An atmospheric indoor shot of a traditional Balinese luxury spa. A stone bathtub is filled with warm water and covered with hundreds of vibrant pink and red flower petals in a complex mandala pattern. Soft ambient candlelight flickers against dark wood walls, creating a serene, indulgent, and premium wellness aesthetic."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMvPfWCizwg7fhRgwGS41ZKm655a079jJAnl0a-tZJ4nnEV4AaXIcbBXnkgEXUk3mtf9CkqM7GNhrc6N1F8d0OKSVcXRAtven9zaBCmpNgGXQPopgxKLufo6ir49gruWv4PiMbMonPA6GNOumEF6kHfiBChkXHrAQnzN4yzIGDHJV3f0XJhOp8AJGo8IivIyG14iC4Nwq6RXjQokzPLXnAi3Jqac2yr20t2h6aytboxO-4jI3uWC5GX9pkUQS5_GyNDqE0EaBjtnw">
+                </div>
+            </div>
+        </section>
+        <!-- Package Grid -->
+        <section class="bg-surface-container-low py-20 px-margin-desktop">
+            <div class="max-w-container-max mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Curated Bali Itineraries</h2>
+                    <p class="text-on-surface-variant max-w-2xl mx-auto">From spiritual retreats in Ubud to sun-drenched
+                        coastal luxury, find the perfect pace for your Balinese odyssey.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12" id="package-grid">
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-surface rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                data-alt="A serene landscape of Bali's coastline featuring traditional fishing boats on a white sand beach at sunset, with warm golden light reflecting off the calm Indian Ocean."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPQFay71ZxwpDBx7yj670On9Cp5d1nJRbc_xibU6KF8KepQ_3VAyy0TO8rdYawB9XbPIqeeCj1D2T84r2dIUxtdw2G9U1XOMmGWuoesbEjr8-jNpLmVdIAhZC0XC-EfZn4VDCV7YnrD8ED5I55j-WnJlvv4w0vfC2b0krYeApGizjvRY2sgpnsO6KU8GQGXcn9Jwbueuzc0nabLwjmCaAyN0_SYZMVejmGfWLpPaAPDsfZM9AfTRNa4U1xBklDb3JIggNmIzJxLYI">
+                            <div
+                                class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                ELITE SELECTION</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline-md text-primary">Bali Classic Escape</h3>
+                                <div class="flex items-center text-elite-gold">
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                    <span class="text-xs font-bold ml-1">4.9</span>
+                                </div>
+                            </div>
+                            <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-lg">schedule</span> 4N/5D • South Bali &amp;
+                                Ubud
+                            </p>
+                            <div class="flex justify-between items-end border-t border-outline-variant pt-4">
+                                <div>
+                                    <span
+                                        class="text-xs text-on-surface-variant block uppercase font-bold tracking-tighter">Starts
+                                        from</span>
+                                    <span class="font-price-display text-primary">₹39,000</span>
+                                </div>
+                                <button
+                                    class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded font-bold text-sm hover:opacity-90 transition-opacity">View
+                                    Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-surface rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                data-alt="Intricate stone carvings of a Balinese temple in Ubud, surrounded by tropical rainforest greenery with a mystical atmospheric fog rolling through the trees."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxQaunuZG63sHSWiGUpwJ2EoGbubAyS4KBkyRp6NgD2GTRdkHvUckKSGZJ-qnuq2sIerpT3glTMN48d0uiGZIxn61mlkhS4wARm-evyqYLKTMTF09Av6cxzeooePh0KyGkqN-sW7Ce3ihMbZGkLRZTZ4H8LpMcjD8UZCuHTT8cBbjJT219-dh0HsrXNrBzdUxJqITQUcWYJ4BzBOzD0wfW4q5QGEiY7zj16FKgsJE8iQQZliR5ZA_Ue9hxajrqRAAGwGRxYRb1rBk">
+                            <div
+                                class="absolute top-4 left-4 bg-status-success text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                TOP RATED</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline-md text-primary">Spiritual Ubud &amp; Nusa Penida</h3>
+                                <div class="flex items-center text-elite-gold">
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                    <span class="text-xs font-bold ml-1">4.8</span>
+                                </div>
+                            </div>
+                            <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-lg">schedule</span> 5N/6D • Island Hopping
+                            </p>
+                            <div class="flex justify-between items-end border-t border-outline-variant pt-4">
+                                <div>
+                                    <span
+                                        class="text-xs text-on-surface-variant block uppercase font-bold tracking-tighter">Starts
+                                        from</span>
+                                    <span class="font-price-display text-primary">₹48,500</span>
+                                </div>
+                                <button
+                                    class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded font-bold text-sm hover:opacity-90 transition-opacity">View
+                                    Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div
+                        class="bg-surface rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all group border-t-4 border-t-elite-gold">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                data-alt="A private luxury infinity pool overlooking the lush Ayung River valley in Ubud at dusk, with ambient floating candles and a romantic sunset sky."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuApm1DKzs0D6MT5CP8v2L7SnJUzIMk7LWk0dYI-zEY6YGwmGMwb5C12BzGBV2sFrL7J3rCbV0e6MIuhh5g8nCObTUB1xdOlMoMgdTz1K0PwjFYxbwU0i7LlcQncfk4dvx0oPMYcQosLl-ZHLwh6NnSvQsD_9vs35rpc_TvEerdx7AZEFigveyHyZSwhc6w7ulJrfr91-6D6uBO7xRply15_T9zGmwOY8EHX4PmEHZwXpy0IugqjWKHh06fAzBjUUhq1ic9YN9uWAG8">
+                            <div
+                                class="absolute top-4 left-4 bg-elite-gold text-on-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                HONEYMOON SPECIAL</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline-md text-primary">Bali Luxury Honeymoon</h3>
+                                <div class="flex items-center text-elite-gold">
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                    <span class="text-xs font-bold ml-1">5.0</span>
+                                </div>
+                            </div>
+                            <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-lg">schedule</span> 6N/7D • All Inclusive
+                            </p>
+                            <div class="flex justify-between items-end border-t border-outline-variant pt-4">
+                                <div>
+                                    <span
+                                        class="text-xs text-on-surface-variant block uppercase font-bold tracking-tighter">Starts
+                                        from</span>
+                                    <span class="font-price-display text-primary">₹1,25,000</span>
+                                </div>
+                                <button
+                                    class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded font-bold text-sm hover:opacity-90 transition-opacity">View
+                                    Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div
+                        class="bg-surface rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                data-alt="Two mountain bikers traversing a narrow trail through Bali's volcanic landscapes near Mount Batur, with a dramatic backdrop of the crater lake and morning sunlight."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkowIieJc3i14hytUvivofZxqhb_LASVW3LfJIekfE-EvNxiOZdUAquQx64UszurVZBraUOUuGHM78LCamBamVwXdpk7PqI83CzCXlOc3PP-5rm5DEcqthDKwIPCMmUzyk2GJ1j8gBQ3AhXug2wqtdwiNaLbuuaFsCWoGpfMVW9iYw9GBUkGkD0m8HfcVehZAfWlVzvraicOj87zUPk2lQJgO9UrCe5Gx2PieV7PZVDOgR7iu8yUUsi2zfITVwcGcSk9SJjujRtEc">
+                            <div
+                                class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                ADVENTURE</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline-md text-primary">Adventure &amp; Biking Bali</h3>
+                                <div class="flex items-center text-elite-gold">
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                    <span class="text-xs font-bold ml-1">4.7</span>
+                                </div>
+                            </div>
+                            <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-lg">schedule</span> 7N/8D • Mount Batur Trek
+                            </p>
+                            <div class="flex justify-between items-end border-t border-outline-variant pt-4">
+                                <div>
+                                    <span
+                                        class="text-xs text-on-surface-variant block uppercase font-bold tracking-tighter">Starts
+                                        from</span>
+                                    <span class="font-price-display text-primary">₹55,000</span>
+                                </div>
+                                <button
+                                    class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded font-bold text-sm hover:opacity-90 transition-opacity">View
+                                    Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div
+                        class="bg-surface rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                data-alt="A turquoise ocean scene on the Gili Islands featuring a person swinging on a wooden ocean swing during sunset, with crystal clear water and a vibrant pink sky."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT6fxDJGRXHhi0jEO2FKSCX7ShL55TEkLnvy7SDkHJPrLfsPbCRpoFGfEJlNbZ8sF_70DG7oD-4zKAnxO9oWU1qOux18D0TfP2XlkqLJbg861TlWRWkI7Dwvga7eM9Zz8dxDieMM70STuMXeXTrqZND10FB1LSmsz41G5-D66yH1j7jitT2Ov9kLSJng0QcZnxGIgkDqE_4TmVhhkeKdXpPSnvg4IwRFDrDH8Y8D3sPDHby4wjvENxSTOhHTZkw2-iekYeFpjjd6M">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline-md text-primary">Coastal Bliss &amp; Gili Islands</h3>
+                                <div class="flex items-center text-elite-gold">
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                    <span class="text-xs font-bold ml-1">4.9</span>
+                                </div>
+                            </div>
+                            <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-lg">schedule</span> 5N/6D • Beach Hopping
+                            </p>
+                            <div class="flex justify-between items-end border-t border-outline-variant pt-4">
+                                <div>
+                                    <span
+                                        class="text-xs text-on-surface-variant block uppercase font-bold tracking-tighter">Starts
+                                        from</span>
+                                    <span class="font-price-display text-primary">₹42,000</span>
+                                </div>
+                                <button
+                                    class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded font-bold text-sm hover:opacity-90 transition-opacity">View
+                                    Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div
+                        class="bg-surface rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                data-alt="A wide angle landscape of the Uluwatu Temple perched on a steep cliff edge overlooking the Indian Ocean, with dramatic waves crashing below in the evening light."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn99uGIP9ctCBUMbUgaC33NlS4XE-9eMd5tkmxOJ2jUlEEGsKJ-8NQYh-jF_faP02D4ikm0wRx42b1846m4I-2sjnWVENtCYKz4pzNXZioR09q2meXMNT0HP-09YxVk1m-YBmKYxRp4JTef8081Pee-TWnRZg6YW_s6W2CZ3F2fekKOGZWqo2nMF8POt0z5DxB8w5Oye57VCVZGi6IOkoIzKgC-rW8VwHMSbSk5BsGxcBaPnIEhKfIto_EccRKV0zQflmDYpIv0Bs">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline-md text-primary">Grand Bali Expedition</h3>
+                                <div class="flex items-center text-elite-gold">
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                    <span class="text-xs font-bold ml-1">4.9</span>
+                                </div>
+                            </div>
+                            <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-lg">schedule</span> 8N/9D • Complete Circle
+                            </p>
+                            <div class="flex justify-between items-end border-t border-outline-variant pt-4">
+                                <div>
+                                    <span
+                                        class="text-xs text-on-surface-variant block uppercase font-bold tracking-tighter">Starts
+                                        from</span>
+                                    <span class="font-price-display text-primary">₹72,000</span>
+                                </div>
+                                <button
+                                    class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded font-bold text-sm hover:opacity-90 transition-opacity">View
+                                    Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <button
+                        class="bg-surface border-2 border-primary text-primary px-8 py-3 rounded-lg font-bold hover:bg-primary hover:text-white transition-all active:scale-95">
+                        Load More Packages
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Why Choose Indikosh -->
+        <section class="py-24 px-margin-desktop bg-white">
+            <div class="max-w-container-max mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="font-label-caps tracking-widest block mb-4 text-secondary">THE INDIKOSH
+                            PROMISE</span>
+                        <h2 class="font-headline-lg text-headline-lg mb-8 text-primary">Travel with Total Confidence
+                        </h2>
+                        <div class="space-y-8">
+                            <div class="flex gap-6">
+                                <div
+                                    class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 bg-primary/10">
+                                    <span class="material-symbols-outlined text-3xl text-primary">hotel</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-headline-md mb-2 text-primary">Handpicked Hotels</h4>
+                                    <p class="leading-relaxed text-on-surface-variant">We personally audit every
+                                        property for hygiene, aesthetic, and luxury standards so you don't have to.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6">
+                                <div
+                                    class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 bg-primary/10">
+                                    <span class="material-symbols-outlined text-3xl text-primary">support_agent</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-headline-md mb-2 text-primary">World Class Service</h4>
+                                    <p class="leading-relaxed text-on-surface-variant">24/7 dedicated travel concierge
+                                        to assist with on-ground changes or emergency support.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6">
+                                <div
+                                    class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 bg-primary/10">
+                                    <span class="material-symbols-outlined text-3xl text-primary">sell</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-headline-md mb-2 text-primary">Best Price Guarantee</h4>
+                                    <p class="leading-relaxed text-on-surface-variant">Unbeatable value through our
+                                        direct local partnerships across Southeast Asia.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="aspect-square rounded-3xl overflow-hidden border-8 border-surface-container-high">
+                            <img class="w-full h-full object-cover"
+                                data-alt="A portrait of a smiling young couple on a cliffside in Bali, overlooking the ocean at sunset. They look happy and relaxed, embodying the stress-free travel experience provided by Indikosh Travels. The lighting is warm and golden."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMp028vgxsph6jJWXtszjUgan4vjTiYPSOdC7eR67oZaXYDOpkhGaEwqto4Cx3kSmP0iVf7SLiv5MKYry-gtMpxJRXc1cpIo2fuumG5TcP9RaQ1_YRxgQLf5TVrXF95NOu3JrFwWA8LVDyevCAE6bjYztLYnNC2aTp4h2vG_Fist0O3vhKQ51DXhsoVteAX8KeVMxwmeulLEqTQcmZNSfjwPP9SFNx19ujFUAEKV4zDpf_Y2zB-ZmB47UdjCOR0legvjvXo1nxzDc">
+                        </div>
+                        <div
+                            class="absolute -bottom-8 -left-8 bg-secondary-container p-8 rounded-2xl shadow-2xl max-w-[240px]">
+                            <div class="text-4xl font-extrabold text-on-secondary-container mb-2">15k+</div>
+                            <div
+                                class="text-sm font-bold text-on-secondary-container opacity-80 uppercase tracking-tighter leading-none">
+                                Explorers trusted us for their Bali journey</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Newsletter / CTA -->
+        <section class="py-20 px-margin-desktop bg-white">
+            <div
+                class="max-w-4xl mx-auto bg-surface-container rounded-[2rem] p-12 text-center border border-outline-variant">
+                <span class="material-symbols-outlined text-secondary text-5xl mb-6">mail</span>
+                <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Get Secret Bali Deals</h2>
+                <p class="text-on-surface-variant mb-8">Join our Elite Club for exclusive itinerary access and seasonal
+                    luxury offers delivered to your inbox.</p>
+                <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+                    <input
+                        class="flex-grow px-6 py-4 rounded-xl border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all"
+                        placeholder="Your email address" type="email">
+                    <button
+                        class="bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-colors">Join
+                        Now</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full py-12 px-margin-desktop mt-auto bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant">
+        <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="col-span-1 md:col-span-1">
+                <div class="font-headline-md text-headline-md text-primary mb-6">Indikosh Travels</div>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Crafting elite travel experiences for the
+                    sophisticated explorer since 2014. Member of Voyage Elite.</p>
+            </div>
+            <div class="col-span-1">
+                <h4 class="font-bold text-primary mb-6">Quick Links</h4>
+                <div class="flex flex-col gap-3">
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Privacy
+                        Policy</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Terms of
+                        Service</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Cookie
+                        Policy</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Travel
+                        Insurance</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Contact
+                        Us</a>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <h4 class="font-bold text-primary mb-6">Destinations</h4>
+                <div class="flex flex-col gap-3">
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Bali,
+                        Indonesia</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Thailand
+                        Islands</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Vietnam
+                        Trails</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Maldives
+                        Luxury</a>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <h4 class="font-bold text-primary mb-6">Follow Us</h4>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                        href="#"><span class="material-symbols-outlined text-lg">share</span></a>
+                    <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                        href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-container-max mx-auto pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="font-body-md text-body-md text-on-surface-variant">© 2024 Indikosh Travels. All rights reserved.
+                Member of Voyage Elite.</p>
+            <div class="flex gap-6">
+                <img alt="Visa" class="h-6 opacity-60"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPvSovkO0dtz4ElTtL3lhCNfi3MpjmX2VHAqV7y27xmaLx5C18dxg0f03gGlN0EO2J7PHOdq4PVIIiZGCZzjFrOgDwHN-t78I5Ax8jO-Mwxnp6qUBaxZaxo4RbkGrUDuKVL-G2IOe4S-ckeVXvKIgX0THPP7yBmyiv5B6vhzScnJlkq0EbvoPqivUj1jtDiiL8zy7CjBeEngN9g7Kpv_Nr4SBhsDOdwVaRhfHOcHT2Ia1zUbL-3vLKNTil2nLvfWT2F33S9sw1GjU">
+                <img alt="Mastercard" class="h-6 opacity-60"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzfak16SXvJLbO6RXR3IkLVP0nAhWJcpr7qPVcfNzf-2G3zzPRMus7LOQbAIe7x3A9PJ2v4-NRqdd-bugz5RnOEcD30VTlwOgyajrFaFsenQ0KC93WBOk-2sA5oGTgurucM5_aSKEiR7QIlI1ULmVxvaom2_Xvw1UgIma9KiQGhk-Hu8w-RdsB9-PlkJQmzsPhwZ4rXpf-g8mXT8bm9-nYXkx9YV6wA_DKiHBYWlqtO9C3cW8mFdB50sxiouo1al3yvFkZiwDjF_I">
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Micro-interaction for Load More
+        document.querySelector('button:contains("Load More")')?.addEventListener('click', function () {
+            this.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Loading...';
+            setTimeout(() => {
+                this.innerHTML = 'All Packages Loaded';
+                this.disabled = true;
+                this.classList.add('opacity-50', 'cursor-not-allowed');
+            }, 1500);
+        });
+
+        // Add contains selector support for the script above
+        window.addEventListener('load', () => {
+            // Basic intersection observer for reveal animations
+            const observerOptions = {
+                threshold: 0.1
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-8');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.group').forEach(el => {
+                el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+                observer.observe(el);
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

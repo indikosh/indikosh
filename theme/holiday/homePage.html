@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Indikosh Travels | Tailor-Made International Escapes</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "status-success": "#10B981",
+                        "primary-container": "#003366",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#351000",
+                        "surface-dark": "#1A1A1A",
+                        "primary": "#001e40",
+                        "elite-gold": "#C5A059",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#002037",
+                        "on-primary-fixed": "#001b3c",
+                        "on-secondary-fixed-variant": "#7b2f00",
+                        "surface-container": "#edeeef",
+                        "secondary-fixed-dim": "#ffb694",
+                        "on-tertiary-fixed-variant": "#004a76",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-bright": "#f8f9fa",
+                        "surface-dim": "#d9dadb",
+                        "surface-variant": "#e1e3e4",
+                        "surface-tint": "#3a5f94",
+                        "outline-variant": "#c3c6d1",
+                        "on-tertiary-container": "#5aa1dd",
+                        "secondary-container": "#fe7528",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary-container": "#003657",
+                        "primary-fixed": "#d5e3ff",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "background": "#f8f9fa",
+                        "inverse-primary": "#a7c8ff",
+                        "inverse-surface": "#2e3132",
+                        "status-urgent": "#EA2330",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-background": "#191c1d",
+                        "on-surface-variant": "#43474f",
+                        "on-primary-container": "#799dd6",
+                        "on-error": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "secondary-fixed": "#ffdbcc",
+                        "tertiary-fixed": "#cee5ff",
+                        "outline": "#737780",
+                        "on-surface": "#191c1d",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed-dim": "#96ccff",
+                        "secondary": "#a14000",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "on-secondary-container": "#5e2300"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "price-display": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "price-display": ["22px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .orange-gradient-btn {
+            background: linear-gradient(135deg, #fe7528 0%, #a14000 100%);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .orange-gradient-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(254, 117, 40, 0.4);
+        }
+
+        .hero-mesh {
+            background-color: #001e40;
+            background-image: radial-gradient(at 0% 0%, hsla(210, 100%, 15%, 1) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(210, 100%, 10%, 1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(210, 100%, 15%, 1) 0, transparent 50%);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body-md antialiased">
+    <!-- TopNavBar -->
+    <header
+        class="bg-surface-container-lowest dark:bg-surface-dark fixed top-0 w-full z-50 border-b border-outline-variant dark:border-outline shadow-sm transition-all duration-300 ease-in-out">
+        <nav
+            class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <div class="flex items-center gap-12">
+                <a class="font-headline-lg text-headline-lg font-extrabold text-primary dark:text-primary-fixed"
+                    href="#">Indikosh Travels</a>
+                <div class="hidden md:flex gap-8 items-center">
+                    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
+                        href="#">Flights</a>
+                    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
+                        href="#">Hotels</a>
+                    <a class="text-secondary font-bold border-b-2 border-secondary pb-1 font-body-md text-body-md"
+                        href="#">Tours</a>
+                    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
+                        href="#">Cabs</a>
+                    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
+                        href="#">Visa</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden md:block text-on-surface-variant font-semibold hover:text-primary transition-colors px-4 py-2">My
+                    Bookings</button>
+                <button class="orange-gradient-btn text-white px-6 py-2.5 rounded-full font-bold shadow-lg">Sign
+                    In</button>
+                <button class="md:hidden p-2">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative min-h-[921px] flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img class="w-full h-full object-cover brightness-50"
+                data-alt="A panoramic wide-angle photograph of a sophisticated global travel collage featuring the Eiffel Tower, Burj Khalifa, and ancient Bali temples under a soft golden hour sunset. The lighting is cinematic and warm, creating a premium and aspirational travel mood with subtle overlays of translucent navigation maps and geometric travel patterns. The style is modern, high-contrast, and elegant."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBO7k4mz3lMlHsXWHM6ldJUBT_x0R1C1Oq3LwhcV1gxjs1PA6zXlt57Yadj0X23t2z0ND8cRNcAWB8Hr-nNX_eJnQauhU_d02r5cWF-90yknPYtCgxkMb9t8NbZt5f6DkQuGSDL9gpvzUIAcKYv3bwtd9yRtyUbeiGnej4SybUD1Ra8KfaE4RomY9QEzov-Ymr0oIy7rtUhgYTNMidOC0r2x3Z3Ko1Ziso4Mvm-lm_JYfFxUuDgzb_RrjjWqrXGS1CDu2YI4uZf9k">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent"></div>
+        </div>
+        <div
+            class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps">LUXURY
+                    REDEFINED</span>
+                <h1 class="font-headline-xl text-headline-xl text-white max-w-xl">
+                    Tailor-Made <span class="text-secondary-fixed">International</span> Escapes
+                </h1>
+                <p class="font-body-lg text-body-lg text-white/90 max-w-lg leading-relaxed">
+                    From the white sands of Bali to the futuristic skyline of Dubai, craft your perfect journey with our
+                    customized international tour packages. Expertly curated, uniquely yours.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <button
+                        class="orange-gradient-btn text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2">
+                        Start Customizing <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                    <button
+                        class="glass-card text-primary px-8 py-4 rounded-xl font-bold flex items-center gap-2 border-white/40">
+                        View Hot Deals
+                    </button>
+                </div>
+            </div>
+            <!-- Floating Search/Widget -->
+            <div class="hidden md:block">
+
+            </div>
+        </div>
+    </section>
+    <!-- Main Content - International Destinations Grid -->
+    <main class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+            <div class="max-w-2xl">
+                <span class="text-secondary font-bold font-label-caps text-label-caps tracking-widest uppercase">Global
+                    Collection</span>
+                <h2 class="font-headline-lg text-headline-lg text-primary mt-2 mb-4">The World is Your Canvas</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    Explore the ease and flexibility of Indikosh's customized international tours. From seamless visa
+                    assistance to handpicked boutique hotels, we manage every detail while you craft the memories.
+                </p>
+            </div>
+            <div class="flex gap-2">
+                <button
+                    class="p-3 rounded-full border border-outline-variant hover:bg-surface-container transition-colors">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <button class="p-3 rounded-full bg-primary text-white hover:bg-primary-container transition-colors">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+            </div>
+        </div>
+        <!-- Bento Grid Style for Destinations -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+            <!-- Bali -->
+            <div
+                class="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 duration-700 opacity-100 translate-y-0">
+                <div class="relative h-[420px]">
+                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        data-alt="A serene Balinese temple gateway framing a lush green jungle and clear blue sky. The image has a calm, spiritual aesthetic with soft daylight filtering through tropical leaves. The colors are vibrant greens and warm stone textures, echoing a premium luxury travel vibe."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx1G7bltvQPzCk2rMa2tSJwyQDVP7zz-9QTez2tEPTdapYrg7nYZbAaKkcUkdxyjYoGT8tkzFVn5a2x4SQ4gdgwFr9SihG-5W6t2qSbF3mwSQyph49eishFWoKvsLcwdgdazcNq40em3QoSd3qUw6EYwZuBbCIrtN4TZaY7Cf4iBNjFH0Ak3lxav1OEKw8bOSFTXtbQaWjlj5n1Oi9i5HyyV32ogBis2BZXLSOK1ihBbi5EkEwxs28nIO6DMGifz84YpG63aXdXbg">
+                    <div class="absolute top-4 left-4 flex gap-2">
+                        <span
+                            class="bg-elite-gold text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">ELITE</span>
+                        <span
+                            class="bg-primary/80 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">BEST
+                            SELLER</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 class="font-headline-md text-headline-md text-white mb-1">Bali</h3>
+                        <p class="text-white/80 text-sm mb-4">Serene beaches &amp; ancient temples</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-white/60 text-xs uppercase tracking-tighter">Starts at</p>
+                                <p class="font-price-display text-price-display text-white">₹39,000</p>
+                            </div>
+                            <button
+                                class="bg-white text-primary p-3 rounded-xl hover:bg-secondary hover:text-white transition-all shadow-lg">
+                                <span class="material-symbols-outlined">arrow_outward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Malaysia -->
+            <div
+                class="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 duration-700 opacity-100 translate-y-0">
+                <div class="relative h-[420px]">
+                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        data-alt="The iconic Petronas Twin Towers in Kuala Lumpur glowing brilliantly at dusk against a deep blue evening sky. High-contrast city lights reflect off the glass facades, creating a sophisticated and modern metropolitan atmosphere."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB94KKKF1fKjPmW3dqNdVelbrr5FSEEvv5EPNJ7FAm2lkiP8qW5A9BXn6JinQgrPLZpR6R8Tm3_v4lA0_YQAtMoKTrkZtiJr9AlzWxnTQ471CZQGKDIhAwMDWMYiUxoqzwhmNoXd2C2G6lwT2_WD2NXDE_9M-YQa8qZS75G9aS76AaNiRiwCsDgYJx0-j_DnMxuTY3WDkq27MfbODrCO21MbdQYOh1B2Arupd53d25oTRG9mTZbkheqkvWg-YngbqlgWUwrEEvpjk0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 class="font-headline-md text-headline-md text-white mb-1">Malaysia</h3>
+                        <p class="text-white/80 text-sm mb-4">City lights &amp; mountain peaks</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-white/60 text-xs uppercase tracking-tighter">Starts at</p>
+                                <p class="font-price-display text-price-display text-white">₹35,500</p>
+                            </div>
+                            <button
+                                class="bg-white text-primary p-3 rounded-xl hover:bg-secondary hover:text-white transition-all shadow-lg">
+                                <span class="material-symbols-outlined">arrow_outward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Singapore -->
+            <div
+                class="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 duration-700 opacity-100 translate-y-0">
+                <div class="relative h-[420px]">
+                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        data-alt="The futuristic Gardens by the Bay in Singapore with glowing Supertrees illuminated in vibrant neon purples and blues. The scene is high-tech and magical, representing luxury and innovation in travel photography."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBplDMiGw0NkHA2NoGwhSD8ScLP9tl1IQFumpoFjyOZqYBOMQc27-M0WKVE8Lv86ePOo7zmR7TZ3PRKVUlivBsaZi5uxpA9w4VgimeD6BGb11XLfNYtYJ8lLfqTnt8tb3DjDhoY_07EDg7sYtqC_RZMtPcftQABoM8V2mpuixRPnkrY3Vmmz0LHM8eR3b58_zedX4rBtHt559Z1iVwYMyfyjOXQNtyzCQgFR5HTUiVyhP5g8-scC0c0YqijN7D8Wzj6kVV952Lfrv0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 class="font-headline-md text-headline-md text-white mb-1">Singapore</h3>
+                        <p class="text-white/80 text-sm mb-4">The garden city of the future</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-white/60 text-xs uppercase tracking-tighter">Starts at</p>
+                                <p class="font-price-display text-price-display text-white">₹72,000</p>
+                            </div>
+                            <button
+                                class="bg-white text-primary p-3 rounded-xl hover:bg-secondary hover:text-white transition-all shadow-lg">
+                                <span class="material-symbols-outlined">arrow_outward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Dubai -->
+            <div
+                class="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 duration-700 opacity-100 translate-y-0">
+                <div class="relative h-[420px]">
+                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        data-alt="A spectacular view of the Burj Khalifa towering over the Dubai skyline, surrounded by gleaming skyscrapers and a hazy golden horizon. The lighting is bright and upscale, emphasizing the luxurious and opulent vibe of the city."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUDEPcIqJhn250X4icQKclw49W0_3J3bqwqqDqeJmnoo4B3XIjq5jWMFrCazITCT3broBtY-eR2I2CK6QyyAq6x46tWiKPZ09fA85mSaONc8g8in_pmhZNmKsbLClxz-pVRS_YyBVt8mhdyd2Zct1UIM57p2PXv5mKGNZIOoxc4aGaXxnAHYnBqSiu2noYLKo1uXmv8FoDF7WBT4Gi1h65QsRruYmjIa5bcr_1ySLn24ZaanJ2_iVUjjJjxk5mP_VPl55BRYb4zoQ">
+                    <div class="absolute top-4 left-4">
+                        <span
+                            class="bg-status-urgent text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">HOT
+                            DEAL</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 class="font-headline-md text-headline-md text-white mb-1">Dubai</h3>
+                        <p class="text-white/80 text-sm mb-4">Desert safaris &amp; golden luxury</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-white/60 text-xs uppercase tracking-tighter">Starts at</p>
+                                <p class="font-price-display text-price-display text-white">₹26,000</p>
+                            </div>
+                            <button
+                                class="bg-white text-primary p-3 rounded-xl hover:bg-secondary hover:text-white transition-all shadow-lg">
+                                <span class="material-symbols-outlined">arrow_outward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sri Lanka -->
+            <div
+                class="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 duration-700 opacity-100 translate-y-0">
+                <div class="relative h-[420px]">
+                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        data-alt="Lush green tea plantations in the misty mountains of Ella, Sri Lanka. A scenic train track winds through the emerald hills under a soft, overcast sky, creating a serene and adventurous atmosphere."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-BaZkwsvfDpB4jR32HfRz6Z8n8HOcPgv-8ykWV2k6jjvx0qEo3Wfaix0JzbAJSalMY_bmeGbbzGIh2wiIcRMfZCVS2K2mpeubQRjKA28GvHEGmMsv8qcHe-CGxLjWeeG2HaFWCTsAtLEBRfzloTuhJJPBeSRVj4H76PaZ4L5PBgA6y18UuTO78j_VH6ZAn_9nI0ygA_NMWJb-9y8S6tS0Y7IlydidBd-KMTWj728X0sO4YCZ1G_9PV3FBynrR67WXKyhOvSczZCY">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 class="font-headline-md text-headline-md text-white mb-1">Sri Lanka</h3>
+                        <p class="text-white/80 text-sm mb-4">Emerald hills &amp; wild wonders</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-white/60 text-xs uppercase tracking-tighter">Starts at</p>
+                                <p class="font-price-display text-price-display text-white">₹28,500</p>
+                            </div>
+                            <button
+                                class="bg-white text-primary p-3 rounded-xl hover:bg-secondary hover:text-white transition-all shadow-lg">
+                                <span class="material-symbols-outlined">arrow_outward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Thailand -->
+            <div
+                class="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 duration-700 opacity-100 translate-y-0">
+                <div class="relative h-[420px]">
+                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        data-alt="Stunning turquoise waters of the Phi Phi Islands in Thailand, with limestone cliffs rising dramatically from the sea. The lighting is bright tropical sun, highlighting the pristine clarity of the water and white sand."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcDuYTsCKWjxsdJ3E7WowjSYIU9a9eZ4URzu5bUpBQANkod_6bJQDnttFpQ21vUmqi66VgogOi1PeEwN8ii-29kCFYKu6KjuM8FN123iLwlsKTO3vKrUyl4ppT6zc1woxGisWMC2uy9gDsuo-ZAr7jm0mpnfYUCHl05MJeTlXDRKILTFYDY9vM2IxIadmPccAIN5HTSQTuDVPjEhJqYWCwsUAX0SNp1AHtMe5EL75T5K3ektzx_O-3-WA_0GLfK0tCIEePinuDOnA">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 class="font-headline-md text-headline-md text-white mb-1">Thailand</h3>
+                        <p class="text-white/80 text-sm mb-4">Island hopping &amp; street feasts</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-white/60 text-xs uppercase tracking-tighter">Starts at</p>
+                                <p class="font-price-display text-price-display text-white">₹25,000</p>
+                            </div>
+                            <button
+                                class="bg-white text-primary p-3 rounded-xl hover:bg-secondary hover:text-white transition-all shadow-lg">
+                                <span class="material-symbols-outlined">arrow_outward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Georgia -->
+            <div
+                class="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 duration-700 opacity-100 translate-y-0">
+                <div class="relative h-[420px]">
+                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        data-alt="Majestic snow-capped Caucasus mountains towering over a small ancient stone church in Georgia. The lighting is crisp and cold with a bright blue sky, creating an atmosphere of ancient history and natural grandeur."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMxHmG9QY31reC5ONmrzodpQVpBUou7Dnunvd6sTmDufeWW3aapwRO9Swiac8sWe9MBtmvIYcQ2KaDdSRA5DreFUJF42GfGmukFZ-xtfMzEETRIspFuZfwacPaiNDVu0XKPNAYIBVMZ6mCsMYjhKsEqsQn9hipo_DEg4SGLRNinXMnSQm_pHIm2Ao9Nv1prMuGYn-HWAIT3f6xd5V5oSWXhUniMCFZcaUo8eIz4VArLvmpWz1zw5ejWQ-EhaT8HQRPV3lgQdfzQtE">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 class="font-headline-md text-headline-md text-white mb-1">Georgia</h3>
+                        <p class="text-white/80 text-sm mb-4">Mountain peaks &amp; old town charm</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-white/60 text-xs uppercase tracking-tighter">Starts at</p>
+                                <p class="font-price-display text-price-display text-white">₹45,000</p>
+                            </div>
+                            <button
+                                class="bg-white text-primary p-3 rounded-xl hover:bg-secondary hover:text-white transition-all shadow-lg">
+                                <span class="material-symbols-outlined">arrow_outward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Azerbaijan -->
+            <div
+                class="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 duration-700 opacity-100 translate-y-0">
+                <div class="relative h-[420px]">
+                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        data-alt="The Flame Towers in Baku, Azerbaijan, standing as modern glass architectural marvels against a twilight sky over the Caspian Sea. The sleek buildings are lit with fiery patterns, reflecting a blend of modern innovation and cultural heritage."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk_B1uZFhaceR2s-HIJlRmMVc16kftQjjk_N6aGd2yMeZe0UHyCIjFDc1ktO9V8pWBZ5Isxau86OYywCUqGkMXfOckRyM9kUuis67t_Onp2t0h5cFOe9w-EeqVvWPM21BeC71nCsiV2ZWkTdNq-fxizg1MzOlZa62SIpjXH3Cl17Uiee6b9UXjSfWbNHNi-3UwGuDjfjrzSWKcCTRXjPa3C27SwpFAZUt1AXan5DFa4cVXThzbDuQNXq2hWkCHIFG7NOqRb2jIEZ0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 class="font-headline-md text-headline-md text-white mb-1">Azerbaijan</h3>
+                        <p class="text-white/80 text-sm mb-4">The land of fire and modern art</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-white/60 text-xs uppercase tracking-tighter">Starts at</p>
+                                <p class="font-price-display text-price-display text-white">₹42,000</p>
+                            </div>
+                            <button
+                                class="bg-white text-primary p-3 rounded-xl hover:bg-secondary hover:text-white transition-all shadow-lg">
+                                <span class="material-symbols-outlined">arrow_outward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-16 text-center">
+            <button
+                class="px-10 py-5 border-2 border-primary text-primary font-bold rounded-2xl hover:bg-primary hover:text-white transition-all">
+                Browse All Destinations
+            </button>
+        </div>
+    </main>
+    <!-- Social Proof / Features -->
+    <section class="py-24">
+        <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto bg-white">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter text-center">
+                <div class="space-y-4">
+                    <div
+                        class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto text-secondary-fixed bg-primary/5">
+                        <span class="material-symbols-outlined text-4xl text-primary">verified_user</span>
+                    </div>
+                    <h4 class="font-headline-md text-headline-md text-primary">Verified Travel</h4>
+                    <p class="">100% Secure bookings and on-ground assistance.</p>
+                </div>
+                <div class="space-y-4">
+                    <div
+                        class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto text-secondary-fixed bg-primary/5">
+                        <span class="material-symbols-outlined text-4xl text-primary">headset_mic</span>
+                    </div>
+                    <h4 class="font-headline-md text-headline-md text-primary">24/7 Support</h4>
+                    <p class="">Expert consultants available anytime, anywhere.</p>
+                </div>
+                <div class="space-y-4">
+                    <div
+                        class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto text-secondary-fixed bg-primary/5">
+                        <span class="material-symbols-outlined text-4xl text-primary">payments</span>
+                    </div>
+                    <h4 class="font-headline-md text-headline-md text-primary">Easy EMI</h4>
+                    <p class="">Plan now, pay later with flexible financing options.</p>
+                </div>
+                <div class="space-y-4">
+                    <div
+                        class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto text-secondary-fixed bg-primary/5">
+                        <span class="material-symbols-outlined text-4xl text-primary">stars</span>
+                    </div>
+                    <h4 class="font-headline-md text-headline-md text-primary">Elite Perks</h4>
+                    <p class="">Exclusive upgrades at partner hotels worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-surface-dark w-full border-t border-outline-variant">
+        <div
+            class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto border-b border-outline-variant">
+            <div class="col-span-1 md:col-span-1">
+                <h3 class="font-headline-md text-headline-md font-bold text-primary mb-6">Indikosh Travels</h3>
+                <p class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md mb-8">
+                    Crafting extraordinary journeys for the sophisticated explorer. Your passport to the world's most
+                    unique destinations.
+                </p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-secondary-container hover:text-white transition-all"
+                        href="#">
+                        <span class="material-symbols-outlined">public</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-secondary-container hover:text-white transition-all"
+                        href="#">
+                        <span class="material-symbols-outlined">mail</span>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-primary font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-4">
+                    <li class=""><a
+                            class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md"
+                            href="#">About Us</a></li>
+                    <li class=""><a
+                            class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md"
+                            href="#">Terms of Service</a></li>
+                    <li class=""><a
+                            class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md"
+                            href="#">Privacy Policy</a></li>
+                    <li class=""><a
+                            class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md"
+                            href="#">Contact Support</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-primary font-bold mb-6">Support Info</h4>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-secondary">phone_in_talk</span>
+                        <div class="text-primary">
+                            <p class="text-sm text-on-surface-variant">Landline</p>
+                            <p class="font-bold">00 800 21 21 21 00</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 pt-4">
+                        <span class="material-symbols-outlined text-secondary">news</span>
+                        <div class="w-full">
+                            <p class="text-sm text-on-surface-variant mb-2">Newsletter Registration</p>
+                            <div class="flex gap-2">
+                                <input
+                                    class="bg-surface-container border-outline-variant rounded-lg text-on-surface placeholder:text-outline px-3 py-2 w-full focus:ring-1 focus:ring-secondary"
+                                    placeholder="Email address" type="email">
+                                <button
+                                    class="bg-secondary-container text-white px-4 py-2 rounded-lg font-bold hover:bg-secondary transition-colors">Join</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-primary font-bold mb-6">Mobile Apps</h4>
+                <div class="space-y-4">
+                    <button
+                        class="w-full flex items-center gap-3 bg-primary text-white px-6 py-3 rounded-xl hover:bg-primary-container transition-all shadow-sm">
+                        <span class="material-symbols-outlined text-3xl">play_store_installed</span>
+                        <div class="text-left">
+                            <p class="text-[10px] uppercase leading-none opacity-80">Get it on</p>
+                            <p class="font-bold leading-none">Google Play</p>
+                        </div>
+                    </button>
+                    <button
+                        class="w-full flex items-center gap-3 bg-primary text-white px-6 py-3 rounded-xl hover:bg-primary-container transition-all shadow-sm">
+                        <span class="material-symbols-outlined text-3xl">ios</span>
+                        <div class="text-left">
+                            <p class="text-[10px] uppercase leading-none opacity-80">Download on the</p>
+                            <p class="font-bold leading-none">App Store</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-container-max mx-auto py-8 px-margin-mobile md:px-margin-desktop text-center text-on-surface-variant/70 text-sm">
+            © 2024 Indikosh Travels. All rights reserved. Crafted for the global nomad.
+        </div>
+    </footer>
+    <script>
+        // Simple scroll interaction for Header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md', 'h-16');
+                header.classList.remove('h-20');
+            } else {
+                header.classList.remove('shadow-md', 'h-16');
+                header.classList.add('h-20');
+            }
+        });
+
+        // Destination Card reveal on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.group.relative.overflow-hidden').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(card);
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>

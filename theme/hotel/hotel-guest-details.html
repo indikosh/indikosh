@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html class="light" lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Guest Details | Indikosh Travels</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        .bg-orange-gradient {
+            background: linear-gradient(135deg, #fe7528 0%, #a14000 100%);
+        }
+
+        .elite-border {
+            border-top: 3px solid #C5A059;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #003366 !important;
+            ring: 2px;
+            ring-color: #003366;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f3f4f5;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c3c6d1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #737780;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#a7c8ff",
+                        "on-primary-fixed": "#001b3c",
+                        "on-tertiary-container": "#5aa1dd",
+                        "surface": "#f8f9fa",
+                        "outline-variant": "#c3c6d1",
+                        "on-secondary-fixed-variant": "#7b2f00",
+                        "on-surface-variant": "#43474f",
+                        "primary-container": "#003366",
+                        "on-secondary-fixed": "#351000",
+                        "tertiary-fixed": "#cee5ff",
+                        "on-tertiary-fixed-variant": "#004a76",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#001d32",
+                        "status-success": "#10B981",
+                        "secondary-fixed": "#ffdbcc",
+                        "tertiary-fixed-dim": "#96ccff",
+                        "elite-gold": "#C5A059",
+                        "outline": "#737780",
+                        "on-error": "#ffffff",
+                        "surface-dark": "#1A1A1A",
+                        "on-primary-container": "#799dd6",
+                        "surface-dim": "#d9dadb",
+                        "primary-fixed": "#d5e3ff",
+                        "surface-variant": "#e1e3e4",
+                        "primary": "#001e40",
+                        "secondary-container": "#fe7528",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container": "#edeeef",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "error": "#ba1a1a",
+                        "background": "#f8f9fa",
+                        "status-urgent": "#EA2330",
+                        "inverse-primary": "#a7c8ff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-tint": "#3a5f94",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary-fixed-dim": "#ffb694",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "tertiary-container": "#003657",
+                        "on-background": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#002037",
+                        "on-surface": "#191c1d",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#5e2300",
+                        "secondary": "#a14000",
+                        "surface-bright": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "price-display": ["Plus Jakarta Sans"],
+                        "label-caps": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "price-display": ["22px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background font-body-md text-on-surface">
+    <!-- TopNavBar -->
+    <header
+        class="bg-surface dark:bg-surface-dark border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none docked full-width top-0 z-50 sticky">
+        <div
+            class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div class="flex items-center gap-8">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdkRcZKuMskZ25lrLHLQ65fVSW01wYOfddc-t4WOhOzMdjQz4cwpcl4kL08ct_Co-7Z1MdyYFVsiHJWBJiC1WhKsnVEW9MbvmQRm8ZhTKoV1YSm9E0Y8hUKB4OmqXxDrLUw6SoZhI4x8NO-ld-uVX3xyiXLgc6w__ZK2LYn_vCstRbkv5U79yVtuQD6ulvQsvSKARSNfDicI_Vaz62xy0hLZIvFDuDRFlX2cDfF57lPodPPtprSUiNqXqCyOfPF0lR9jpTjxJmrfs"
+                    alt="Indikosh Travels" class="h-8 w-auto object-contain">
+                <nav class="hidden md:flex gap-6">
+                    <a class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps"
+                        href="#">Flights</a>
+                    <a class="text-secondary dark:text-secondary-fixed border-b-2 border-secondary font-bold pb-1 font-label-caps text-label-caps"
+                        href="#">Hotels</a>
+                    <a class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps"
+                        href="#">Tours</a>
+                    <a class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps"
+                        href="#">Cabs</a>
+                    <a class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps"
+                        href="#">Visa</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-primary cursor-pointer">language</span>
+                <span class="material-symbols-outlined text-primary cursor-pointer">person</span>
+                <button
+                    class="hidden md:block bg-surface-container-low px-4 py-2 rounded-lg text-primary font-bold hover:bg-surface-container-highest transition-all duration-200">Login</button>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8">
+        <div class="flex flex-col md:grid md:grid-cols-12 gap-gutter">
+            <!-- Left Content: Guest Details -->
+            <div class="md:col-span-8 space-y-gutter">
+                <!-- Page Title -->
+                <div>
+                    <h1 class="font-headline-lg text-headline-lg text-primary">Review Your Booking</h1>
+                    <p class="text-on-surface-variant mt-1">Please enter guest details as per government ID.</p>
+                </div>
+                <!-- Guest Information Form -->
+                <section
+                    class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 shadow-sm overflow-hidden relative">
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-primary"></div>
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="font-headline-md text-headline-md flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">group</span>
+                            Guest Details
+                        </h2>
+                        <span class="text-status-success flex items-center gap-1 font-label-caps text-label-caps">
+                            <span class="material-symbols-outlined text-sm">verified_user</span> 2 Adults
+                        </span>
+                    </div>
+                    <!-- Guest 1 -->
+                    <div class="mb-8">
+                        <p class="font-bold text-on-surface mb-4 font-label-caps text-label-caps opacity-60">ADULT 1
+                            (PRIMARY)</p>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div class="md:col-span-1">
+                                <label class="block text-xs font-bold text-outline uppercase mb-1">Title</label>
+                                <select
+                                    class="w-full p-3 bg-surface border border-outline-variant rounded-lg font-body-md">
+                                    <option>Mr</option>
+                                    <option>Ms</option>
+                                    <option>Mrs</option>
+                                </select>
+                            </div>
+                            <div class="md:col-span-1.5">
+                                <label class="block text-xs font-bold text-outline uppercase mb-1">First Name</label>
+                                <input
+                                    class="w-full p-3 bg-surface border border-outline-variant rounded-lg font-body-md focus:border-primary-container"
+                                    placeholder="Enter first name" type="text">
+                            </div>
+                            <div class="md:col-span-1.5">
+                                <label class="block text-xs font-bold text-outline uppercase mb-1">Last Name</label>
+                                <input
+                                    class="w-full p-3 bg-surface border border-outline-variant rounded-lg font-body-md focus:border-primary-container"
+                                    placeholder="Enter last name" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Guest 2 -->
+                    <div class="mb-2">
+                        <p class="font-bold text-on-surface mb-4 font-label-caps text-label-caps opacity-60">ADULT 2</p>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div class="md:col-span-1">
+                                <label class="block text-xs font-bold text-outline uppercase mb-1">Title</label>
+                                <select
+                                    class="w-full p-3 bg-surface border border-outline-variant rounded-lg font-body-md">
+                                    <option>Mr</option>
+                                    <option>Ms</option>
+                                    <option>Mrs</option>
+                                </select>
+                            </div>
+                            <div class="md:col-span-1.5">
+                                <label class="block text-xs font-bold text-outline uppercase mb-1">First Name</label>
+                                <input
+                                    class="w-full p-3 bg-surface border border-outline-variant rounded-lg font-body-md"
+                                    placeholder="Enter first name" type="text">
+                            </div>
+                            <div class="md:col-span-1.5">
+                                <label class="block text-xs font-bold text-outline uppercase mb-1">Last Name</label>
+                                <input
+                                    class="w-full p-3 bg-surface border border-outline-variant rounded-lg font-body-md"
+                                    placeholder="Enter last name" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Contact Information -->
+                <section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 shadow-sm">
+                    <h2 class="font-headline-md text-headline-md flex items-center gap-2 mb-6">
+                        <span class="material-symbols-outlined text-primary">contact_mail</span>
+                        Contact Details
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-outline uppercase mb-1">Email Address</label>
+                            <input class="w-full p-3 bg-surface border border-outline-variant rounded-lg font-body-md"
+                                placeholder="example@email.com" type="email">
+                            <p class="text-[11px] text-on-surface-variant mt-1 italic">Voucher will be sent to this
+                                email</p>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-outline uppercase mb-1">Mobile Number</label>
+                            <div class="flex">
+                                <span
+                                    class="bg-surface-container inline-flex items-center px-3 border border-r-0 border-outline-variant rounded-l-lg text-on-surface-variant">+91</span>
+                                <input
+                                    class="w-full p-3 bg-surface border border-outline-variant rounded-r-lg font-body-md"
+                                    placeholder="Mobile Number" type="tel">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Add-ons / Special Requests -->
+                <section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 shadow-sm">
+                    <h2 class="font-headline-md text-headline-md flex items-center gap-2 mb-6">
+                        <span class="material-symbols-outlined text-primary">add_circle</span>
+                        Special Requests (Optional)
+                    </h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <label
+                            class="flex flex-col items-center justify-center border border-outline-variant p-4 rounded-xl cursor-pointer hover:bg-surface-container-low transition-colors group">
+                            <input class="hidden peer" type="checkbox">
+                            <span class="material-symbols-outlined text-primary mb-2">schedule</span>
+                            <span class="text-xs font-bold text-center">Early Check-in</span>
+                            <div
+                                class="mt-2 w-4 h-4 border-2 border-outline rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                <span
+                                    class="material-symbols-outlined text-[12px] text-white hidden peer-checked:block">check</span>
+                            </div>
+                        </label>
+                        <label
+                            class="flex flex-col items-center justify-center border border-outline-variant p-4 rounded-xl cursor-pointer hover:bg-surface-container-low transition-colors group">
+                            <input class="hidden peer" type="checkbox">
+                            <span class="material-symbols-outlined text-primary mb-2">king_bed</span>
+                            <span class="text-xs font-bold text-center">Large Bed</span>
+                            <div
+                                class="mt-2 w-4 h-4 border-2 border-outline rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                <span
+                                    class="material-symbols-outlined text-[12px] text-white hidden peer-checked:block">check</span>
+                            </div>
+                        </label>
+                        <label
+                            class="flex flex-col items-center justify-center border border-outline-variant p-4 rounded-xl cursor-pointer hover:bg-surface-container-low transition-colors group">
+                            <input class="hidden peer" type="checkbox">
+                            <span class="material-symbols-outlined text-primary mb-2">local_taxi</span>
+                            <span class="text-xs font-bold text-center">Airport Transfer</span>
+                            <div
+                                class="mt-2 w-4 h-4 border-2 border-outline rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                <span
+                                    class="material-symbols-outlined text-[12px] text-white hidden peer-checked:block">check</span>
+                            </div>
+                        </label>
+                        <label
+                            class="flex flex-col items-center justify-center border border-outline-variant p-4 rounded-xl cursor-pointer hover:bg-surface-container-low transition-colors group">
+                            <input class="hidden peer" type="checkbox">
+                            <span class="material-symbols-outlined text-primary mb-2">smoke_free</span>
+                            <span class="text-xs font-bold text-center">Smoking Room</span>
+                            <div
+                                class="mt-2 w-4 h-4 border-2 border-outline rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                <span
+                                    class="material-symbols-outlined text-[12px] text-white hidden peer-checked:block">check</span>
+                            </div>
+                        </label>
+                    </div>
+                </section>
+                <!-- Secure Action -->
+                <div
+                    class="flex items-center gap-4 p-4 bg-primary-container/10 border border-primary-container rounded-xl">
+                    <span class="material-symbols-outlined text-primary text-3xl"
+                        style="font-variation-settings: &quot;FILL&quot; 1;">verified_user</span>
+                    <div>
+                        <p class="font-bold text-primary">Your booking is protected by Secure SSL Encryption</p>
+                        <p class="text-sm text-on-surface-variant">We ensure your personal and payment data is kept 100%
+                            private and secure.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Content: Sticky Summary -->
+            <aside class="md:col-span-4">
+                <div class="sticky top-24 space-y-gutter">
+                    <!-- Hotel Summary Card -->
+                    <div
+                        class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+                        <div class="h-40 overflow-hidden">
+                            <img alt="The Grand Oberoi Udaivilas"
+                                class="w-full h-full object-cover transition-transform hover:scale-105 duration-700"
+                                data-alt="A luxurious, sun-drenched aerial view of The Grand Oberoi Udaivilas in Udaipur, showcasing its intricate Rajput-inspired architecture, sprawling turquoise pools, and lush green courtyards. The lighting is golden hour, creating a warm and opulent atmosphere that emphasizes the premium hospitality. The style is crisp and professional, fitting a high-end corporate travel portal."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuETh39dr8Lna2LDmlkaV5Mpsowm-MAt-6xqJGncB1Dd3yEoCoJh2ZYsp76FgbIyilgSWr6vitqZdMJHwXQxFIN4jifLvrYPKqvh9z6Yt-JDkXW-frk-C0O8rqt8hUg7k7ccmKJyLnJ1V_8C2QoIF5cw94IEIufPMccjSQvZ0IxgWCo8MkmLi4x0A8Spug5fveRx-I2qBvlTr-QQoOt4CgEkaY72iVp0jBPYfdMTFWGB03BpCX-vQEnP5PkzyMn6SEn_XhL5OkJws">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-1 mb-1">
+                                <span class="material-symbols-outlined text-elite-gold text-sm"
+                                    style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                <span class="material-symbols-outlined text-elite-gold text-sm"
+                                    style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                <span class="material-symbols-outlined text-elite-gold text-sm"
+                                    style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                <span class="material-symbols-outlined text-elite-gold text-sm"
+                                    style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                <span class="material-symbols-outlined text-elite-gold text-sm"
+                                    style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                <span class="text-xs text-on-surface-variant font-bold ml-2">VOYAGE ELITE</span>
+                            </div>
+                            <h3 class="font-headline-md text-primary leading-tight mb-2">The Grand Oberoi Udaivilas</h3>
+                            <p class="text-xs text-on-surface-variant mb-4 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-sm">location_on</span>
+                                Lake Pichola, Udaipur, Rajasthan
+                            </p>
+                            <div class="grid grid-cols-2 gap-4 border-t border-outline-variant pt-4">
+                                <div>
+                                    <p class="text-[10px] font-bold text-outline uppercase tracking-wider">Check-in</p>
+                                    <p class="text-sm font-bold">24 Oct, 2024</p>
+                                    <p class="text-[10px] text-on-surface-variant">Thursday, 2:00 PM</p>
+                                </div>
+                                <div class="text-right border-l border-outline-variant pl-4">
+                                    <p class="text-[10px] font-bold text-outline uppercase tracking-wider">Check-out</p>
+                                    <p class="text-sm font-bold">27 Oct, 2024</p>
+                                    <p class="text-[10px] text-on-surface-variant">Sunday, 11:00 AM</p>
+                                </div>
+                            </div>
+                            <div
+                                class="mt-4 p-3 bg-status-success/10 rounded-lg flex items-center justify-between border border-status-success/20">
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-status-success text-lg">check_circle</span>
+                                    <span class="text-xs font-bold text-status-success">Free Cancellation</span>
+                                </div>
+                                <span class="text-[10px] text-status-success">Till Oct 22</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Price Breakup Card -->
+                    <div
+                        class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm p-6 mb-gutter">
+                        <h4 class="font-bold text-primary mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">local_offer</span>
+                            Promo Codes
+                        </h4>
+                        <div class="flex gap-2 mb-4">
+                            <input type="text" placeholder="Enter code"
+                                class="w-full p-2.5 bg-surface border border-outline-variant rounded-lg font-body-md text-sm focus:border-primary-container uppercase">
+                            <button
+                                class="bg-primary text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-primary-container transition-colors">Apply</button>
+                        </div>
+                        <div class="space-y-3">
+                            <p class="text-[10px] font-bold text-outline uppercase tracking-wider">Available Offers</p>
+                            <div class="flex flex-wrap gap-2">
+                                <button
+                                    class="flex flex-col items-start p-2 border border-dashed border-elite-gold/50 rounded-lg hover:bg-elite-gold/5 transition-all text-left w-full">
+                                    <div class="flex justify-between w-full items-center mb-1">
+                                        <span class="font-bold text-secondary text-xs tracking-wider">ELITESAVE</span>
+                                        <span class="text-[10px] text-status-success font-bold">Apply</span>
+                                    </div>
+                                    <p class="text-[10px] text-on-surface-variant">Save ₹ 8,500 on your luxury stay</p>
+                                </button>
+                                <button
+                                    class="flex flex-col items-start p-2 border border-dashed border-outline-variant rounded-lg hover:bg-surface-container transition-all text-left w-full">
+                                    <div class="flex justify-between w-full items-center mb-1">
+                                        <span
+                                            class="font-bold text-primary text-xs tracking-wider uppercase">WELCOME20</span>
+                                        <span class="text-[10px] text-primary font-bold">Apply</span>
+                                    </div>
+                                    <p class="text-[10px] text-on-surface-variant">Flat 20% off on first booking</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm p-6 relative elite-border">
+                        <h4 class="font-bold text-primary mb-4 flex items-center justify-between">
+                            Price Breakup
+                            <span class="material-symbols-outlined text-on-surface-variant text-sm">info</span>
+                        </h4>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-on-surface-variant">Base Price (3 Nights)</span>
+                                <span class="font-medium">₹ 1,42,500</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-on-surface-variant">Taxes &amp; Service Fees</span>
+                                <span class="font-medium">₹ 17,100</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-on-surface-variant">Elite Discount</span>
+                                <span class="text-status-success font-medium">- ₹ 8,500</span>
+                            </div>
+                        </div>
+                        <div class="border-t-2 border-dashed border-outline-variant pt-4 mb-6">
+                            <div class="flex justify-between items-end">
+                                <div>
+                                    <p class="text-[10px] font-bold text-outline uppercase">Total Amount</p>
+                                    <p class="text-[11px] text-on-surface-variant">(Inclusive of all taxes)</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-price-display text-price-display text-primary">₹ 1,51,100</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-orange-gradient text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all active:scale-[0.98] flex items-center justify-center gap-2 mb-4">
+                            Proceed to Payment
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                        <p class="text-[10px] text-center text-outline-variant px-4">By continuing, you agree to our
+                            Terms of Service and Privacy Policy.</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="bg-surface-container-low dark:bg-surface-dark border-t border-outline-variant dark:border-outline w-full mt-auto">
+        <div
+            class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+            <div class="col-span-1 md:col-span-1">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUwGbcfRpeERbDFY0euIa5WQWknO_1tkq_V8Pdx_8cgnyGIsx6phOBlYYNnPcZ-Azs8fhk7PCxDd8ReL29tCGuqXcwsfWvainxgElA94nMdQd62hgi8gcIMS_GL26Olg74985-kSUAY0TDV1yo2ZHcmih0m3OSVa3FGx7r-z7LwdknqB0IWlBHiMPGvRe-fYpLnxNlZ5w2C9A2LA96n7dvKZ3iWqbIyTUpkM79f4-fAQQsTlRn58XtPF9-LKLZ-WMWs55cZETjk5g"
+                    alt="Indikosh Travels" class="h-10 w-auto object-contain block mb-4">
+                <p class="text-on-surface-variant text-body-md">Your trusted partner for premium travel experiences
+                    across the globe. Exploring the extraordinary.</p>
+            </div>
+            <div>
+                <h5 class="font-bold text-primary mb-4">Company</h5>
+                <ul class="space-y-2">
+                    <li class=""><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
+                            href="#">About Us</a></li>
+                    <li class=""><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
+                            href="#">Privacy Policy</a></li>
+                    <li class=""><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
+                            href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-primary mb-4">Support</h5>
+                <ul class="space-y-2">
+                    <li class=""><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
+                            href="#">Contact Support</a></li>
+                    <li class=""><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
+                            href="#">Partner with Us</a></li>
+                    <li class=""><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
+                            href="#">Travel Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-primary mb-4">Newsletter</h5>
+                <p class="text-on-surface-variant text-sm mb-4">Get travel deals and news in your inbox.</p>
+                <div class="flex gap-2">
+                    <input class="bg-surface border border-outline-variant rounded-lg px-3 py-2 text-sm w-full"
+                        placeholder="Email" type="email">
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg font-bold">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-outline-variant py-6 text-center">
+            <p class="text-on-surface-variant text-sm">© 2024 Indikosh Travels. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Simple micro-interaction for form validation/state
+        const inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('scale-[1.01]');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+
+        // Toggle add-on visual selection
+        const addons = document.querySelectorAll('input[type="checkbox"]');
+        addons.forEach(addon => {
+            addon.addEventListener('change', (e) => {
+                const parent = e.target.closest('label');
+                if (e.target.checked) {
+                    parent.classList.add('bg-primary-container/5', 'border-primary-container');
+                } else {
+                    parent.classList.remove('bg-primary-container/5', 'border-primary-container');
+                }
+            });
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>

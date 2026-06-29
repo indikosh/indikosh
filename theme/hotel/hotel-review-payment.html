@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <title>Review &amp; Payment | Indikosh Travels</title>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#799dd6",
+                        "primary-fixed": "#d5e3ff",
+                        "tertiary": "#002037",
+                        "on-tertiary-container": "#5aa1dd",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "on-secondary-fixed": "#351000",
+                        "background": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#004a76",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001b3c",
+                        "surface-container": "#edeeef",
+                        "tertiary-container": "#003657",
+                        "secondary-fixed-dim": "#ffb694",
+                        "on-surface-variant": "#43474f",
+                        "surface": "#f8f9fa",
+                        "secondary-fixed": "#ffdbcc",
+                        "primary-container": "#003366",
+                        "surface-variant": "#e1e3e4",
+                        "outline": "#737780",
+                        "outline-variant": "#c3c6d1",
+                        "on-secondary-container": "#5e2300",
+                        "on-secondary-fixed-variant": "#7b2f00",
+                        "on-background": "#191c1d",
+                        "inverse-surface": "#2e3132",
+                        "status-urgent": "#EA2330",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#3a5f94",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary-fixed": "#001d32",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f3f4f5",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#a7c8ff",
+                        "error": "#ba1a1a",
+                        "elite-gold": "#C5A059",
+                        "surface-dim": "#d9dadb",
+                        "on-surface": "#191c1d",
+                        "tertiary-fixed": "#cee5ff",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary-fixed-dim": "#96ccff",
+                        "secondary-container": "#fe7528",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-primary": "#ffffff",
+                        "surface-dark": "#1A1A1A",
+                        "secondary": "#a14000",
+                        "on-error-container": "#93000a",
+                        "primary": "#001e40",
+                        "status-success": "#10B981"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "price-display": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "price-display": ["22px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "800" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        .stepper-line {
+            height: 2px;
+            background: linear-gradient(90deg, #10B981 50%, #c3c6d1 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            transition: all 0.5s ease;
+        }
+
+        .stepper-line-active {
+            background-position: left bottom;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+        }
+
+        .floating-input:focus-within label {
+            transform: translateY(-20px) scale(0.85);
+            color: #003366;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body-md text-body-md min-h-screen flex flex-col">
+    <!-- TopNavBar -->
+    <nav
+        class="bg-surface dark:bg-surface-dark docked full-width top-0 z-50 border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none">
+        <div
+            class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div
+                class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4CAon5Sg44uB9jLX154_0iqzCjv1vRSZyZ-7bFAx55ANbYmQnLEFBZtNhoZneQOIEBCJfTBt1cOA4PSnSdrClz3SCmlDT1KTfUKRruL8vXMSCiotByC2JyZa8o9fMJ_NUAJDGxyyKIaW4eIWBUqn2HzwNO5hFXzK4pnB8iKazbhQbg4MtCivsQkXLfyS0rDgqqORHaEmMgkMYfxLxXfs1EBbX-MDsczZa71ure4PC_RGjQGz3hLoJ4nxyYxbdUE-axz4LUKonB9Q"
+                    alt="Indikosh Travels" class="h-8 w-auto object-contain"></div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps"
+                    href="#">Flights</a>
+                <a class="text-secondary dark:text-secondary-fixed border-b-2 border-secondary font-bold pb-1 font-label-caps text-label-caps"
+                    href="#">Hotels</a>
+                <a class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps"
+                    href="#">Tour Packages</a>
+
+
+            </div>
+            <div class="flex items-center space-x-4">
+                <button
+                    class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-container-low rounded-full transition-all">language</button>
+                <div class="h-8 w-px bg-outline-variant"></div>
+                <button
+                    class="flex items-center space-x-2 text-primary font-bold hover:bg-surface-container-low px-4 py-2 rounded-lg transition-all active:scale-95">
+                    <span class="material-symbols-outlined">person</span>
+                    <span class="font-label-caps text-label-caps">Login</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main class="flex-grow max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-8">
+        <!-- Header & Stepper -->
+        <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+                <h1 class="font-headline-xl text-headline-xl text-primary mb-2">Review Your Booking</h1>
+                <p class="text-on-surface-variant max-w-lg">Double-check your luxury stay details and complete the
+                    secure payment to confirm your reservation at Udaivilas.</p>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-10 h-10 rounded-full bg-status-success text-white flex items-center justify-center shadow-lg">
+                        <span class="material-symbols-outlined">check</span>
+                    </div>
+                    <span class="text-[10px] font-bold mt-1 uppercase tracking-widest text-status-success">Guest
+                        Details</span>
+                </div>
+                <div class="w-12 h-0.5 bg-status-success rounded-full opacity-30"></div>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shadow-lg border-2 border-primary ring-4 ring-primary/10">
+                        <span class="text-sm font-bold">2</span>
+                    </div>
+                    <span class="text-[10px] font-bold mt-1 uppercase tracking-widest text-primary">Review</span>
+                </div>
+                <div class="w-12 h-0.5 bg-outline-variant rounded-full"></div>
+                <div class="flex flex-col items-center opacity-40">
+                    <div
+                        class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
+                        <span class="text-sm font-bold">3</span>
+                    </div>
+                    <span class="text-[10px] font-bold mt-1 uppercase tracking-widest">Payment</span>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+            <!-- Left Column: Booking Summary & Payment -->
+            <div class="lg:col-span-8 space-y-gutter">
+                <!-- Booking Summary Section -->
+                <section
+                    class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant overflow-hidden">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="font-headline-md text-headline-md text-primary flex items-center gap-2">
+                            <span class="material-symbols-outlined text-secondary">verified</span>
+                            Stay Summary
+                        </h2>
+                        <button class="text-secondary font-bold text-label-caps hover:underline">Edit Details</button>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-6 mb-8">
+                        <div class="w-full md:w-48 h-32 rounded-lg overflow-hidden shrink-0">
+                            <img class="w-full h-full object-cover"
+                                data-alt="A cinematic aerial view of The Grand Oberoi Udaivilas in Udaipur, showcasing its intricate domes, luxury pools, and lush gardens under a golden hour sun. The architectural style is regal Rajputana, with soft, ambient lighting reflecting off the water. The image evokes a sense of high-end exclusivity and serene architectural beauty."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHI2FIp9Zo4RHANJPYI_KKDSq1nDHa4ptgp97iyNXk-nmZ8w1rhdz834dil4Vhu7jADwCbRr1sMqgc3vhtQ4WIksyqPPVb2NoN1sTtlvEQAnvWf_42aDRMOl4DXklhXimExnpnC_vIN3C5ZTRTdatePNHXkmYIBIW-aJRqWpgMfiGwLeGOAZitrc8dA7tQbNVouB3ZIo3C3w-YRDYOck-l-TW15dMyUKXDbZIGwZYGv_XI_IdQ8_yyC5umqR9Cs_Cgu46tc5SWwgI">
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span
+                                    class="bg-elite-gold/10 text-elite-gold text-[10px] px-2 py-0.5 rounded-full font-bold tracking-wider">ELITE
+                                    PARTNER</span>
+                                <div class="flex text-elite-gold">
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                </div>
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">The Grand Oberoi Udaivilas,
+                                Udaipur</h3>
+                            <div class="flex flex-wrap gap-4 text-on-surface-variant">
+                                <div class="flex items-center gap-1.5">
+                                    <span class="material-symbols-outlined text-lg">calendar_today</span>
+                                    <span class="text-sm">24 Oct - 27 Oct (3 Nights)</span>
+                                </div>
+                                <div class="flex items-center gap-1.5">
+                                    <span class="material-symbols-outlined text-lg">group</span>
+                                    <span class="text-sm">2 Adults, 1 Child</span>
+                                </div>
+                                <div class="flex items-center gap-1.5">
+                                    <span class="material-symbols-outlined text-lg">bed</span>
+                                    <span class="text-sm">Premier Lake View Room</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 bg-surface-container-low rounded-lg border border-outline-variant/50">
+                        <div>
+                            <p class="text-[10px] font-bold text-on-surface-variant uppercase mb-1 tracking-widest">
+                                Primary Guest</p>
+                            <p class="font-bold text-primary">Arjun Malhotra</p>
+                            <p class="text-sm text-on-surface-variant">arjun.m@example.com | +91 98765 43210</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold text-on-surface-variant uppercase mb-1 tracking-widest">Stay
+                                Policy</p>
+                            <div class="flex items-center gap-1.5 text-status-success font-medium text-sm">
+                                <span class="material-symbols-outlined text-lg">check_circle</span>
+                                Free Cancellation until 22 Oct, 11:59 PM
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Payment Methods Section -->
+                <section class="space-y-4">
+                    <h2 class="font-headline-md text-headline-md text-primary px-2">Select Payment Method</h2>
+                    <div class="grid grid-cols-1 gap-3">
+                        <!-- Credit/Debit Card -->
+                        <div
+                            class="bg-white border-2 border-primary rounded-xl overflow-hidden transition-all shadow-md">
+                            <div class="p-5 flex items-center justify-between bg-primary-container/5">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-6 h-6 rounded-full border-4 border-primary bg-white flex shrink-0">
+                                    </div>
+                                    <span class="font-bold text-primary">Credit / Debit Card</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <div
+                                        class="w-8 h-5 bg-surface-container rounded-sm border border-outline-variant opacity-60">
+                                    </div>
+                                    <div
+                                        class="w-8 h-5 bg-surface-container rounded-sm border border-outline-variant opacity-60">
+                                    </div>
+                                    <div
+                                        class="w-8 h-5 bg-surface-container rounded-sm border border-outline-variant opacity-60">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 border-t border-outline-variant/30 space-y-4">
+                                <div class="relative floating-input">
+                                    <input
+                                        class="w-full h-14 pt-4 px-4 border border-outline rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                                        id="card_num" placeholder=" " type="text">
+                                    <label
+                                        class="absolute left-4 top-4 text-on-surface-variant transition-all pointer-events-none origin-left"
+                                        for="card_num">Card Number</label>
+                                    <span
+                                        class="absolute right-4 top-4 material-symbols-outlined text-on-surface-variant">credit_card</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="relative floating-input">
+                                        <input
+                                            class="w-full h-14 pt-4 px-4 border border-outline rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                                            id="card_expiry" placeholder=" " type="text">
+                                        <label
+                                            class="absolute left-4 top-4 text-on-surface-variant transition-all pointer-events-none origin-left"
+                                            for="card_expiry">Expiry (MM/YY)</label>
+                                    </div>
+                                    <div class="relative floating-input">
+                                        <input
+                                            class="w-full h-14 pt-4 px-4 border border-outline rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                                            id="card_cvv" placeholder=" " type="password">
+                                        <label
+                                            class="absolute left-4 top-4 text-on-surface-variant transition-all pointer-events-none origin-left"
+                                            for="card_cvv">CVV</label>
+                                        <span
+                                            class="absolute right-4 top-4 material-symbols-outlined text-on-surface-variant cursor-help"
+                                            title="3-digit security code on the back of your card">info</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 py-2">
+                                    <input class="w-5 h-5 text-primary rounded border-outline focus:ring-primary"
+                                        id="save_card" type="checkbox">
+                                    <label class="text-sm text-on-surface-variant" for="save_card">Save this card for
+                                        future bookings. <span class="text-primary font-bold">Securely
+                                            encrypted.</span></label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- UPI -->
+                        <div
+                            class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 flex items-center justify-between hover:border-primary/50 transition-all cursor-pointer">
+                            <div class="flex items-center gap-4">
+                                <div class="w-6 h-6 rounded-full border border-outline-variant bg-white flex shrink-0">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-primary">UPI / QR Code</span>
+                                    <span class="text-xs text-on-surface-variant">Google Pay, PhonePe, Any UPI
+                                        App</span>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-on-surface-variant">qr_code_2</span>
+                        </div>
+                        <!-- Net Banking -->
+                        <div
+                            class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 flex items-center justify-between hover:border-primary/50 transition-all cursor-pointer">
+                            <div class="flex items-center gap-4">
+                                <div class="w-6 h-6 rounded-full border border-outline-variant bg-white flex shrink-0">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-primary">Net Banking</span>
+                                    <span class="text-xs text-on-surface-variant">All major Indian banks
+                                        supported</span>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-on-surface-variant">account_balance</span>
+                        </div>
+                        <!-- Wallets -->
+                        <div
+                            class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 flex items-center justify-between hover:border-primary/50 transition-all cursor-pointer">
+                            <div class="flex items-center gap-4">
+                                <div class="w-6 h-6 rounded-full border border-outline-variant bg-white flex shrink-0">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-primary">Wallets / Pay Later</span>
+                                    <span class="text-xs text-on-surface-variant">Mobikwik, Amazon Pay, LazyPay</span>
+                                </div>
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-on-surface-variant">account_balance_wallet</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Right Column: Price Summary Sidebar -->
+            <aside class="lg:col-span-4 sticky top-24 space-y-gutter">
+                <div
+                    class="rounded-xl p-6 shadow-xl relative overflow-hidden bg-surface-container-lowest border border-outline-variant">
+                    <!-- Atmospheric subtle pattern -->
+
+                    <h3 class="font-headline-md text-headline-md mb-6 relative z-10 text-primary">Fare Details</h3>
+                    <div class="space-y-4 relative z-10">
+                        <div class="flex justify-between items-center text-on-surface-variant">
+                            <span class="text-sm">Base Price (3 Nights)</span>
+                            <span class="font-medium text-on-surface">₹1,44,000</span>
+                        </div>
+                        <div class="flex justify-between items-center text-on-surface-variant">
+                            <span class="text-sm">Taxes &amp; Fees (18% GST)</span>
+                            <span class="font-medium text-on-surface">₹25,920</span>
+                        </div>
+                        <div class="h-px bg-outline-variant/30 my-2"></div>
+                        <div class="flex justify-between items-center text-status-success font-bold">
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-lg">workspace_premium</span>
+                                <span class="text-sm">Elite Member Discount</span>
+                            </div>
+                            <span class="">- ₹12,000</span>
+                        </div>
+                        <div class="flex justify-between items-center text-status-success font-bold">
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-lg">local_offer</span>
+                                <span class="text-sm">Promo: VOYAGE10</span>
+                            </div>
+                            <span class="">- ₹5,000</span>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-outline-variant/30">
+                            <div class="flex justify-between items-end mb-6">
+                                <div>
+                                    <p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
+                                        Total Amount Payable</p>
+                                    <p class="text-[10px] text-on-surface-variant italic">Including all luxury taxes</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-price-display text-price-display text-secondary">₹1,52,920</p>
+                                </div>
+                            </div>
+                            <button
+                                class="w-full bg-secondary-container hover:bg-secondary text-on-secondary font-bold py-4 rounded-lg shadow-lg shadow-black/10 transition-all active:scale-[0.98] flex items-center justify-center gap-3">
+                                <span class="material-symbols-outlined">lock</span>
+                                PAY NOW
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
+                    <h4 class="font-bold text-primary mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-elite-gold">shield_with_heart</span>
+                        Indikosh Trust Guarantee
+                    </h4>
+                    <ul class="space-y-3">
+                        <li class="flex gap-3 text-sm text-on-surface-variant">
+                            <span class="material-symbols-outlined text-status-success text-lg">verified_user</span>
+                            <span class="">PCI-DSS compliant secure payments with 256-bit encryption.</span>
+                        </li>
+                        <li class="flex gap-3 text-sm text-on-surface-variant">
+                            <span class="material-symbols-outlined text-status-success text-lg">price_check</span>
+                            <span class="">Best Price Guarantee. If you find lower, we match it.</span>
+                        </li>
+                        <li class="flex gap-3 text-sm text-on-surface-variant">
+                            <span class="material-symbols-outlined text-status-success text-lg">support_agent</span>
+                            <span class="">24/7 Dedicated Concierge Support for Elite members.</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Urgent Social Proof -->
+                <div class="bg-status-urgent/5 border border-status-urgent/20 rounded-xl p-4 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-status-urgent/10 flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-status-urgent animate-pulse">speed</span>
+                    </div>
+                    <div>
+                        <p class="text-xs text-status-urgent font-bold">HIGH DEMAND</p>
+                        <p class="text-sm text-on-surface-variant font-medium">8 people booked this hotel in the last
+                            hour. Price may increase soon.</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="bg-surface-container-low dark:bg-surface-dark w-full mt-auto border-t border-outline-variant dark:border-outline">
+        <div
+            class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+            <div class="col-span-1 md:col-span-1">
+                <div class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary mb-4">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAASRSaapuidIaQ_Bc06D05NRa_OkqAoCJM4oXWb1TCUiTTh48P6tKwl3A4c-sUZduBHKK2Z1VhyQC2UO6S-L1dC0qJzsR4aHa8xy2YK7ocTihDL-tHdf7TIcUe9tkd33qELoyS06g5ef9v0yMARwbL96IHlIBd3r8-HPMtBKILOcJ7Az2xH4RKwBIv7o3IsXKkhicLl8Pm47TDxyWPLUht9-7b2t9c6zB_0rftBOvGx-NzJTwa_AOV2TlUYm4LBV9xvUwIfOjDTKU"
+                        alt="Indikosh Travels" class="h-8 w-auto object-contain"></div>
+                <p class="text-on-surface-variant text-sm mb-6">Crafting extraordinary journeys across the Indian
+                    subcontinent since 1994. Your gateway to luxury and discovery.</p>
+                <div class="flex space-x-4">
+                    <a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                        href="#">
+                        <span class="material-symbols-outlined text-lg">share</span>
+                    </a>
+                    <a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                        href="#">
+                        <span class="material-symbols-outlined text-lg">mail</span>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-primary mb-4 font-label-caps text-label-caps">Discover</h4>
+                <ul class="space-y-2">
+                    <li class=""><a class="text-on-surface-variant hover:text-primary transition-colors text-sm"
+                            href="#">About Us</a></li>
+                    <li class=""><a class="text-on-surface-variant hover:text-primary transition-colors text-sm"
+                            href="#">Travel Blog</a></li>
+                    <li class=""><a class="text-on-surface-variant hover:text-primary transition-colors text-sm"
+                            href="#">Partner with Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-primary mb-4 font-label-caps text-label-caps">Support</h4>
+                <ul class="space-y-2">
+                    <li class=""><a class="text-on-surface-variant hover:text-primary transition-colors text-sm"
+                            href="#">Contact Support</a></li>
+                    <li class=""><a class="text-on-surface-variant hover:text-primary transition-colors text-sm"
+                            href="#">Privacy Policy</a></li>
+                    <li class=""><a class="text-on-surface-variant hover:text-primary transition-colors text-sm"
+                            href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="font-bold text-primary font-label-caps text-label-caps">Indikosh Elite</h4>
+                <div class="p-4 bg-elite-gold/10 border border-elite-gold/20 rounded-lg">
+                    <p class="text-xs text-elite-gold font-bold mb-2">JOIN THE CIRCLE</p>
+                    <p class="text-xs text-on-surface-variant mb-4">Unlock exclusive 15% discounts and complimentary
+                        room upgrades.</p>
+                    <button
+                        class="text-xs font-bold text-primary bg-white px-3 py-1.5 rounded border border-elite-gold/30 hover:bg-elite-gold hover:text-white transition-all">LEARN
+                        MORE</button>
+                </div>
+            </div>
+        </div>
+        <div
+            class="px-margin-mobile md:px-margin-desktop py-6 border-t border-outline-variant/30 text-center max-w-container-max mx-auto">
+            <p class="text-on-surface-variant text-xs">© 2024 Indikosh Travels. All rights reserved. Registered Travel
+                Partner of Incredible India.</p>
+        </div>
+    </footer>
+    <script>
+        // Micro-interaction for input fields
+        document.querySelectorAll('.floating-input input').forEach(input => {
+            input.addEventListener('blur', (e) => {
+                if (e.target.value !== "") {
+                    e.target.nextElementSibling.classList.add('-translate-y-5', 'scale-85');
+                } else {
+                    e.target.nextElementSibling.classList.remove('-translate-y-5', 'scale-85');
+                }
+            });
+        });
+
+        // Payment method selection visual logic
+        const paymentCards = document.querySelectorAll('.grid.grid-cols-1.gap-3 > div');
+        paymentCards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Reset all
+                paymentCards.forEach(c => {
+                    c.classList.remove('border-primary', 'shadow-md', 'bg-white');
+                    c.classList.add('border-outline-variant', 'bg-surface-container-lowest');
+                    const indicator = c.querySelector('.w-6.h-6');
+                    if (indicator) indicator.classList.replace('border-4', 'border');
+                    if (indicator) indicator.classList.remove('border-primary');
+                });
+
+                // Set active
+                card.classList.add('border-primary', 'shadow-md', 'bg-white');
+                card.classList.remove('border-outline-variant', 'bg-surface-container-lowest');
+                const indicator = card.querySelector('.w-6.h-6');
+                if (indicator) indicator.classList.replace('border', 'border-4');
+                if (indicator) indicator.classList.add('border-primary');
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

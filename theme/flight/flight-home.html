@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html class="light" lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Indikosh Travels | Cheap Flights &amp; Exclusive Offers</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .orange-gradient {
+            background: linear-gradient(135deg, #fe7528 0%, #a14000 100%);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .airplane-window-frame {
+            mask-image: radial-gradient(ellipse 70% 85% at 50% 50%, black 40%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 85% at 50% 50%, black 40%, transparent 80%);
+        }
+
+        .carousel-glow {
+            background: radial-gradient(circle, rgba(244, 110, 32, 0.3) 0%, rgba(244, 110, 32, 0) 70%);
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#7b2f00",
+                        "on-surface": "#191c1d",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary-container": "#799dd6",
+                        "on-primary-fixed": "#001b3c",
+                        "primary-fixed": "#d5e3ff",
+                        "on-surface-variant": "#43474f",
+                        "elite-gold": "#C5A059",
+                        "status-success": "#10B981",
+                        "secondary-fixed": "#ffdbcc",
+                        "inverse-surface": "#2e3132",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary-fixed": "#351000",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "on-tertiary-container": "#5aa1dd",
+                        "primary-container": "#003366",
+                        "tertiary": "#002037",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-fixed-dim": "#ffb694",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#737780",
+                        "primary": "#001e40",
+                        "on-background": "#191c1d",
+                        "surface-variant": "#e1e3e4",
+                        "tertiary-fixed-dim": "#96ccff",
+                        "surface-container": "#edeeef",
+                        "on-error": "#ffffff",
+                        "surface-dark": "#1A1A1A",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-secondary-container": "#5e2300",
+                        "status-urgent": "#EA2330",
+                        "outline-variant": "#c3c6d1",
+                        "surface-tint": "#3a5f94",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#a7c8ff",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "secondary-container": "#fe7528",
+                        "background": "#f8f9fa",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#cee5ff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#004a76",
+                        "secondary": "#a14000",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-dim": "#d9dadb",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#003657",
+                        "surface": "#f8f9fa",
+                        "surface-container-highest": "#e1e3e4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "price-display": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "price-display": ["22px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+    <!-- TopNavBar -->
+    <header
+        class="bg-surface dark:bg-surface-dark border-b border-outline-variant dark:border-outline shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <div
+            class="flex items-center justify-between h-20 px-margin-desktop max-w-container-max mx-auto w-full relative">
+            <div class="flex items-center gap-8 flex-1">
+                <a class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed"
+                    href="#"><img alt="Indikosh Travels Logo" class="h-10 object-contain"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr6z_EsvANV4XOtazIjcKmYhSEcz1w5fU_AuDFH_J5ATgYhGHXBVSyl9DwfUSeU3smVffi5d6khx141rfYZ_ShtYS5ANAs_SJAdlGHCZF-Kh6ysF4st8j-THvn_dDAZPza2S7ZdpFNWIjQXDsaJsvb7g4A4EM8xNBr5CvI_lqZ9tip9aipwU2O2evukEtZUmNWZnWCDPaTXYYWc3_CxTHdfhBPGb5D-X3Bq1N5cbTKiKNwyRChdnTbttLY5ECnWOYO-krdprkk9lA"></a>
+                <nav class="hidden lg:flex items-center gap-6 mx-auto">
+                    <a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim font-bold border-b-2 border-secondary h-20 flex items-center gap-2 font-headline-md"
+                        href="#">Flights</a>
+                    <a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all h-20 flex items-center gap-2 font-headline-md"
+                        href="#">Hotels</a>
+                    <a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all h-20 flex items-center gap-2 font-headline-md"
+                        href="#">Tour Packages</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4 flex-1 justify-end">
+                <div class="hidden md:flex items-center gap-2 mr-4 border-r border-outline-variant pr-4">
+                    <button
+                        class="p-2 text-on-surface-variant hover:bg-surface-container transition-colors rounded-full">
+                    </button>
+                </div>
+                <button
+                    class="font-label-caps text-label-caps px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary-container/10 active:scale-[0.98] transition-all">Support</button>
+                <button
+                    class="font-label-caps text-label-caps px-6 py-2 orange-gradient text-white rounded-lg shadow-md active:scale-[0.98] transition-all">Login
+                    / Signup</button>
+            </div>
+        </div>
+    </header>
+    <!-- Cinematic Search Widget Container -->
+    <div class="relative min-h-screen lg:min-h-[800px] flex items-center justify-center overflow-hidden z-40 bg-black"
+        id="sticky-search">
+        <!-- Immersive Airplane Window Background -->
+        <div class="absolute inset-0 z-0 flex items-center justify-center">
+            <img alt="Modern airplane window looking out onto a beautiful bright blue sky"
+                class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0KZk9snEg-RlrHmAnqQSSo47RkW6ZIGT6igFTP2J2qiY5RcHNotuRtq6A997ugpfGtvPY6GtyHPNM8ewayVlmpB8Hs5KqKrGpQurvdwyjSHQfeg23g5YWkipqqz2gRn8PBesta4HNwE4ceZ9ux9YpbcM9nUF6KJpN_IsigVWK10-D7HqA_sNsA4BMz0CAs0JKX_VlD_dETu_lLNiMznpYb-PfE0D6YYT2d0mQgrNbDs0wQ52Cus1SBaRXZCXZIe4rKcCXlQS1nOc">
+            <div class="absolute inset-0 bg-black/20 backdrop-brightness-90"></div>
+        </div>
+        <!-- Content Overlay -->
+        <div class="max-w-container-max mx-auto px-margin-desktop w-full relative z-10 py-12">
+            <div class="flex justify-center lg:justify-end">
+                <!-- Flight Search Fields Container -->
+                <div class="glass-effect rounded-[40px] p-8 lg:p-10 text-white shadow-2xl max-w-xl w-full bg-black/30">
+                    <div class="mb-8">
+                        <h1 class="font-headline-xl text-3xl lg:text-4xl mb-2 font-headline-md">Where to go?</h1>
+                        <p class="text-white/90 text-sm">Explore and travel to any destination you want. Enjoy
+                            competitive pricing from over 600 airlines.</p>
+                    </div>
+                    <div class="flex items-center gap-6 mb-8">
+                        <label class="flex items-center gap-2 cursor-pointer group">
+                            <input checked=""
+                                class="w-4 h-4 text-secondary focus:ring-secondary bg-white/20 border-white/40"
+                                name="trip-type" type="radio">
+                            <span class="text-sm font-bold group-hover:text-secondary transition-colors">One Way</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer group">
+                            <input class="w-4 h-4 text-secondary focus:ring-secondary bg-white/20 border-white/40"
+                                name="trip-type" type="radio">
+                            <span
+                                class="text-sm font-bold text-white/70 group-hover:text-secondary transition-colors">Round
+                                Trip</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer group">
+                            <input class="w-4 h-4 text-secondary focus:ring-secondary bg-white/20 border-white/40"
+                                name="trip-type" type="radio">
+                            <span
+                                class="text-sm font-bold text-white/70 group-hover:text-secondary transition-colors">Multi
+                                City</span>
+                        </label>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <!-- From Field -->
+                        <div
+                            class="bg-white/10 hover:bg-white/20 transition-all rounded-2xl p-4 border border-white/10 cursor-pointer group relative">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-elite-gold">flight_takeoff</span>
+                                <div class="flex-1">
+                                    <p class="text-[10px] uppercase font-bold text-white/60 mb-0.5">From</p>
+                                    <h4 class="font-bold text-lg leading-tight font-headline-md">New Delhi (DEL)</h4>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute -bottom-5 right-6 z-20 w-10 h-10 bg-secondary rounded-full flex items-center justify-center shadow-lg border-4 border-[#1c1c1c] group-hover:rotate-180 transition-transform duration-500">
+                                <span class="material-symbols-outlined text-white text-lg">swap_vert</span>
+                            </div>
+                        </div>
+                        <!-- To Field -->
+                        <div
+                            class="bg-white/10 hover:bg-white/20 transition-all rounded-2xl p-4 border border-white/10 cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-elite-gold">flight_land</span>
+                                <div class="flex-1">
+                                    <p class="text-[10px] uppercase font-bold text-white/60 mb-0.5">To</p>
+                                    <h4 class="font-bold text-lg leading-tight text-white/50 italic font-headline-md">
+                                        Select Destination</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Date & Class Grid -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div
+                                class="bg-white/10 hover:bg-white/20 transition-all rounded-2xl p-4 border border-white/10 cursor-pointer">
+                                <p class="text-[10px] uppercase font-bold text-white/60 mb-0.5">Departure</p>
+                                <h4 class="font-bold text-md font-headline-md">24 Oct, 2024</h4>
+                            </div>
+                            <div
+                                class="bg-white/10 hover:bg-white/20 transition-all rounded-2xl p-4 border border-white/10 cursor-pointer">
+                                <p class="text-[10px] uppercase font-bold text-white/60 mb-0.5">Travellers &amp; Class
+                                </p>
+                                <h4 class="font-bold text-md truncate font-headline-md">1 Adult, Economy</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full orange-gradient py-5 rounded-2xl font-headline-md text-white font-black shadow-xl hover:scale-[1.02] active:scale-95 transition-all text-xl">
+                        SEARCH FLIGHTS
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="max-w-container-max mx-auto px-margin-desktop py-12">
+        <!-- Quick Filters -->
+        <section class="mb-12 overflow-x-auto no-scrollbar">
+            <div class="flex gap-4 min-w-max pb-2">
+            </div>
+        </section>
+        <!-- Cinematic 3D Carousel Section -->
+        <section class="mb-20 relative min-h-[500px] flex items-center justify-center overflow-hidden bg-white">
+            <!-- Atmospheric Background Glow -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] carousel-glow z-0 pointer-events-none"
+                style="background: radial-gradient(circle, rgba(244, 110, 32, 0.15) 0%, rgba(244, 110, 32, 0) 70%);">
+            </div>
+            <!-- Carousel Container -->
+            <div class="relative w-full max-w-6xl flex items-center justify-center gap-0 lg:gap-8 z-10 py-10">
+                <!-- Left Nav Arrow -->
+                <button
+                    class="absolute left-4 lg:left-0 z-30 p-3 rounded-full hover:bg-white/20 transition-all text-primary bg-white/80 border border-outline-variant">
+                    <span class="material-symbols-outlined text-3xl">chevron_left</span>
+                </button>
+                <!-- Side Card Left -->
+                <div
+                    class="hidden lg:block w-72 h-[400px] rounded-3xl overflow-hidden opacity-40 scale-90 blur-[2px] shadow-2xl relative group">
+                    <img alt="Tokyo Night" class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR75SbvR1zy6mcDiZg1W91gLbZdhkH5ItfPZX7PiIz_GBzEGIyLa63U3YiO4xpXkAzRFTi4Y89bAMBgegaGjX61u217-qE1-ThLRzQZjogrxd2n2SYgv798NB_rRVTj9ThZuuA9E3qq-ioTrMgJt7pkZtTiXiYDokzUemHZgszt7afNqmu3GFhkxhlFma1Mn7YK8uVAAixdCbxUtOkP1zlfRsrq2T9Rv83qdvfMKlsJKfYA0DHvjA59N2aRvDnPRLyFXy7DEquq80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                </div>
+                <!-- Main Active Card -->
+                <div
+                    class="w-full max-w-[500px] h-[520px] rounded-[40px] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-white/20 relative z-20 transform transition-transform duration-500 hover:scale-[1.02]">
+                    <img alt="International Flash Sale" class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEZVdNmiT50VFx4pZELiZd4qHbbtjwSqTzyhYNW7fhQYkA8rFlkHy1DKD5hS8T_QOhleJcON7cJE80pdA-Ris3Lov4zPdbDq5UTu7e1JnXng5XH9c2M3-BXg02LeLpqP6yMFMeC_yJWyNQbW4g0Rjb9rCMkdnfnxTqjrN44izucMVR-EalfHR4FwIncttKD6VFHPnsvZPKGPV_bA3BJC3Bj5xWiNYv87gt9e0vewE5Iwc7w0VN0tU_RG0z9P_vkROQEizxbn3qGXg">
+                    <!-- Content Overlay -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
+                        <div class="mb-auto flex justify-between items-start">
+                            <span
+                                class="bg-secondary text-white font-bold text-[10px] tracking-widest px-4 py-1.5 rounded-full shadow-lg font-headline-md uppercase">Limited
+                                Flash Sale</span>
+                            <div class="glass-effect rounded-2xl px-4 py-2 text-right">
+                                <p class="text-white/60 text-[10px] font-bold line-through uppercase tracking-tighter">
+                                    WAS $890</p>
+                                <p class="text-white text-2xl font-black font-headline-md">$549</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <h2 class="font-headline-xl text-white text-4xl leading-tight font-headline-md">Save up to
+                                40% Today</h2>
+                            <p class="text-white/80 font-body-md text-sm max-w-xs font-headline-md">Book your dream
+                                journey to Bali, Paris, or Tokyo at unprecedented rates. Exclusive to Indikosh members.
+                            </p>
+                            <div class="flex items-center gap-4 pt-4">
+                                <button
+                                    class="orange-gradient text-white px-8 py-4 rounded-2xl font-black text-sm tracking-wide shadow-xl hover:shadow-secondary/20 transition-all font-headline-md uppercase">Explore
+                                    Destinations</button>
+                                <button
+                                    class="p-4 rounded-2xl glass-effect text-white hover:bg-white/20 transition-all">
+                                    <span class="material-symbols-outlined">favorite</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Side Card Right -->
+                <div
+                    class="hidden lg:block w-72 h-[400px] rounded-3xl overflow-hidden opacity-40 scale-90 blur-[2px] shadow-2xl relative group">
+                    <img alt="San Francisco" class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkZQXCXGXqlM9DyTwCy_Y4xt8VuYOfV_FCMq3YtaYrKuSF62xbGdaNTfgqzYPT-xI37IqgfmTTDomQ0KtoGZd-c8X7T50Y9M8s7ijWeyNOsY9r3REsBFG2GrQkpA5aYyXSoitrIws7Hz6fU6CByjNZidvll0K10o0h64SEb_jP86w-lAQH42JM8shPTFYhPtLrOcp_RlT_lKZ_BDFvEPhdiYCkP9vcv1b6JELnS3hCSsgUNTrtDkPK4Pknap2v26pi9Y1W70xqy_I">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                </div>
+                <!-- Right Nav Arrow -->
+                <button
+                    class="absolute right-4 lg:right-0 z-30 p-3 rounded-full hover:bg-white/20 transition-all text-primary bg-white/80 border border-outline-variant">
+                    <span class="material-symbols-outlined text-3xl">chevron_right</span>
+                </button>
+            </div>
+        </section>
+        <!-- Top Flight Routes with Real-time Pricing -->
+        <section class="mb-16">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-8 font-headline-md">Pre- Purachsed Deals</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Route Item -->
+                <div
+                    class="bg-surface-container-low p-5 rounded-xl border border-transparent hover:border-outline-variant hover:bg-white transition-all cursor-pointer group shadow-sm hover:shadow-md">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-primary/5 rounded-full flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary text-xl">flight_takeoff</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-on-surface font-headline-md">DEL → BOM</h4>
+                                <p class="text-[10px] text-on-surface-variant uppercase font-bold">New Delhi to Mumbai
+                                </p>
+                            </div>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward_ios</span>
+                    </div>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-xs text-on-surface-variant">Starts at</span>
+                        <span class="text-price-display font-price-display text-primary">$42</span>
+                    </div>
+                    <p class="text-[10px] text-status-success font-bold mt-1 uppercase tracking-wider">Prices down by
+                        15%</p>
+                </div>
+                <!-- Route Item -->
+                <div
+                    class="bg-surface-container-low p-5 rounded-xl border border-transparent hover:border-outline-variant hover:bg-white transition-all cursor-pointer group shadow-sm hover:shadow-md">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-primary/5 rounded-full flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary text-xl">flight_takeoff</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-on-surface font-headline-md">BLR → DEL</h4>
+                                <p class="text-[10px] text-on-surface-variant uppercase font-bold">Bengaluru to Delhi
+                                </p>
+                            </div>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward_ios</span>
+                    </div>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-xs text-on-surface-variant">Starts at</span>
+                        <span class="text-price-display font-price-display text-primary">$55</span>
+                    </div>
+                    <p class="text-[10px] text-on-surface-variant font-bold mt-1 uppercase tracking-wider">Most Searched
+                        Route</p>
+                </div>
+                <!-- Route Item -->
+                <div
+                    class="bg-surface-container-low p-5 rounded-xl border border-transparent hover:border-outline-variant hover:bg-white transition-all cursor-pointer group shadow-sm hover:shadow-md">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-primary/5 rounded-full flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary text-xl">flight_takeoff</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-on-surface font-headline-md">BOM → GOI</h4>
+                                <p class="text-[10px] text-on-surface-variant uppercase font-bold">Mumbai to Goa</p>
+                            </div>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward_ios</span>
+                    </div>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-xs text-on-surface-variant">Starts at</span>
+                        <span class="text-price-display font-price-display text-primary">$38</span>
+                    </div>
+                    <p class="text-[10px] text-status-urgent font-bold mt-1 uppercase tracking-wider">Fast filling</p>
+                </div>
+                <!-- Route Item -->
+                <div
+                    class="bg-surface-container-low p-5 rounded-xl border border-transparent hover:border-outline-variant hover:bg-white transition-all cursor-pointer group shadow-sm hover:shadow-md">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-primary/5 rounded-full flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary text-xl">flight_takeoff</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-on-surface font-headline-md">MAA → HYD</h4>
+                                <p class="text-[10px] text-on-surface-variant uppercase font-bold">Chennai to Hyderabad
+                                </p>
+                            </div>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward_ios</span>
+                    </div>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-xs text-on-surface-variant">Starts at</span>
+                        <span class="text-price-display font-price-display text-primary">$29</span>
+                    </div>
+                    <p class="text-[10px] text-on-surface-variant font-bold mt-1 uppercase tracking-wider">Daily 15+
+                        Flights</p>
+                </div>
+            </div>
+        </section>
+        <!-- Social Proof Section -->
+        <section class="relative py-24 mb-24 overflow-hidden rounded-[48px] shadow-xl bg-white">
+            <!-- Background Image with Overlay -->
+
+            <div class="relative z-10 max-w-container-max mx-auto px-margin-desktop">
+                <!-- Header -->
+                <div class="text-center mb-16">
+                    <p class="font-label-caps tracking-[0.3em] uppercase mb-2 text-primary">Destination</p>
+                    <h2 class="font-headline-xl text-4xl lg:text-5xl font-extrabold text-primary">WHY CHOOSE US</h2>
+                </div>
+                <!-- Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Left Card: Handpicked Hotels -->
+                    <div
+                        class="bg-white rounded-2xl p-8 pt-12 relative flex flex-col items-center text-center shadow-lg group border border-outline-variant">
+                        <div
+                            class="absolute -top-8 w-16 h-16 bg-secondary rounded-full flex items-center justify-center shadow-md">
+                            <span class="material-symbols-outlined text-white text-3xl">star</span></div>
+                        <h3 class="font-headline-md text-primary text-xl mb-4 font-bold">Handpicked Hotels</h3>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed mb-6">We carefully select
+                            each property to ensure premium comfort, unique character, and exceptional service for every
+                            guest.</p><a
+                            class="mt-auto font-label-caps text-secondary hover:text-on-secondary-fixed-variant transition-colors border-b border-secondary/30"
+                            href="#">LEARN MORE</a>
+                    </div>
+                    <!-- Center Card: World Class Service -->
+                    <div
+                        class="orange-gradient rounded-2xl p-8 pt-12 relative flex flex-col items-center text-center shadow-2xl scale-105 z-20">
+                        <div
+                            class="absolute -top-8 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
+                            <span class="material-symbols-outlined text-secondary text-3xl">star</span>
+                        </div>
+                        <h3 class="font-headline-md text-white text-xl mb-4 font-bold">World Class Service</h3>
+                        <p class="font-body-md text-white/90 text-sm leading-relaxed mb-6">
+                            Our dedicated concierge team is available around the clock to cater to your every need,
+                            ensuring a seamless journey.
+                        </p>
+                        <a class="mt-auto font-label-caps text-white hover:text-white/80 transition-colors border-b border-white/50"
+                            href="#">LEARN MORE</a>
+                    </div>
+                    <!-- Right Card: Best Price Guarantee -->
+                    <div
+                        class="bg-white rounded-2xl p-8 pt-12 relative flex flex-col items-center text-center shadow-lg group border border-outline-variant">
+                        <div
+                            class="absolute -top-8 w-16 h-16 bg-secondary rounded-full flex items-center justify-center shadow-md">
+                            <span class="material-symbols-outlined text-white text-3xl">star</span></div>
+                        <h3 class="font-headline-md text-primary text-xl mb-4 font-bold">Best Price Guarantee</h3>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed mb-6">Enjoy the luxury of
+                            peace of mind. We promise the most competitive rates for all our curated elite travel
+                            experiences.</p><a
+                            class="mt-auto font-label-caps text-secondary hover:text-on-secondary-fixed-variant transition-colors border-b border-secondary/30"
+                            href="#">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="border-t border-primary-container py-12 bg-surface-container-lowest text-on-surface">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto w-full">
+            <div class="flex flex-col gap-6">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_55gzXrQLCucxEdRV0OSWAmk_9YyRw2vsmaTb6WLrh08S_2I6mdZXbwzeydQ-DRm40JOsj0KnG99sL24sRXGduI1md884h-vEYsbGzQfrlUEvbYl_mBut-7bg6iAVmQcQorPYf_2BNLODTUCEEKDj1CSrd2xxg-Ojdl0GuezaXeORsIn1_9O-yoWDFx0GOSYYUnn6whihMppDDqhehPO9a7Dp2dke1hOIZJnfw_pa84jKr__a83fvknPBcILsOppihwbxVITdX1g"
+                    alt="Indikosh Travels Logo" class="h-10 object-contain">
+                <p class="font-body-md text-body-md leading-relaxed text-on-surface-variant">Redefining modern travel
+                    with seamless booking experiences and premium destination curation. Join the elite explorer's club
+                    today.</p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors bg-primary/5"
+                        href="#"><span class="material-symbols-outlined text-primary">public</span></a>
+                    <a class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors bg-primary/5"
+                        href="#"><span class="material-symbols-outlined text-primary">alternate_email</span></a>
+                    <a class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors bg-primary/5"
+                        href="#"><span class="material-symbols-outlined text-primary">forum</span></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-elite-gold mb-6 text-sm uppercase tracking-widest font-headline-md">Quick
+                    Links</h4>
+                <ul class="flex flex-col gap-4">
+                    <li class=""><a
+                            class="hover:underline transition-all bg-primary/5 text-on-surface-variant hover:text-primary"
+                            href="#">About Us</a></li>
+                    <li class=""><a
+                            class="hover:underline transition-all bg-primary/5 text-on-surface-variant hover:text-primary"
+                            href="#">Careers</a></li>
+                    <li class=""><a
+                            class="hover:underline transition-all bg-primary/5 text-on-surface-variant hover:text-primary"
+                            href="#">Terms of Service</a></li>
+                    <li class=""><a
+                            class="hover:underline transition-all bg-primary/5 text-on-surface-variant hover:text-primary"
+                            href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-elite-gold mb-6 text-sm uppercase tracking-widest font-headline-md">Partner
+                    Services</h4>
+                <ul class="flex flex-col gap-4">
+                    <li class=""><a
+                            class="hover:underline transition-all bg-primary/5 text-on-surface-variant hover:text-primary"
+                            href="#">Partner with Us</a></li>
+                    <li class=""><a
+                            class="hover:underline transition-all bg-primary/5 text-on-surface-variant hover:text-primary"
+                            href="#">Agent Portal</a></li>
+                    <li class=""><a
+                            class="hover:underline transition-all bg-primary/5 text-on-surface-variant hover:text-primary"
+                            href="#">Corporate Travels</a></li>
+                    <li class=""><a
+                            class="hover:underline transition-all bg-primary/5 text-on-surface-variant hover:text-primary"
+                            href="#">Hotelier Hub</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-elite-gold mb-6 text-sm uppercase tracking-widest font-headline-md">Mobile App
+                </h4>
+                <p class="text-sm mb-4 text-on-surface-variant">Book on the go and get exclusive app-only discounts up
+                    to 20%.</p>
+                <div class="flex flex-col gap-3">
+                    <button
+                        class="bg-black border border-white/20 p-2 rounded-lg flex items-center gap-3 hover:bg-white/10 transition-all text-white">
+                        <span class="material-symbols-outlined text-white">play_arrow</span>
+                        <div class="text-left">
+                            <p class="text-[8px] uppercase">Get it on</p>
+                            <p class="text-xs font-bold">Google Play</p>
+                        </div>
+                    </button>
+                    <button
+                        class="bg-black border border-white/20 p-2 rounded-lg flex items-center gap-3 hover:bg-white/10 transition-all text-white">
+                        <span class="material-symbols-outlined text-white">ios</span>
+                        <div class="text-left">
+                            <p class="text-[8px] uppercase">Download on the</p>
+                            <p class="text-xs font-bold">App Store</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-container-max mx-auto px-margin-desktop mt-12 pt-12 border-t flex flex-col md:flex-row justify-between items-center gap-4 border-outline-variant">
+            <p class="text-sm text-on-surface-variant">© 2024 Indikosh Travels Limited. All rights reserved.</p>
+            <div class="flex gap-6 items-center opacity-40 grayscale">
+                <span class="material-symbols-outlined text-3xl">payments</span>
+                <span class="material-symbols-outlined text-3xl">credit_card</span>
+                <span class="material-symbols-outlined text-3xl">account_balance</span>
+            </div>
+        </div>
+    </footer>
+    <!-- BottomNavBar (Mobile Only) -->
+    <nav
+        class="fixed bottom-0 w-full z-50 md:hidden bg-surface dark:bg-surface-dark border-t border-outline-variant bg-surface/95 backdrop-blur-md shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+        <div class="flex justify-around items-center h-16 pb-safe px-4">
+            <a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim bg-secondary-container/20 rounded-xl px-3 py-1 scale-110 duration-200"
+                href="#">
+                <span class="material-symbols-outlined">home</span>
+                <span class="font-label-caps text-[10px] font-bold">Home</span>
+            </a>
+            <a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant active:bg-surface-container-high transition-all"
+                href="#">
+                <span class="material-symbols-outlined">travel_explore</span>
+                <span class="font-label-caps text-[10px] font-bold">Bookings</span>
+            </a>
+            <a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant active:bg-surface-container-high transition-all"
+                href="#">
+                <span class="material-symbols-outlined">local_offer</span>
+                <span class="font-label-caps text-[10px] font-bold">Offers</span>
+            </a>
+            <a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant active:bg-surface-container-high transition-all"
+                href="#">
+                <span class="material-symbols-outlined">person</span>
+                <span class="font-label-caps text-[10px] font-bold">Account</span>
+            </a>
+        </div>
+    </nav>
+    <script>
+        // Sticky Header Interaction (Simple hide on scroll down for main search widget visibility)
+        let lastScrollTop = 0;
+        const stickySearch = document.getElementById('sticky-search');
+
+        // Simple smooth scroll behavior for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

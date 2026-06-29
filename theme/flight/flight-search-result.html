@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Flight Search Results | Indikosh Travels</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c3c6d1;
+            border-radius: 10px;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#c3c6d1",
+                        "surface-container": "#edeeef",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-tertiary-fixed-variant": "#004a76",
+                        "elite-gold": "#C5A059",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "tertiary-fixed": "#cee5ff",
+                        "surface-bright": "#f8f9fa",
+                        "surface-tint": "#3a5f94",
+                        "surface-dim": "#d9dadb",
+                        "surface-container-low": "#f3f4f5",
+                        "secondary-fixed-dim": "#ffb694",
+                        "primary": "#001e40",
+                        "primary-container": "#003366",
+                        "secondary": "#a14000",
+                        "tertiary-fixed-dim": "#96ccff",
+                        "on-secondary-container": "#5e2300",
+                        "tertiary-container": "#003657",
+                        "on-primary-fixed": "#001b3c",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "status-urgent": "#EA2330",
+                        "on-surface-variant": "#43474f",
+                        "on-secondary-fixed": "#351000",
+                        "on-secondary-fixed-variant": "#7b2f00",
+                        "inverse-primary": "#a7c8ff",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary-fixed": "#ffdbcc",
+                        "tertiary": "#002037",
+                        "secondary-container": "#fe7528",
+                        "on-primary-container": "#799dd6",
+                        "on-background": "#191c1d",
+                        "status-success": "#10B981",
+                        "outline": "#737780",
+                        "inverse-surface": "#2e3132",
+                        "on-tertiary-container": "#5aa1dd",
+                        "surface-dark": "#1A1A1A",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#d5e3ff",
+                        "on-error-container": "#93000a",
+                        "background": "#f8f9fa",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "surface-variant": "#e1e3e4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "price-display": ["Plus Jakarta Sans"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "price-display": ["22px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-fixed-dim">
+    <!-- Header / TopNavBar -->
+    <header class="bg-surface w-full top-0 sticky z-50 border-b border-outline-variant shadow-sm">
+        <div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div class="flex items-center gap-gutter">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiOx_ghLhrs5ev4c0S9sI4p6zhqqA47najaej8lGh2-bfHzmEAyXUTRGmc-EsYrIcNWmXeBLtxtkU6qCSyULsl4LDOZ53D_8T8Cw8zKCenF8gRdktNk3p4cO49Qcvq6v50QbrzpZCCjf_xT95c2Tfm_FV6bC9dTNDal8ljnXun4X9WhC9fwBDTF7zuPzlsTWd3uv6bLN3FUFt9PB_QNk5uv8muEQiU81c0LJEDAMnlAVpAXy7h6kSMostPypK9_6vxBk94CP7Qu9Q"
+                    alt="Indikosh Travels Logo" class="h-10 w-auto object-contain">
+                <nav class="hidden lg:flex items-center gap-8 ml-8">
+                    <a class="text-secondary border-b-2 border-secondary font-bold pb-1 font-body-md text-body-md transition-all"
+                        href="#">Flights</a>
+                    <a class="text-on-surface-variant hover:text-primary font-medium font-body-md text-body-md transition-colors duration-200"
+                        href="#">Hotels</a>
+                    <a class="text-on-surface-variant hover:text-primary font-medium font-body-md text-body-md transition-colors duration-200"
+                        href="#">Tour Packages</a>
+
+
+                </nav>
+            </div>
+            <div class="flex items-center gap-6">
+                <button
+                    class="text-on-surface font-bold hover:text-secondary transition-colors duration-200 cursor-pointer text-sm">Log
+                    In</button>
+                <button
+                    class="px-6 py-2.5 bg-secondary-container text-on-secondary-container rounded-lg font-bold hover:bg-secondary hover:text-white transition-all duration-200 cursor-pointer shadow-sm active:scale-95">Sign
+                    Up</button>
+            </div>
+        </div>
+    </header>
+    <!-- Sticky Search Summary Bar -->
+    <div class="sticky top-[73px] z-40 w-full bg-white border-b border-outline-variant py-4 shadow-sm">
+        <div class="max-w-container-max mx-auto px-margin-desktop flex items-center justify-between">
+            <div class="flex items-center gap-10">
+                <div class="flex items-center gap-4">
+                    <span class="material-symbols-outlined text-secondary opacity-80">flight_takeoff</span>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-0.5">From
+                        </p>
+                        <p class="font-bold text-primary">New Delhi (DEL)</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="material-symbols-outlined text-secondary opacity-80">flight_land</span>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-0.5">To</p>
+                        <p class="font-bold text-primary">Mumbai (BOM)</p>
+                    </div>
+                </div>
+                <div class="h-8 w-px bg-outline-variant"></div>
+                <div class="flex items-center gap-4">
+                    <span class="material-symbols-outlined text-secondary opacity-80">calendar_today</span>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-0.5">
+                            Departure</p>
+                        <p class="font-bold text-primary">24 Oct, 2024</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="material-symbols-outlined text-secondary opacity-80">person</span>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-0.5">
+                            Travellers</p>
+                        <p class="font-bold text-primary">1 Adult, Economy</p>
+                    </div>
+                </div>
+            </div>
+            <button
+                class="bg-surface-container hover:bg-surface-container-high border border-outline-variant px-6 py-2 rounded-lg font-bold text-sm text-primary transition-all active:scale-95">
+                Modify Search
+            </button>
+        </div>
+    </div>
+    <main class="max-w-container-max mx-auto px-margin-desktop py-gutter grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+        <!-- Sidebar Filters -->
+        <aside class="lg:col-span-3 flex flex-col gap-gutter">
+            <!-- Elite Advantage Card -->
+
+            <!-- Standard Filters -->
+            <div class="bg-white rounded-xl shadow-sm border border-outline-variant p-6 sticky top-[180px]">
+                <div class="flex justify-between items-center mb-8">
+                    <h4 class="font-bold text-primary text-lg">Filters</h4>
+                    <button class="text-secondary text-xs font-bold hover:underline">Reset All</button>
+                </div>
+                <!-- Price Range -->
+                <div class="mb-10">
+                    <p class="font-bold text-sm text-primary mb-5">Price Range</p>
+                    <input class="w-full accent-secondary h-1.5 rounded-full cursor-pointer" max="25000" min="2000"
+                        type="range" value="12000">
+                    <div
+                        class="flex justify-between mt-3 text-[11px] text-on-surface-variant font-bold uppercase tracking-wider">
+                        <span class="">₹2,000</span>
+                        <span class="">₹25,000+</span>
+                    </div>
+                </div>
+                <!-- Stops -->
+                <div class="mb-10">
+                    <p class="font-bold text-sm text-primary mb-5">Stops</p>
+                    <div class="space-y-4">
+                        <label class="flex items-center justify-between group cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <input
+                                    class="rounded border-outline-variant text-secondary focus:ring-secondary/30 transition-all w-4 h-4"
+                                    type="checkbox">
+                                <span
+                                    class="text-sm font-medium group-hover:text-primary transition-colors">Non-stop</span>
+                            </div>
+                            <span class="text-xs font-bold text-on-surface-variant">₹5,499</span>
+                        </label>
+                        <label class="flex items-center justify-between group cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <input
+                                    class="rounded border-outline-variant text-secondary focus:ring-secondary/30 transition-all w-4 h-4"
+                                    type="checkbox">
+                                <span class="text-sm font-medium group-hover:text-primary transition-colors">1
+                                    Stop</span>
+                            </div>
+                            <span class="text-xs font-bold text-on-surface-variant">₹4,200</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- Departure Time -->
+                <div class="mb-10">
+                    <p class="font-bold text-sm text-primary mb-5">Departure Time</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button
+                            class="flex flex-col items-center p-3 border border-outline-variant rounded-xl hover:border-secondary hover:bg-secondary/5 transition-all group">
+                            <span
+                                class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary text-xl">wb_twilight</span>
+                            <span class="text-[10px] mt-2 font-bold uppercase tracking-tighter">Morning</span>
+                            <span class="text-[8px] opacity-60">Before 11 AM</span>
+                        </button>
+                        <button
+                            class="flex flex-col items-center p-3 border-2 border-secondary bg-secondary/5 rounded-xl shadow-sm">
+                            <span class="material-symbols-outlined text-secondary text-xl"
+                                style="font-variation-settings: &quot;FILL&quot; 1;">sunny</span>
+                            <span
+                                class="text-[10px] mt-2 font-bold uppercase tracking-tighter text-secondary">Noon</span>
+                            <span class="text-[8px] opacity-60 text-secondary/70">11 AM - 5 PM</span>
+                        </button>
+                        <button
+                            class="flex flex-col items-center p-3 border border-outline-variant rounded-xl hover:border-secondary hover:bg-secondary/5 transition-all group">
+                            <span
+                                class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary text-xl">nights_stay</span>
+                            <span class="text-[10px] mt-2 font-bold uppercase tracking-tighter">Evening</span>
+                            <span class="text-[8px] opacity-60">5 PM - 9 PM</span>
+                        </button>
+                        <button
+                            class="flex flex-col items-center p-3 border border-outline-variant rounded-xl hover:border-secondary hover:bg-secondary/5 transition-all group">
+                            <span
+                                class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary text-xl">bedtime</span>
+                            <span class="text-[10px] mt-2 font-bold uppercase tracking-tighter">Night</span>
+                            <span class="text-[8px] opacity-60">After 9 PM</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Airlines -->
+                <div>
+                    <p class="font-bold text-sm text-primary mb-5">Airlines</p>
+                    <div class="space-y-4">
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input checked=""
+                                class="rounded border-outline-variant text-secondary focus:ring-secondary/30 w-4 h-4"
+                                type="checkbox">
+                            <span class="text-sm font-medium group-hover:text-primary">Air India</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input class="rounded border-outline-variant text-secondary focus:ring-secondary/30 w-4 h-4"
+                                type="checkbox">
+                            <span class="text-sm font-medium group-hover:text-primary">IndiGo</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input class="rounded border-outline-variant text-secondary focus:ring-secondary/30 w-4 h-4"
+                                type="checkbox">
+                            <span class="text-sm font-medium group-hover:text-primary">SpiceJet</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input class="rounded border-outline-variant text-secondary focus:ring-secondary/30 w-4 h-4"
+                                type="checkbox">
+                            <span class="text-sm font-medium group-hover:text-primary">Vistara</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content Area -->
+        <div class="lg:col-span-9 flex flex-col gap-6">
+            <!-- Quick Sort/Filters -->
+            <div class="flex items-center gap-4 overflow-x-auto pb-2 custom-scrollbar no-scrollbar">
+                <button
+                    class="px-7 py-3 bg-primary text-white rounded-full text-xs font-bold whitespace-nowrap shadow-md">Cheapest
+                    First</button>
+                <button
+                    class="px-7 py-3 bg-white border border-outline-variant hover:border-secondary hover:text-secondary rounded-full text-xs font-bold whitespace-nowrap transition-all shadow-sm">Fastest</button>
+                <button
+                    class="px-7 py-3 bg-white border border-outline-variant hover:border-secondary hover:text-secondary rounded-full text-xs font-bold whitespace-nowrap transition-all shadow-sm">Refundable
+                    Fares Only</button>
+
+            </div>
+            <!-- Urgency Banner -->
+            <div class="bg-error-container/10 border border-error/20 p-4 rounded-xl flex items-center gap-4">
+                <div
+                    class="w-10 h-10 rounded-full bg-error-container/30 flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-status-urgent"
+                        style="font-variation-settings: &quot;FILL&quot; 1;">error</span>
+                </div>
+                <p class="text-sm text-primary font-medium">Prices for this route have increased by <span
+                        class="text-status-urgent font-bold">12%</span> in the last 24 hours. <span
+                        class="font-bold underline decoration-status-urgent underline-offset-2">Book now</span> to lock
+                    in the price!</p>
+                <span
+                    class="ml-auto text-[10px] font-bold bg-status-urgent text-white px-2.5 py-1 rounded shadow-sm">HOT
+                    DEAL</span>
+            </div>
+            <!-- Flight Results List -->
+            <div class="flex flex-col gap-6">
+                <!-- Flight Card 1 -->
+                <div
+                    class="bg-white border border-outline-variant rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 group">
+                    <div class="p-8">
+                        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+                            <!-- Airline Info -->
+                            <div class="flex items-center gap-5 min-w-[160px]">
+                                <div
+                                    class="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center p-2 shadow-inner">
+                                    <img alt="Air India Logo" class="w-full h-full object-contain"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwUy1iTNQdROaZsuU2CgJkkYsiiCdfkKKwqldIP6N-ZuY_PTkN4G_JnhpLbw4HdXAR04fT7YBz0wMK1bom4LbM8rzAhh7vLLdIvSreODZ9XsBABp2y1Eb_tMtTQQYSP1d7Uf1hHUk8ZoYGJUx7a_WRhjp_8r1epoDUDwIz5ll2p7b_cOTyl5OD4p34IzuV277PnlYaHnhCrlhAXdxrN8afgrP_3aJ_9SGuXOeKbvrW18LwfSSfB03Qs9yVk5UKEiT_fhHIFgkCCig">
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-primary">Air India</h5>
+                                    <p
+                                        class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">
+                                        AI-805 | A321</p>
+                                </div>
+                            </div>
+                            <!-- Flight Times & Path -->
+                            <div class="flex-1 flex items-center justify-between lg:px-12">
+                                <div class="text-center">
+                                    <p class="font-bold text-2xl text-primary tracking-tight">06:45</p>
+                                    <p class="text-sm font-bold mt-1">DEL</p>
+                                    <p class="text-[10px] font-medium text-on-surface-variant uppercase">New Delhi</p>
+                                </div>
+                                <div class="flex-1 px-10 flex flex-col items-center">
+                                    <p
+                                        class="text-[10px] text-on-surface-variant font-bold mb-2 uppercase tracking-widest">
+                                        2h 15m</p>
+                                    <div class="w-full h-[1.5px] bg-outline-variant/50 relative">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-transparent via-secondary/20 to-transparent">
+                                        </div>
+                                        <span
+                                            class="material-symbols-outlined text-lg text-secondary absolute left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 group-hover:scale-110 transition-transform">flight</span>
+                                    </div>
+                                    <p
+                                        class="text-[10px] text-status-success font-extrabold mt-2 uppercase tracking-widest">
+                                        Non-stop</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="font-bold text-2xl text-primary tracking-tight">09:00</p>
+                                    <p class="text-sm font-bold mt-1">BOM</p>
+                                    <p class="text-[10px] font-medium text-on-surface-variant uppercase">Mumbai</p>
+                                </div>
+                            </div>
+                            <!-- Pricing & Action -->
+                            <div
+                                class="lg:border-l lg:border-outline-variant/50 lg:pl-10 flex flex-col items-center lg:items-end justify-center">
+                                <p class="text-xs text-on-surface-variant mb-1 line-through font-medium">₹7,200</p>
+                                <div class="flex items-baseline gap-1 mb-5">
+                                    <span class="text-sm font-bold text-primary">₹</span>
+                                    <span class="font-price-display text-3xl text-primary">5,499</span>
+                                </div>
+                                <button
+                                    class="w-full lg:w-40 bg-secondary-container text-on-secondary-container px-8 py-3 rounded-xl font-bold shadow-sm hover:bg-secondary hover:text-white transition-all active:scale-95">
+                                    Book Now
+                                </button>
+                                <p class="text-[10px] text-status-urgent font-extrabold mt-3 animate-pulse">Only 2 seats
+                                    left!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Footer Actions -->
+                    <div
+                        class="bg-surface-container-lowest px-8 py-4 flex items-center justify-between border-t border-outline-variant/30">
+                        <div class="flex gap-8">
+                            <button
+                                class="text-[11px] font-bold text-primary hover:text-secondary flex items-center gap-2 transition-colors uppercase tracking-wider">
+                                <span class="material-symbols-outlined text-base">info</span>
+                                Flight Details
+                            </button>
+                            <button
+                                class="text-[11px] font-bold text-primary hover:text-secondary flex items-center gap-2 transition-colors uppercase tracking-wider">
+                                <span class="material-symbols-outlined text-base">assignment</span>
+                                Fare Rules
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-2 px-3 py-1.5 bg-status-success/5 rounded-full">
+                            <span class="material-symbols-outlined text-status-success text-sm"
+                                style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+                            <span class="text-[10px] font-extrabold text-status-success uppercase tracking-widest">Free
+                                Cancellation Available</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Flight Card 2 (IndiGo) -->
+                <div
+                    class="bg-white border border-outline-variant rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 group">
+                    <div class="p-8">
+                        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+                            <div class="flex items-center gap-5 min-w-[160px]">
+                                <div
+                                    class="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center p-2 shadow-inner">
+                                    <img alt="IndiGo Logo" class="w-full h-full object-contain"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpVG5e-M8alfHdqiruCMxfxf6wA75qSx11FHTJXn_NluU93JZuNq2u-8YYcf1DL_cSdSLgtEX9Ha4aSvaNNbkcOokqryLNr_1D3crBuMW2XmaAgLopie3MLblUbhW6EEatFKmCCFSU86OnpuFXtBCqwUh1AV_-SBrOG8wot3gAuZLEpQf-y_6jMgcYyZhhqqxOh-WhWOkPJyJWsVppdCf8u-EZm2fwxpGeOZoSfCWbv0b5p_lguxGCQxU56N7Jp5nTl0Vu8HDxffA">
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-primary">IndiGo</h5>
+                                    <p
+                                        class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">
+                                        6E-2134 | A320</p>
+                                </div>
+                            </div>
+                            <div class="flex-1 flex items-center justify-between lg:px-12">
+                                <div class="text-center">
+                                    <p class="font-bold text-2xl text-primary tracking-tight">08:15</p>
+                                    <p class="text-sm font-bold mt-1">DEL</p>
+                                </div>
+                                <div class="flex-1 px-10 flex flex-col items-center">
+                                    <p
+                                        class="text-[10px] text-on-surface-variant font-bold mb-2 uppercase tracking-widest">
+                                        2h 10m</p>
+                                    <div class="w-full h-[1.5px] bg-outline-variant/50 relative">
+                                        <span
+                                            class="material-symbols-outlined text-lg text-secondary absolute left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2">flight</span>
+                                    </div>
+                                    <p
+                                        class="text-[10px] text-status-success font-extrabold mt-2 uppercase tracking-widest">
+                                        Non-stop</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="font-bold text-2xl text-primary tracking-tight">10:25</p>
+                                    <p class="text-sm font-bold mt-1">BOM</p>
+                                </div>
+                            </div>
+                            <div
+                                class="lg:border-l lg:border-outline-variant/50 lg:pl-10 flex flex-col items-center lg:items-end justify-center">
+                                <div class="flex items-baseline gap-1 mb-5">
+                                    <span class="text-sm font-bold text-primary">₹</span>
+                                    <span class="font-price-display text-3xl text-primary">5,840</span>
+                                </div>
+                                <button
+                                    class="w-full lg:w-40 bg-white border-2 border-secondary text-secondary px-8 py-3 rounded-xl font-bold hover:bg-secondary hover:text-white transition-all">
+                                    View Fares
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-surface-container-lowest px-8 py-4 flex items-center justify-between border-t border-outline-variant/30">
+                        <div class="flex gap-8">
+                            <button
+                                class="text-[11px] font-bold text-primary hover:text-secondary flex items-center gap-2 transition-colors uppercase tracking-wider">Flight
+                                Details</button>
+                            <button
+                                class="text-[11px] font-bold text-primary hover:text-secondary flex items-center gap-2 transition-colors uppercase tracking-wider">Fare
+                                Rules</button>
+                        </div>
+                        <div class="flex items-center gap-2 px-3 py-1.5 bg-secondary/5 rounded-full">
+                            <span class="material-symbols-outlined text-secondary text-sm"
+                                style="font-variation-settings: &quot;FILL&quot; 1;">stars</span>
+                            <span
+                                class="text-[10px] font-extrabold text-secondary uppercase tracking-widest">Recommended
+                                by 85% travelers</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Flight Card 3 (SpiceJet) -->
+                <div
+                    class="bg-white border border-outline-variant rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 group">
+                    <div class="p-8">
+                        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+                            <div class="flex items-center gap-5 min-w-[160px]">
+                                <div
+                                    class="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center p-2 shadow-inner">
+                                    <img alt="SpiceJet Logo" class="w-full h-full object-contain"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyIi8Aq0CKpopK3ogSmKh6cl3FG6yEVYBjCMJRBQ9nhpxLZbDQCLwPVneirfH5jlEPYEWnZB3LdqDFwdY5uF5olOkubLHXyQFV18Uns2zPJvOs9PGXJD47WaD2VJMcbnAeZKCAploPgc798pHh1blijokXdiiL95F0aMtEW1OMYQYxK3sj-w792-REj8QVQjQTZhADaZ5VJhjbqICqi-FIXbe8iOEbNJAOxklw6qTCDiF5d8PLfeaNAXTR2EdSeBn7QCK066zOrhk">
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-primary">SpiceJet</h5>
+                                    <p
+                                        class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">
+                                        SG-191 | B737</p>
+                                </div>
+                            </div>
+                            <div class="flex-1 flex items-center justify-between lg:px-12">
+                                <div class="text-center">
+                                    <p class="font-bold text-2xl text-primary tracking-tight">12:30</p>
+                                    <p class="text-sm font-bold mt-1">DEL</p>
+                                </div>
+                                <div class="flex-1 px-10 flex flex-col items-center">
+                                    <p
+                                        class="text-[10px] text-on-surface-variant font-bold mb-2 uppercase tracking-widest">
+                                        5h 45m</p>
+                                    <div class="w-full h-[1.5px] bg-outline-variant/50 relative">
+                                        <div
+                                            class="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full border-2 border-secondary bg-white">
+                                        </div>
+                                        <span
+                                            class="material-symbols-outlined text-lg text-secondary absolute left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 -mt-5">flight</span>
+                                    </div>
+                                    <p
+                                        class="text-[10px] text-on-surface-variant font-extrabold mt-2 uppercase tracking-widest">
+                                        1 Stop (MAA)</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="font-bold text-2xl text-primary tracking-tight">18:15</p>
+                                    <p class="text-sm font-bold mt-1">BOM</p>
+                                </div>
+                            </div>
+                            <div
+                                class="lg:border-l lg:border-outline-variant/50 lg:pl-10 flex flex-col items-center lg:items-end justify-center">
+                                <div class="flex items-baseline gap-1 mb-5">
+                                    <span class="text-sm font-bold text-primary">₹</span>
+                                    <span class="font-price-display text-3xl text-primary">4,199</span>
+                                </div>
+                                <button
+                                    class="w-full lg:w-40 bg-secondary-container text-on-secondary-container px-8 py-3 rounded-xl font-bold shadow-sm hover:bg-secondary hover:text-white transition-all active:scale-95">
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-surface-container-lowest px-8 py-4 flex items-center justify-between border-t border-outline-variant/30">
+                        <div class="flex gap-8">
+                            <button
+                                class="text-[11px] font-bold text-primary hover:text-secondary flex items-center gap-2 transition-colors uppercase tracking-wider">Flight
+                                Details</button>
+                            <button
+                                class="text-[11px] font-bold text-primary hover:text-secondary flex items-center gap-2 transition-colors uppercase tracking-wider">Fare
+                                Rules</button>
+                        </div>
+                        <div class="flex items-center gap-2 px-3 py-1.5 bg-status-urgent/5 rounded-full">
+                            <span class="material-symbols-outlined text-status-urgent text-sm"
+                                style="font-variation-settings: &quot;FILL&quot; 1;">bolt</span>
+                            <span
+                                class="text-[10px] font-extrabold text-status-urgent uppercase tracking-widest">Cheapest
+                                option for today</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Ad / Promo Banner -->
+            <div class="mt-4 rounded-2xl overflow-hidden relative h-48 group cursor-pointer shadow-lg">
+                <img alt="Travel Banner"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfnuwyLwU2y-N375suyM-T3-8EN-Kphq-6488nXPFSmMGe1rQQj_crwS5waPIT60vhB1HSmVM0fNWc4OtVY9S4qYXh-mRH_uK3sAwU-FkwHDl3QorKa0t9rx7TkGKkDWY2ZZ9bXmr9Km1nuDdfQjk9DF7jbn6EPfoEhpU2WWelZWE3fEwFeWUvoifSoDcJB9e8R0nm3_VNE8bs3zTUuc7x9X8iitp-toUeWD1m3J_Ygq-DMR3tpAk7xTsA8MeACYakqi81lSgISeM">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/50 to-transparent flex flex-col justify-center p-12">
+                    <span class="text-elite-gold text-[10px] font-bold tracking-[0.2em] mb-3 uppercase">Voyage Elite
+                        Exclusive</span>
+                    <h4 class="text-white font-headline-lg text-headline-lg mb-3">Signature Rewards</h4>
+                    <p class="text-white/80 max-w-sm text-sm font-medium leading-relaxed">Earn 2x points on every
+                        festive booking. Complimentary business lounge access for Elite members.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-surface w-full mt-20 border-t border-outline-variant">
+        <div class="max-w-container-max mx-auto px-margin-desktop py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-on-surface">
+                <div class="col-span-1 md:col-span-2">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8IURGOIZViZvAwjrBReaBNip-t48qnMXtdh_FzpY2SkarqX8BXTE7Ywvn8FkXRCh6kTvjeKsvH4Bss1rzjlKRI_5soFrrjXxO0XSdAg5f3CxFdVa_KQAvrgkjmW7_oqY06q5YlHW32VVX4NkJEZ48e_FHZX5cWpMgP6AVia9btKOg_PQoud11SGuVZ4bCYy6hzTBTiHMlE3d0A6rYEnO7H-jSXc3F3WZlbsiK99hB7UmtDuSuYUvSXVJ-XeE1Oy8hCRx6jRfYUPo"
+                        alt="Indikosh Travels" class="h-10 w-auto object-contain mb-6 block">
+                    <p class="text-on-surface-variant max-w-sm mb-8 font-body-md text-body-md leading-relaxed">
+                        Redefining luxury travel with data-driven insights and elite service across the globe. Your
+                        premium journey begins with Indikosh.</p>
+                    <div class="flex gap-6">
+                        <span
+                            class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-secondary transition-colors text-2xl">social_leaderboard</span>
+                        <span
+                            class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-secondary transition-colors text-2xl">public</span>
+                        <span
+                            class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-secondary transition-colors text-2xl">alternate_email</span>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="font-bold text-primary mb-8 uppercase tracking-widest text-xs">Quick Links</h6>
+                    <ul class="space-y-4 text-on-surface-variant text-sm font-medium">
+                        <li class="hover:text-secondary transition-colors duration-200 cursor-pointer">About Us</li>
+                        <li class="hover:text-secondary transition-colors duration-200 cursor-pointer">Contact</li>
+                        <li class="hover:text-secondary transition-colors duration-200 cursor-pointer">Blog</li>
+                        <li class="hover:text-secondary transition-colors duration-200 cursor-pointer">FAQ</li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-bold text-primary mb-8 uppercase tracking-widest text-xs">Legal</h6>
+                    <ul class="space-y-4 text-on-surface-variant text-sm font-medium">
+                        <li class="hover:text-secondary transition-colors duration-200 cursor-pointer">Privacy Policy
+                        </li>
+                        <li class="hover:text-secondary transition-colors duration-200 cursor-pointer">Terms of Service
+                        </li>
+                        <li class="hover:text-secondary transition-colors duration-200 cursor-pointer">Booking Policy
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-outline-variant mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-on-surface-variant text-xs font-medium uppercase tracking-widest">© 2024 Indikosh
+                    Travels. All rights reserved.</p>
+                <div class="flex gap-6 items-center">
+                    <div class="flex items-center gap-2 text-on-surface-variant opacity-60">
+                        <span class="material-symbols-outlined text-sm">verified_user</span>
+                        <p class="text-[9px] uppercase tracking-[0.2em] font-bold">PCI DSS Certified</p>
+                    </div>
+                    <div class="h-4 w-px bg-outline-variant"></div>
+                    <div class="flex items-center gap-2 text-on-surface-variant opacity-60">
+                        <span class="material-symbols-outlined text-sm">security</span>
+                        <p class="text-[9px] uppercase tracking-[0.2em] font-bold">SSL Secured</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Interactivity scripts
+        document.querySelectorAll('input[type="range"]').forEach(slider => {
+            slider.addEventListener('input', (e) => {
+                console.log('Price Filter Value:', e.target.value);
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const searchBar = document.querySelector('.sticky.top-\\[73px\\]');
+            if (window.scrollY > 10) {
+                searchBar.classList.add('shadow-md');
+            } else {
+                searchBar.classList.remove('shadow-md');
+            }
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>

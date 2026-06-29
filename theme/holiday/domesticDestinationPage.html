@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Spiti Valley: The Middle Land | Indikosh Travels</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;700&amp;display=swap"
+        rel="stylesheet">
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#ffb694",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "on-tertiary-container": "#5aa1dd",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary-fixed": "#ffdbcc",
+                        "on-tertiary-fixed-variant": "#004a76",
+                        "elite-gold": "#C5A059",
+                        "outline": "#737780",
+                        "tertiary": "#002037",
+                        "inverse-surface": "#2e3132",
+                        "tertiary-container": "#003657",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary-fixed": "#cee5ff",
+                        "on-surface-variant": "#43474f",
+                        "surface-container-low": "#f3f4f5",
+                        "primary-container": "#003366",
+                        "outline-variant": "#c3c6d1",
+                        "surface-variant": "#e1e3e4",
+                        "inverse-on-surface": "#f0f1f2",
+                        "status-success": "#10B981",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-secondary-container": "#5e2300",
+                        "on-primary-container": "#799dd6",
+                        "inverse-primary": "#a7c8ff",
+                        "surface-dark": "#1A1A1A",
+                        "surface-tint": "#3a5f94",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "on-error": "#ffffff",
+                        "primary": "#001e40",
+                        "status-urgent": "#EA2330",
+                        "on-surface": "#191c1d",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#a14000",
+                        "primary-fixed": "#d5e3ff",
+                        "background": "#f8f9fa",
+                        "tertiary-fixed-dim": "#96ccff",
+                        "surface-container": "#edeeef",
+                        "on-secondary-fixed-variant": "#7b2f00",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d9dadb",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "surface": "#f8f9fa",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001b3c",
+                        "secondary-container": "#fe7528",
+                        "on-secondary-fixed": "#351000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "price-display": ["Plus Jakarta Sans"],
+                        "label-caps": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "price-display": ["22px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(to bottom, rgba(0, 30, 64, 0.4) 0%, rgba(0, 30, 64, 0.8) 100%);
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        .elite-glow {
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+        }
+
+        .itinerary-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-surface">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto bg-surface dark:bg-surface-dark shadow-sm">
+        <div class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed">Indikosh
+            Travels</div>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="nav-item text-secondary dark:text-secondary-fixed-dim font-bold border-b-2 border-secondary font-headline-md text-headline-md"
+                href="#">Destinations</a>
+            <a class="nav-item text-on-surface-variant dark:text-on-surface-variant hover:text-secondary transition-colors duration-200 font-headline-md text-headline-md"
+                href="#">Packages</a>
+            <a class="nav-item text-on-surface-variant dark:text-on-surface-variant hover:text-secondary transition-colors duration-200 font-headline-md text-headline-md"
+                href="#">Experiences</a>
+            <a class="nav-item text-on-surface-variant dark:text-on-surface-variant hover:text-secondary transition-colors duration-200 font-headline-md text-headline-md"
+                href="#">Elite Club</a>
+            <a class="nav-item text-on-surface-variant dark:text-on-surface-variant hover:text-secondary transition-colors duration-200 font-headline-md text-headline-md"
+                href="#">Offers</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-primary cursor-pointer">search</span>
+            <button
+                class="bg-secondary text-on-primary px-6 py-2 rounded-lg font-headline-md text-headline-md active:scale-95 transition-transform">Plan
+                My Trip</button>
+        </div>
+    </nav>
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative h-[85vh] w-full flex items-center overflow-hidden">
+            <img alt="Spiti Valley" class="absolute inset-0 w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuABL3KNU52x0T8K8aRYeaYEeZ9nIX62clQWPKNOY2P1f_ka0sOFKRo_KE4UvhzIW0z_9GUT0VwKriexJJDoUgXN9CGHHaI41KuOea5FoFnCtB2LYkjLtTfxuFQmqE5sZIuZKEYVN7PYoM4UVeT7PSOzQQdQsS2vYG9Ny30EwPohxwTQ-QlcuLZJAk5nVEj5TQx7YpaDD13Qxp_wQFT8g8Is7UzL4GipbR00LxdbYpdhz2jlJo_L6GyNHbDYRx0a-JOfIwkWe5c5BQs">
+            <div class="absolute inset-0 gradient-overlay"></div>
+            <div class="relative z-10 px-margin-desktop max-w-4xl text-on-primary">
+                <span
+                    class="inline-block px-4 py-1 bg-secondary rounded-full font-label-caps text-label-caps mb-6">FEATURED
+                    EXPEDITION</span>
+                <h1 class="font-headline-xl text-headline-xl mb-6 leading-tight">Spiti Valley: The Middle Land</h1>
+                <p class="font-body-lg text-body-lg mb-10 opacity-90 max-w-2xl">
+                    Discover a high-altitude desert world where ancient monasteries cling to rugged cliffs and time
+                    stands still among the peaks. A sanctuary of silence and raw Himalayan beauty.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button
+                        class="px-8 py-4 bg-secondary text-on-primary rounded-xl font-headline-md text-headline-md hover:bg-secondary-container transition-all flex items-center gap-2">
+                        Explore Itineraries <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                    <button
+                        class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-xl font-headline-md text-headline-md hover:bg-white/20 transition-all">
+                        Customize Trip
+                    </button>
+                </div>
+            </div>
+            <!-- Booking Widget Overlap -->
+            <div
+                class="absolute bottom-12 right-margin-desktop hidden lg:block glass-card p-8 rounded-2xl w-96 shadow-xl border border-outline-variant">
+                <h3 class="font-headline-md text-headline-md text-primary mb-4">Check Availability</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label
+                            class="block font-label-caps text-label-caps text-on-surface-variant mb-1">DEPARTURE</label>
+                        <div class="bg-surface-container rounded-lg p-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-secondary">calendar_today</span>
+                            <span class="font-body-md text-body-md">Select Month</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">GROUP
+                            SIZE</label>
+                        <div class="bg-surface-container rounded-lg p-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-secondary">groups</span>
+                            <span class="font-body-md text-body-md">2-4 People</span>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full py-4 bg-primary text-white rounded-xl font-headline-md text-headline-md hover:opacity-90 transition-opacity">Request
+                        Quote</button>
+                </div>
+            </div>
+        </section>
+        <!-- Gallery / Moments Section -->
+        <section class="py-24 px-margin-desktop bg-surface-container-lowest">
+            <div class="max-w-container-max mx-auto">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h2 class="font-headline-lg text-headline-lg text-primary">Moments from Spiti</h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant mt-2">A visual journey through the
+                            soul of the Himalayas</p>
+                    </div>
+                    <button
+                        class="flex items-center gap-2 text-secondary font-headline-md text-headline-md hover:underline">
+                        View All Media <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-[600px]">
+                    <div class="md:col-span-8 relative rounded-2xl overflow-hidden group">
+                        <img alt="Spiti Landscape"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx0G9HKOTu-qPwQzjRatyqqs-QLb_iqdk0X6xtt5XmV9D8HJmSdtWQIeyJPm8EqnD8z-hdJVDgNxQQz7nILiir5XG0PG4r5M5dG3YfUZznkc5HYTzUCvXONoSXdjsl7ZYvszCjyfJXGkyOtKv_TxlOEDJSnHHebyWgn-23d3UXc2Ylu1wUd38WcjJrCUq_CZRVx6TeRflGqrfOBMikDN4D78QU69GXAtwONDvqiU2mFa8a56ucRHndoanOPOve0DC0MhKO223EMz0">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <h4 class="font-headline-md text-headline-md">The Indigo River Valley</h4>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4 grid grid-rows-2 gap-gutter">
+                        <div class="relative rounded-2xl overflow-hidden group">
+                            <img alt="Spiti Culture"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB54S7z9s3kM9g8U0MSkOOX1bXuD-PdNVSObYmbnlTImCQNNvyFIt4LdJ-u5NGf2FaKh9fXDnhKaW2lPUadBusHJ5Bof1xks_QmqPCScizl3KsCYsSYACVFk7bjcDwFqsCbgs2_1m9dLuCG1TUI3rsr6IqeXAIHIroGHRQogKpbxLPY63bzHG_G-iPSbIxBEnIf1MmWCixRf7D3m3dbS5yJtqt8mA91v8VPnpAJ2kQ2jqkca-6pOFqxZu_pA7RTrUKZH_dC7b72Se4">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                        </div>
+                        <div
+                            class="relative rounded-2xl overflow-hidden bg-primary flex items-center justify-center group cursor-pointer">
+                            <div
+                                class="absolute inset-0 opacity-40 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]">
+                            </div>
+                            <div class="z-10 text-center px-6">
+                                <div
+                                    class="w-16 h-16 bg-secondary text-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-4xl"
+                                        data-weight="fill">play_arrow</span>
+                                </div>
+                                <p class="font-headline-md text-headline-md text-white">Watch Spiti Experiences</p>
+                                <p class="text-on-primary-container font-body-md text-body-md mt-1">Video Documentary
+                                    (4:12)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Itineraries Grid -->
+        <section class="py-24 px-margin-desktop">
+            <div class="max-w-container-max mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="font-headline-lg text-headline-lg text-primary">Curated Spiti Itineraries</h2>
+                    <div class="flex justify-center gap-4 mt-8 overflow-x-auto pb-2 no-scrollbar">
+                        <button
+                            class="px-6 py-2 bg-primary text-white rounded-full font-headline-md text-headline-md">All
+                            Packages</button>
+                        <button
+                            class="px-6 py-2 bg-surface-container-high text-on-surface-variant rounded-full font-headline-md text-headline-md hover:bg-outline-variant">Road
+                            Trip</button>
+                        <button
+                            class="px-6 py-2 bg-surface-container-high text-on-surface-variant rounded-full font-headline-md text-headline-md hover:bg-outline-variant">Winter</button>
+                        <button
+                            class="px-6 py-2 bg-surface-container-high text-on-surface-variant rounded-full font-headline-md text-headline-md hover:bg-outline-variant">Photography</button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                    <!-- Card 1 -->
+                    <div
+                        class="itinerary-card group bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant transition-all">
+                        <div class="relative h-64">
+                            <img class="w-full h-full object-cover"
+                                data-alt="A group of vintage royal enfield motorcycles parked in front of a majestic ancient white buddhist monastery under a clear blue sky in Spiti. The lighting is crisp afternoon sun casting deep dramatic shadows. Professional travel photography style with vibrant orange and deep navy tones."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLNvUs_MqIOR0TGHBWvC2EYnxtURXNKCLXq_vS-d6EsS4fvWucxUdygCx9QT-UjMNwkyW9TRD9tnkeg3LBoewMxGznUypKPQZFmA4THGdyp6xovRbHTNKmIMp378jHFjXS3YqXyOK38HZzP1E1bRFLDKgVKO67xbcCz6bf6OV8JB7_Sz_ohh0vl3DUziIOiyHo0KSEyL-LwdqujsowY1-z_KpXljiZCCn-dm3cIu7d_mYpUKoL99uR5UStmtfXbG7VFAv7lI10k84">
+                            <div
+                                class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full font-label-caps text-label-caps">
+                                BESTSELLER</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="font-label-caps text-label-caps text-secondary">7N/8D EXPEDITION</span>
+                                <div class="flex items-center text-elite-gold">
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                    <span class="font-body-md font-bold ml-1">4.9</span>
+                                </div>
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">Spiti Valley Bike Trip</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Manali • Kaza • Chandratal
+                                • Manali</p>
+                            <div class="flex justify-between items-center pt-6 border-t border-outline-variant">
+                                <div>
+                                    <p class="font-label-caps text-label-caps text-on-surface-variant">STARTS FROM</p>
+                                    <p class="font-price-display text-price-display text-primary">₹24,500</p>
+                                </div>
+                                <button
+                                    class="px-6 py-2 bg-secondary text-white rounded-lg font-headline-md text-headline-md hover:opacity-90 active:scale-95 transition-all">View
+                                    Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="itinerary-card group bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant transition-all">
+                        <div class="relative h-64">
+                            <img class="w-full h-full object-cover"
+                                data-alt="A lone snow leopard walking across a pristine white snow-covered landscape in the high Himalayas. The background features jagged blue-toned mountains under a cold winter sun. The aesthetic is cool, minimalist, and elite, focusing on the rare wildlife of Spiti in winter."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzNhZvG5BwahIKi9aBv5Yil3Ztq7-eNh9R2rInu7TKKMNn35PnQYaCV6t8mEN5ndBWRCkE5B7GUGHVuuvLmGVP65a77btjN49znJWMwskfbEgsvAVGYvxXkOyGbx0FK9cTn9oKxvv3OTwUvdLaph74n46xKsDuwQLIpxzMMiGY1NGAegcbRQ4rdfKxyW9aJoQoZ1UHoQYIX6o2FAmmOKDe1_6VGvwWrb2ujy_E6OEBd9OGG34EJthEQECZd1tefhL0485UVP9Xj5U">
+                            <div
+                                class="absolute top-4 left-4 bg-elite-gold text-white px-3 py-1 rounded-full font-label-caps text-label-caps">
+                                ELITE</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="font-label-caps text-label-caps text-secondary">9N/10D ADVENTURE</span>
+                                <div class="flex items-center text-elite-gold">
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                    <span class="font-body-md font-bold ml-1">5.0</span>
+                                </div>
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">Winter Spiti Expedition</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Shimla • Kaza • Pin Valley
+                                • Shimla</p>
+                            <div class="flex justify-between items-center pt-6 border-t border-outline-variant">
+                                <div>
+                                    <p class="font-label-caps text-label-caps text-on-surface-variant">STARTS FROM</p>
+                                    <p class="font-price-display text-price-display text-primary">₹45,000</p>
+                                </div>
+                                <button
+                                    class="px-6 py-2 bg-secondary text-white rounded-lg font-headline-md text-headline-md hover:opacity-90 active:scale-95 transition-all">View
+                                    Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div
+                        class="itinerary-card group bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant transition-all">
+                        <div class="relative h-64">
+                            <img class="w-full h-full object-cover"
+                                data-alt="A modern luxury SUV driving along a winding mountain road that follows a turquoise river in a deep rocky canyon. The cliffs are golden-brown in the late afternoon sun. High-end lifestyle photography, corporate modern aesthetic with sharp focus and clean lines."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZLdSZeXzPkMd_C3mT0qzMwkmBPuOcHbG1GppecVzjdn0nf5BaBiCVWosyjeMQFB5pTrGRcvwi0hOA0sDgcwy9Mq8qFvPG9_poNHxOEr2lheSXjgoAQD6Wt4RyQJrOQ7Nu3wuvEXSL3BSkplxUxw0ueALFkKjD8sx_V3mea8lUTS9T1_Yxks-TbTd__YDd8g8tL-YJpdrZSWhMIYSPxeFZH9NFRjtKgte8TGTw7Xw8IXh5VtyOjzXqwV7NkOyztMg-UrxyQkLMeSM">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="font-label-caps text-label-caps text-secondary">6N/7D ROADTRIP</span>
+                                <div class="flex items-center text-elite-gold">
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                    <span class="font-body-md font-bold ml-1">4.8</span>
+                                </div>
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">Lahaul &amp; Spiti Road Trip
+                            </h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Chandigarh • Kaza • Atal
+                                Tunnel • Manali</p>
+                            <div class="flex justify-between items-center pt-6 border-t border-outline-variant">
+                                <div>
+                                    <p class="font-label-caps text-label-caps text-on-surface-variant">STARTS FROM</p>
+                                    <p class="font-price-display text-price-display text-primary">₹32,000</p>
+                                </div>
+                                <button
+                                    class="px-6 py-2 bg-secondary text-white rounded-lg font-headline-md text-headline-md hover:opacity-90 active:scale-95 transition-all">View
+                                    Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div
+                        class="itinerary-card group bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant transition-all">
+                        <div class="relative h-64">
+                            <img class="w-full h-full object-cover"
+                                data-alt="A backpacker sitting on a rock ridge looking out over a vast mountain valley at sunrise. In the distance, a small village with whitewashed houses is visible. The lighting is warm and ethereal. This scene represents exploration and youthful adventure in the Himalayas."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7GVKTuM6zzEE9BjCMmcnMtRAyo9_uv3hS27y_p4nH5IcqoIDiZSCaiNOWs_IdsZssqCnkEx_jw2NtKYzzP0duz_HjWW6I5lCYc1V5NfCmk0xxwHxbTAlXpALrLIJWOiGCLMia1fjmBr7B3dbQ61VIzvCOXatMG9K8qrWKQUntyCo5PgkLTxTy3FGLSu1aK-m49yj3sDwzAzoHf2LSqqRj_VRsc3pZK_XVAI3KbttUZ60Cvc5Oy8AlD-CldnUSbwldmUIGjx0XMhY">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="font-label-caps text-label-caps text-secondary">7N/8D BACKPACKING</span>
+                                <div class="flex items-center text-elite-gold">
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                    <span class="font-body-md font-bold ml-1">4.7</span>
+                                </div>
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">Spiti Backpacking Adventure
+                            </h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Delhi • Kaza • Mudh •
+                                Delhi</p>
+                            <div class="flex justify-between items-center pt-6 border-t border-outline-variant">
+                                <div>
+                                    <p class="font-label-caps text-label-caps text-on-surface-variant">STARTS FROM</p>
+                                    <p class="font-price-display text-price-display text-primary">₹18,500</p>
+                                </div>
+                                <button
+                                    class="px-6 py-2 bg-secondary text-white rounded-lg font-headline-md text-headline-md hover:opacity-90 active:scale-95 transition-all">View
+                                    Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div
+                        class="itinerary-card group bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant transition-all">
+                        <div class="relative h-64">
+                            <img class="w-full h-full object-cover"
+                                data-alt="A stunning view of the Kinnaur mountains with apple orchards in the foreground and snow-capped peaks in the distance. The sky is a deep navy blue and the sunlight is golden. Sophisticated landscape photography with a premium, corporate travel feel."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw3fHaDIogqafZXmSwnDkLwzMprWZ4D2XS9RGvVnfb9UzDYBeVMtTraXGy-1vZjbtHvSIcjgP2ocOJ-gmvxNGTnMBhBoyhz20LD7BwtOWE3LhPI_5ypIKfcHkogx8HB4Hi9PUbRl9lUk8cQEt4F91j1j6LFbW2eCwbNdPtYTL1wvSJ0p_MRjgPpeXFEPCpInlZoLOHHc3cP07dBiiGNvkxBhajrYhzhJPpkB0Q2Hkdh8FNDbL143HLmA3DFylRcuTcOUeIKGOFgLw">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="font-label-caps text-label-caps text-secondary">11N/12D CIRCUIT</span>
+                                <div class="flex items-center text-elite-gold">
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                    <span class="font-body-md font-bold ml-1">4.9</span>
+                                </div>
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">Kinnaur &amp; Spiti Circuit
+                            </h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Shimla • Kalpa • Kaza •
+                                Manali</p>
+                            <div class="flex justify-between items-center pt-6 border-t border-outline-variant">
+                                <div>
+                                    <p class="font-label-caps text-label-caps text-on-surface-variant">STARTS FROM</p>
+                                    <p class="font-price-display text-price-display text-primary">₹38,500</p>
+                                </div>
+                                <button
+                                    class="px-6 py-2 bg-secondary text-white rounded-lg font-headline-md text-headline-md hover:opacity-90 active:scale-95 transition-all">View
+                                    Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div
+                        class="itinerary-card group bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant transition-all">
+                        <div class="relative h-64">
+                            <img class="w-full h-full object-cover"
+                                data-alt="A high-contrast nighttime photograph of the Milky Way galaxy stretching over the silhouette of a Himalayan mountain ridge. The stars are incredibly sharp and dense. The mood is silent, awe-inspiring, and elite. High-end astrophotography for a photography tour."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2iXwrFXxxt31oY45KZBxA4mH3u-nX5TXqNtMI_xzyIs-Pf7OfnuvD7k9znqmIrEE7eNlm2253rxB9oRbQQDFxFsZxg-Z1Ys6n1B-Hx8Z1WlDPshpBYMZDauK5_f5asNyYq-dk2Hxh5y5CQVjm10Kib54mPHAD67Z_bge0ytsOMYakbDm9tHmoiLVnj0CU4C-BGFZSjQMS2RT6z7loWunXcQgCxCa1ulE78BbT6QX5wd9T47amIs7AAWTwS-nXd3h-CoRlIJhpJEA">
+                            <div
+                                class="absolute top-4 left-4 bg-status-urgent text-white px-3 py-1 rounded-full font-label-caps text-label-caps">
+                                LAST 2 SLOTS</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="font-label-caps text-label-caps text-secondary">7N/8D SPECIALTY</span>
+                                <div class="flex items-center text-elite-gold">
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                                    <span class="font-body-md font-bold ml-1">5.0</span>
+                                </div>
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">Spiti Photography Tour</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Night Sky • Culture •
+                                Landscapes</p>
+                            <div class="flex justify-between items-center pt-6 border-t border-outline-variant">
+                                <div>
+                                    <p class="font-label-caps text-label-caps text-on-surface-variant">STARTS FROM</p>
+                                    <p class="font-price-display text-price-display text-primary">₹42,000</p>
+                                </div>
+                                <button
+                                    class="px-6 py-2 bg-secondary text-white rounded-lg font-headline-md text-headline-md hover:opacity-90 active:scale-95 transition-all">View
+                                    Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-20 text-center">
+                    <button
+                        class="px-10 py-4 border-2 border-primary text-primary rounded-xl font-headline-md text-headline-md hover:bg-primary hover:text-white transition-all flex items-center gap-3 mx-auto">
+                        Load More Packages <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Voyage Elite Club (Trust Module) -->
+
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full py-12 px-margin-desktop mt-auto bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant">
+        <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter mb-12">
+            <div class="col-span-1 md:col-span-1">
+                <div class="font-headline-md text-headline-md text-primary mb-6">Indikosh Travels</div>
+                <p class="font-body-md text-body-md text-on-surface-variant">Expert-led Himalayan expeditions for the
+                    modern explorer. Based in the heart of the mountains.</p>
+            </div>
+            <div>
+                <h4 class="font-headline-md text-headline-md text-primary mb-6">Destinations</h4>
+                <ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Spiti Valley</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Ladakh</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Zanskar</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Kinnaur</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-headline-md text-headline-md text-primary mb-6">Member Services</h4>
+                <ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Travel Insurance</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Visa Assistance</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Custom Planning</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Gift Cards</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-headline-md text-headline-md text-primary mb-6">Legal</h4>
+                <ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="max-w-container-max mx-auto pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="font-body-md text-body-md text-on-surface-variant">
+                © 2024 Indikosh Travels. All rights reserved. Member of Voyage Elite.
+            </div>
+            <div class="flex gap-6">
+                <span
+                    class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">social_leaderboard</span>
+                <span
+                    class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">camera</span>
+                <span
+                    class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">play_circle</span>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Micro-interactions and effects
+        document.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md', 'bg-surface/95', 'backdrop-blur-md');
+            } else {
+                nav.classList.remove('shadow-md', 'bg-surface/95', 'backdrop-blur-md');
+            }
+        });
+
+        // Simple animation for the elite glow
+        const glowElement = document.querySelector('.elite-glow');
+        if (glowElement) {
+            let opacity = 0.3;
+            let direction = 1;
+            setInterval(() => {
+                opacity += 0.01 * direction;
+                if (opacity >= 0.5 || opacity <= 0.2) direction *= -1;
+                glowElement.style.boxShadow = `0 0 20px rgba(197, 160, 89, ${opacity})`;
+            }, 50);
+        }
+    </script>
+
+
+</body>
+
+</html>

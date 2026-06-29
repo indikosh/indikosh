@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html class="light" lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Hotels - Indikosh Travels</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#004a76",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-tertiary-container": "#5aa1dd",
+                        "tertiary-fixed-dim": "#96ccff",
+                        "outline-variant": "#c3c6d1",
+                        "primary": "#001e40",
+                        "on-primary-container": "#799dd6",
+                        "on-secondary-fixed-variant": "#7b2f00",
+                        "status-success": "#10B981",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "on-primary-fixed": "#001b3c",
+                        "surface-variant": "#e1e3e4",
+                        "surface-dim": "#d9dadb",
+                        "on-secondary-container": "#5e2300",
+                        "primary-container": "#003366",
+                        "tertiary": "#002037",
+                        "surface-container": "#edeeef",
+                        "inverse-primary": "#a7c8ff",
+                        "secondary-container": "#fe7528",
+                        "tertiary-fixed": "#cee5ff",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-tint": "#3a5f94",
+                        "surface-dark": "#1A1A1A",
+                        "on-surface": "#191c1d",
+                        "primary-fixed": "#d5e3ff",
+                        "on-surface-variant": "#43474f",
+                        "on-secondary-fixed": "#351000",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#ffb694",
+                        "tertiary-container": "#003657",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "inverse-surface": "#2e3132",
+                        "error": "#ba1a1a",
+                        "outline": "#737780",
+                        "status-urgent": "#EA2330",
+                        "elite-gold": "#C5A059",
+                        "secondary-fixed": "#ffdbcc",
+                        "surface": "#f8f9fa",
+                        "secondary": "#a14000",
+                        "background": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-desktop": "40px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "price-display": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-caps": ["Inter"],
+                        "headline-xl": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "price-display": ["22px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(0, 30, 64, 0.4) 0%, rgba(0, 30, 64, 0.1) 100%);
+        }
+
+        .booking-shadow {
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .elite-border {
+            border-top: 4px solid #C5A059;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #003366;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-surface text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+    <!-- TopNavBar -->
+    <nav
+        class="bg-surface dark:bg-surface-dark border-b border-outline-variant dark:border-outline shadow-sm docked full-width top-0 z-[100] sticky">
+        <div class="flex items-center justify-between h-20 px-margin-desktop max-w-container-max mx-auto w-full">
+            <div class="flex items-center gap-8">
+                <img alt="Indikosh Travels" class="h-10 w-auto object-contain block"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyjmZJ3SAZhaLf16X0A4pYgN0_VLFvzJWVEF9in3hL-X9JNmpPQGqULatP02Nqni7a3-YU735cZSVcoQsGzweR5LAoyGiqF2gVHCcBOqi3h1YjtyzJxkeDZ4RaUJ3dxHH5bQmXvftxqHGDLldgPfDbYRceHB4F6rI_Rpi0VFUt7N8Kb5VPUAw-jv_dYwsGfj21ZzoTS3qxvYYTbSieCjorOFPjNGdNPcNMfhG0g6FhKzIKHbW1GWTFq8SFe4kwpJceoQ8-VjZNYVg">
+                <div class="hidden md:flex items-center gap-6">
+                    <a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:text-primary dark:hover:text-primary-fixed transition-all active:scale-[0.98]"
+                        href="#">Flights</a>
+                    <a class="text-secondary dark:text-secondary-fixed-dim font-bold border-b-2 border-secondary font-body-md text-body-md hover:text-primary dark:hover:text-primary-fixed transition-all active:scale-[0.98]"
+                        href="#">Hotels</a>
+                    <a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:text-primary dark:hover:text-primary-fixed transition-all active:scale-[0.98]"
+                        href="#">Tour Packages</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="text-on-primary px-6 py-2 rounded-full font-bold hover:opacity-90 transition-all active:scale-95 bg-[#f46e20]">Login
+                    / Signup</button>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="relative">
+        <!-- Hero & Search Section -->
+        <section class="relative min-h-[500px] flex items-start pt-16 justify-center">
+            <div class="absolute inset-0 z-0 overflow-hidden"><img alt="Luxury poolside villa at sunset"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida/ADBb0ugB43uZVKc-coJw3vhrUhC85HSZ7RdgqCKA8Js7PcglvCNMpMYPvY6yNRnvHkEN4n4BFwrI21eROs6b4ebGKODnZKReKiFs31xGgnI9pSl5N-j7RIEkrsCi5RjqHS8Tcr2PBGlvvYoFgXi0WTbxcklj1Xq4nzD1upRA-Ds5_O7u43SRw36ddqa1aYjh2BxfDoJMnr14-M6tbhlelHFKF62cFJ6A_x_yM8aR_dews4Th7AwUpBdFk2pydw">
+                <div class="absolute inset-0 hero-gradient"></div>
+            </div>
+            <div class="relative z-10 w-full max-w-container-max px-margin-desktop">
+                <div class="flex justify-end pt-4">
+                    <div
+                        class="border border-white/10 rounded-2xl p-8 w-full max-w-[480px] shadow-2xl text-white backdrop-blur-2xl bg-white/5">
+                        <h2 class="font-headline-lg text-[32px] font-bold mb-2">Book the Best Hotels</h2>
+                        <p class="text-sm text-white/70 mb-8 leading-snug">Find the perfect stay with competitive
+                            pricing from over 500,000+ hotels worldwide.</p>
+                        <div class="space-y-4 mb-4">
+                            <div class="bg-white/10 border border-white/20 rounded-xl p-4 flex items-center gap-4"><span
+                                    class="material-symbols-outlined text-secondary">location_on</span>
+                                <div class="flex-1">
+                                    <p class="text-[10px] font-bold text-white/60 uppercase">CITY, PROPERTY NAME OR
+                                        LOCATION</p>
+                                    <p class="font-bold">Goa, India</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="bg-white/10 border border-white/20 rounded-xl p-4">
+                                <p class="text-[10px] font-bold text-white/60 uppercase mb-1">CHECK-IN</p>
+                                <p class="font-bold">24 Oct, 2024</p>
+                            </div>
+                            <div class="bg-white/10 border border-white/20 rounded-xl p-4">
+                                <p class="text-[10px] font-bold text-white/60 uppercase mb-1">CHECK-OUT</p>
+                                <p class="font-bold">25 Oct, 2024</p>
+                            </div>
+                            <div
+                                class="bg-white/10 border border-white/20 rounded-xl p-4 col-span-2 flex items-center gap-4">
+                                <span class="material-symbols-outlined text-secondary">person</span>
+                                <div>
+                                    <p class="text-[10px] font-bold text-white/60 uppercase mb-1">GUESTS &amp; ROOMS</p>
+                                    <p class="font-bold">2 Adults, 1 Room</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-[#f46e20] hover:bg-[#e05d10] text-white py-5 rounded-xl font-bold text-lg tracking-wider transition-colors">SEARCH
+                            HOTELS</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Promotional Banner -->
+        <section class="max-w-container-max mx-auto px-margin-desktop -mt-6 relative z-20">
+        </section>
+        <!-- Offers Section -->
+        <section class="max-w-container-max mx-auto px-margin-desktop py-16">
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-baseline gap-6">
+                    <h2 class="font-headline-lg text-headline-lg text-primary">Super Offers</h2>
+                    <div class="flex gap-8 border-b border-outline-variant">
+                    </div>
+                </div>
+                <button class="text-primary font-bold hover:underline">View All</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8"><!-- Offer Card 1 -->
+                <div
+                    class="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer border border-outline-variant">
+                    <div class="relative h-64 overflow-hidden">
+                        <img alt="First Booking Offer"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdQaLb-0MuZQ_BjJ8rSlJSA7GkPBu5HpQ5HQC045Rh_GEU1r3gdwsi2EBH3_SQVIS6NTGHPUqnw7dTgCR5OTy_hg5n-1TQubRiAtU-AsALr2VGs7ZatguN_oXDAHBQjVt_oVD4WN_tIyMtXibX9GBTVPKhWBf_UWbGejn20tKKT7BamFPNnKlaIMhl9qvfRc11NRE_h7ENuWWNagTB_PkzjCwPwS2oolPkW5rMY1z6AffrDDOUhT5I-5y1JTvEcsoovlL_U4NQwP4">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-widest">T&amp;C
+                                Apply</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1 justify-between">
+                        <div>
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2 line-clamp-2">BIG SAVINGS ON
+                                YOUR FIRST BOOKING</h3>
+                            <p class="text-on-surface-variant text-body-md mb-4">Up to 35% OFF* on Flights &amp; Hotels
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between mt-auto">
+                            <div class="flex flex-col">
+                                <span class="text-[10px] text-on-surface-variant uppercase font-bold mb-1">Use
+                                    Code</span>
+                                <span
+                                    class="text-sm font-mono font-bold text-primary bg-primary-fixed/30 px-3 py-1 rounded border border-dashed border-primary">NEW25</span>
+                            </div>
+                            <button
+                                class="bg-secondary-container text-white px-6 py-2.5 rounded-lg font-bold hover:bg-secondary transition-colors">Book
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Offer Card 2 -->
+                <div
+                    class="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer border border-outline-variant">
+                    <div class="relative h-64 overflow-hidden">
+                        <img alt="Hotel Savings Offer"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBEq2voMMDWQ7JVhr8MvwI4FavrXEB9Vs9ofo8PwdShKCeuPvfQKKECfvxUlkxayEbC1wqUiyjyeH8fIdi9Fp6d-0Qs6KxPu5w1FU2OoBh9D63iCsdXJQeSpcasHIjhe0LI5kNAyctS3JVxLIL3_Mz6G6R-sy7C28XQAv_PrvklyY8Ui3ehjmZ9ru3EY_l1vYJKFMT9Cyr0oZ-OSGrfYtYMz5aDxXJ9QlwMEk1rvs6UztP2MASG7wutDoG6l88PNXFC9CY4OFh0zQ">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-widest">T&amp;C
+                                Apply</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1 justify-between">
+                        <div>
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2 line-clamp-2">Instant
+                                savings: Up to 25% OFF* on hotels</h3>
+                            <p class="text-on-surface-variant text-body-md mb-4">Grab this great value deal on your next
+                                trip.</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-auto">
+                            <div class="flex flex-col">
+                                <span class="text-[10px] text-on-surface-variant uppercase font-bold mb-1">Use
+                                    Code</span>
+                                <span
+                                    class="text-sm font-mono font-bold text-primary bg-primary-fixed/30 px-3 py-1 rounded border border-dashed border-primary">SAVEBIG</span>
+                            </div>
+                            <button
+                                class="bg-secondary-container text-white px-6 py-2.5 rounded-lg font-bold hover:bg-secondary transition-colors">Book
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Offer Card 3: New Luxury Resorts -->
+                <div
+                    class="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer border border-outline-variant">
+                    <div class="relative h-64 overflow-hidden">
+                        <img alt="Luxury Resorts Offer"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxCvLkGrZ83p09cS-7BcEEt708DWSOIaSEkMOkuGmq0E7UuW-pMQoidraR7RwPtmJySqEgkvXt2_-IHmBgj8nmYYAj50PCBAXl36JXI7rLhYqaUhYK4qvI2A9l-RqSpjMpp7dzLReSnY7mrJ_EaZzVibt0Wgmi7hTxhqpWQpVQHRciSxFWv1Q50a57CZwkzwiAnvot8LpXW_J-ELHnZR3ZRYJsEdMz5gjX3YUzX9GyIWCghZtJ03V1xLMqaGLFhgS8g-Vx2F6NGeU">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-widest">T&amp;C
+                                Apply</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1 justify-between">
+                        <div>
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2 line-clamp-2">Luxury Resorts:
+                                Special Summer Access</h3>
+                            <p class="text-on-surface-variant text-body-md mb-4">Complimentary spa &amp; dinner on 3+
+                                night stays.</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-auto">
+                            <div class="flex flex-col">
+                                <span class="text-[10px] text-on-surface-variant uppercase font-bold mb-1">Use
+                                    Code</span>
+                                <span
+                                    class="text-sm font-mono font-bold text-primary bg-primary-fixed/30 px-3 py-1 rounded border border-dashed border-primary">ELITE20</span>
+                            </div>
+                            <button
+                                class="bg-secondary-container text-white px-6 py-2.5 rounded-lg font-bold hover:bg-secondary transition-colors">Book
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Top Destinations (Bento Grid) -->
+        <section class="bg-surface-container-low py-16">
+            <div class="max-w-container-max mx-auto px-margin-desktop">
+                <h2 class="font-headline-lg text-headline-lg text-primary mb-8">Top Destinations for Your Stay</h2>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-[600px]">
+                    <!-- Large Feature Card -->
+                    <div class="md:col-span-6 relative rounded-2xl overflow-hidden group shadow-lg">
+                        <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            data-alt="A vertical wide shot of the Burj Khalifa and the surrounding Dubai fountain at night. The skyscraper is brilliantly lit with complex patterns, and the surrounding water features are illuminated in cool blues. The urban landscape is sharp and detailed, emphasizing the modern, high-tech, and luxurious vibe of Dubai as a premier travel destination."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuALPfNFaCJExHaveENjEHNPrUGfpnnWZwb3CQ7zzS_i0Bw_7-M7Lsd5vLa3W4dYpkdANFE0sRKdWkM_36FOAhs-6wbmFBLtvZJvZBh1JOhBOWbTqG87Z7x-ig4gtKRknXRoFLV_se-BVOaP1kVHiUx_lOy6Y1FTyFpGTYGTYLLUQtHydfWYDZx7LbheBxw_QytqDc8WHCdgmj436O85iNjGxSqAGAhoJ23zkL6JV36GWBvXdZJbIyJvODxvfIQL985dzapDObpX348">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-8">
+                            <div
+                                class="bg-elite-gold text-white text-[10px] font-bold px-3 py-1 rounded-full w-fit mb-3 uppercase tracking-widest">
+                                POPULAR</div>
+                            <h3 class="text-white font-headline-xl text-[32px] leading-tight mb-2">Dubai</h3>
+                            <p class="text-white/80 font-body-md">1,240+ Hotels Starting from <span
+                                    class="text-white font-bold">$120</span></p>
+                        </div>
+                    </div>
+                    <!-- Top Right -->
+                    <div class="md:col-span-6 grid grid-rows-2 gap-gutter">
+                        <div class="grid grid-cols-2 gap-gutter">
+                            <div class="relative rounded-2xl overflow-hidden group shadow-md">
+                                <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    data-alt="A scenic aerial view of Tokyo's Shinjuku district at night, filled with glowing neon signs and bustling traffic streaks. The color palette is vibrant with electric purples, blues, and magentas. This high-density urban scene represents the energy and modern convenience of city travel, perfectly aligned with a tech-forward travel platform."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf3aOtNjT7uppiRdUiYchA1Jh7AxedfWnJzRxcYHQGkx5C3A0C3xqvqhAZHYMCAVSVenpiYZKd6M40MCCA7xVyO8snV7ewNLLbx3ttD_aRQRyTIe_TvAaURvwwzd3-XM5md62ThCeI1coxxJs7dNSXg3qz3fEVyko5c9Td6fDpUQ6sMY0FquRtMpqdFUHCVcftneJQ-KllAWM-l0Hy0YSvPnsqj9xhWSbLzFN94_tJ9UMZI4gg1q6SFlF1WXCJfpIlt93OLP78TAg">
+                                <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 p-4">
+                                    <h4 class="text-white font-headline-md">Tokyo</h4>
+                                    <p class="text-white/80 text-xs">850+ Hotels</p>
+                                </div>
+                            </div>
+                            <div class="relative rounded-2xl overflow-hidden group shadow-md">
+                                <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    data-alt="A picturesque sunset over the River Thames in London, with the Big Ben and Houses of Parliament in soft silhouette. The sky is a mix of lavender and orange hues. The mood is classic and prestigious, symbolizing a traditional yet high-quality luxury travel experience for the sophisticated explorer."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtT2XuW4QZvnAVDMGHzHKEeeJKxA7sGmpI_DUkhNJrT9riJ2ySvqiktpiZkmxXS9AtEpyC3RQL6Caabw9P3xf1HOaWHI_X32_8qYFbYn_-_G72Jy-vW62FbOoc6f95Bak7fH8FTIy75m83ukgzQTmRU-MpcaFlzvW3cTIEs74LhrgatDLh3pXdiokRBdj9HnKpowretTdvbuTb7F2JpJaRsLTrEKOBrmnmeFUT6MYk4RH1TD09XdyDyIDY4eTrNfridNDMHD3YdlQ">
+                                <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 p-4">
+                                    <h4 class="text-white font-headline-md">London</h4>
+                                    <p class="text-white/80 text-xs">920+ Hotels</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative rounded-2xl overflow-hidden group shadow-md">
+                            <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                data-alt="An expansive aerial view of a private island resort in the Maldives. The villas are built on stilts over translucent emerald green and sapphire blue water. The scene is bright and airy, representing the pinnacle of luxury tropical travel. The high-key lighting reinforces the clean, modern light-mode aesthetic of the website."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxCvLkGrZ83p09cS-7BcEEt708DWSOIaSEkMOkuGmq0E7UuW-pMQoidraR7RwPtmJySqEgkvXt2_-IHmBgj8nmYYAj50PCBAXl36JXI7rLhYqaUhYK4qvI2A9l-RqSpjMpp7dzLReSnY7mrJ_EaZzVibt0Wgmi7hTxhqpWQpVQHRciSxFWv1Q50a57CZwkzwiAnvot8LpXW_J-ELHnZR3ZRYJsEdMz5gjX3YUzX9GyIWCghZtJ03V1xLMqaGLFhgS8g-Vx2F6NGeU">
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 p-6">
+                                <h4 class="text-white font-headline-lg">Maldives</h4>
+                                <p class="text-white/80 font-body-md">Exclusive Beach Front Resorts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-surface overflow-hidden">
+            <div class="max-w-container-max mx-auto px-margin-desktop relative">
+                <h2 class="font-headline-lg text-headline-lg text-primary text-center mb-12">Hotels Of Choice</h2>
+                <div class="relative group">
+                    <!-- Navigation Arrows -->
+                    <button
+                        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary hover:bg-surface-container transition-colors border border-outline-variant md:flex hidden">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </button>
+                    <button
+                        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary hover:bg-surface-container transition-colors border border-outline-variant md:flex hidden">
+                        <span class="material-symbols-outlined text-[#0052D4]">arrow_forward</span>
+                    </button>
+                    <!-- Cards Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+                        <!-- Card 1: DLS Hotels -->
+                        <div class="relative h-[450px] rounded-xl overflow-hidden shadow-md group/card cursor-pointer">
+                            <img alt="DLS Hotels"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-105"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLCK2uxdnTohGB4rMKjZmG0-hUdPka1Ouq8RB2StmaIYxpP6v8F4QdaZjNN_v3DlyoOqH1sOi9qtYThGVIihadzSIPMXjMCfrGRXINSpuKtQzbfXKwS-mwEx81whUAH4Vb54vahmgpChesa2YKe6QyQSbOXkCXPcWTY9TI3-RfOFMXCoeNKXQDXQpzHSD8IjlBOofl-lki5OgF6GKsuxXTO1hp6HGH3-CFNWdxeg26lkJQOhqzUEIzVvj1-Ws5-0Nn3HTZBKqG-uU">
+                            <div
+                                class="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-24 bg-white rounded-xl shadow-sm flex items-center justify-center p-4">
+                                <img alt="DLS Logo" class="max-w-full max-h-full object-contain"
+                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgcng9IjgiIGZpbGw9IiNlOGVhZWQiLz48cGF0aCBkPSJNMTcwIDEzMCBsMzAgNDAgbDIwLTE1IGw0MCA1NSBIMTQweiIgZmlsbD0iI2JkYzFjNiIvPjxjaXJjbGUgY3g9IjI1MCIgY3k9IjEyMCIgcj0iMTgiIGZpbGw9IiNiZGMxYzYiLz48L3N2Zz4=">
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl p-5 shadow-lg">
+                                <h3 class="font-headline-md text-primary mb-2">DLS Hotels</h3>
+                                <a class="text-secondary font-bold flex items-center gap-2 group/link text-sm" href="#">
+                                    Explore More <span
+                                        class="material-symbols-outlined text-[20px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Card 2: Voyage Hotels -->
+                        <div class="relative h-[450px] rounded-xl overflow-hidden shadow-md group/card cursor-pointer">
+                            <img alt="Voyage Hotels"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-105"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdQaLb-0MuZQ_BjJ8rSlJSA7GkPBu5HpQ5HQC045Rh_GEU1r3gdwsi2EBH3_SQVIS6NTGHPUqnw7dTgCR5OTy_hg5n-1TQubRiAtU-AsALr2VGs7ZatguN_oXDAHBQjVt_oVD4WN_tIyMtXibX9GBTVPKhWBf_UWbGejn20tKKT7BamFPNnKlaIMhl9qvfRc11NRE_h7ENuWWNagTB_PkzjCwPwS2oolPkW5rMY1z6AffrDDOUhT5I-5y1JTvEcsoovlL_U4NQwP4">
+                            <div
+                                class="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-24 bg-white rounded-xl shadow-sm flex items-center justify-center p-4">
+                                <img alt="Voyage Logo" class="max-w-full max-h-full object-contain"
+                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgcng9IjgiIGZpbGw9IiNlOGVhZWQiLz48cGF0aCBkPSJNMTcwIDEzMCBsMzAgNDAgbDIwLTE1IGw0MCA1NSBIMTQweiIgZmlsbD0iI2JkYzFjNiIvPjxjaXJjbGUgY3g9IjI1MCIgY3k9IjEyMCIgcj0iMTgiIGZpbGw9IiNiZGMxYzYiLz48L3N2Zz4=">
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl p-5 shadow-lg">
+                                <h3 class="font-headline-md text-primary mb-2">Voyage Hotels</h3>
+                                <a class="text-secondary font-bold flex items-center gap-2 group/link text-sm" href="#">
+                                    Explore More <span
+                                        class="material-symbols-outlined text-[20px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Card 3: Lords Hotels Resorts -->
+                        <div class="relative h-[450px] rounded-xl overflow-hidden shadow-md group/card cursor-pointer">
+                            <img alt="Lords Hotels Resorts"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-105"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBEq2voMMDWQ7JVhr8MvwI4FavrXEB9Vs9ofo8PwdShKCeuPvfQKKECfvxUlkxayEbC1wqUiyjyeH8fIdi9Fp6d-0Qs6KxPu5w1FU2OoBh9D63iCsdXJQeSpcasHIjhe0LI5kNAyctS3JVxLIL3_Mz6G6R-sy7C28XQAv_PrvklyY8Ui3ehjmZ9ru3EY_l1vYJKFMT9Cyr0oZ-OSGrfYtYMz5aDxXJ9QlwMEk1rvs6UztP2MASG7wutDoG6l88PNXFC9CY4OFh0zQ">
+                            <div
+                                class="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-24 bg-white rounded-xl shadow-sm flex items-center justify-center p-4">
+                                <img alt="Lords Logo" class="max-w-full max-h-full object-contain"
+                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgcng9IjgiIGZpbGw9IiNlOGVhZWQiLz48cGF0aCBkPSJNMTcwIDEzMCBsMzAgNDAgbDIwLTE1IGw0MCA1NSBIMTQweiIgZmlsbD0iI2JkYzFjNiIvPjxjaXJjbGUgY3g9IjI1MCIgY3k9IjEyMCIgcj0iMTgiIGZpbGw9IiNiZGMxYzYiLz48L3N2Zz4=">
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl p-5 shadow-lg">
+                                <h3 class="font-headline-md text-primary mb-2">Lords Hotels Resorts</h3>
+                                <a class="text-secondary font-bold flex items-center gap-2 group/link text-sm" href="#">
+                                    Explore More <span
+                                        class="material-symbols-outlined text-[20px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Card 4: Spree Hotels -->
+                        <div class="relative h-[450px] rounded-xl overflow-hidden shadow-md group/card cursor-pointer">
+                            <img alt="Spree Hotels"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-105"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxCvLkGrZ83p09cS-7BcEEt708DWSOIaSEkMOkuGmq0E7UuW-pMQoidraR7RwPtmJySqEgkvXt2_-IHmBgj8nmYYAj50PCBAXl36JXI7rLhYqaUhYK4qvI2A9l-RqSpjMpp7dzLReSnY7mrJ_EaZzVibt0Wgmi7hTxhqpWQpVQHRciSxFWv1Q50a57CZwkzwiAnvot8LpXW_J-ELHnZR3ZRYJsEdMz5gjX3YUzX9GyIWCghZtJ03V1xLMqaGLFhgS8g-Vx2F6NGeU">
+                            <div
+                                class="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-24 bg-white rounded-xl shadow-sm flex items-center justify-center p-4">
+                                <img alt="Spree Logo" class="max-w-full max-h-full object-contain"
+                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgcng9IjgiIGZpbGw9IiNlOGVhZWQiLz48cGF0aCBkPSJNMTcwIDEzMCBsMzAgNDAgbDIwLTE1IGw0MCA1NSBIMTQweiIgZmlsbD0iI2JkYzFjNiIvPjxjaXJjbGUgY3g9IjI1MCIgY3k9IjEyMCIgcj0iMTgiIGZpbGw9IiNiZGMxYzYiLz48L3N2Zz4=">
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl p-5 shadow-lg">
+                                <h3 class="font-headline-md text-primary mb-2">Spree Hotels</h3>
+                                <a class="text-secondary font-bold flex items-center gap-2 group/link text-sm" href="#">
+                                    Explore More <span
+                                        class="material-symbols-outlined text-[20px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Social Proof/FOMO Section -->
+        <section class="max-w-container-max mx-auto px-margin-desktop py-24">
+            <div class="text-center mb-16">
+                <p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-[0.3em] mb-4">
+                    DESTINATION</p>
+                <h2 class="font-headline-xl text-headline-xl text-primary">WHY CHOOSE US</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12">
+                <!-- Card 1: Handpicked Hotels -->
+                <div
+                    class="relative bg-white rounded-2xl p-10 pt-16 border border-outline-variant shadow-sm hover:shadow-xl transition-shadow flex flex-col items-center text-center">
+                    <div
+                        class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-secondary rounded-full flex items-center justify-center shadow-lg">
+                        <span class="material-symbols-outlined text-white text-3xl">star</span>
+                    </div>
+                    <h3 class="font-headline-md text-primary mb-4">Handpicked Hotels</h3>
+                    <p class="text-on-surface-variant text-body-md mb-8 flex-1">We carefully select each property to
+                        ensure premium comfort, unique character, and exceptional service for every guest.</p>
+                    <a class="text-secondary font-bold text-sm border-b border-secondary/30 hover:border-secondary transition-colors uppercase tracking-wider"
+                        href="#">LEARN MORE</a>
+                </div>
+                <!-- Card 2: World Class Service (Featured) -->
+                <div
+                    class="relative bg-gradient-to-br from-[#fe7528] to-[#a14000] rounded-2xl p-10 pt-16 shadow-2xl flex flex-col items-center text-center text-white scale-105 z-10">
+                    <div
+                        class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg">
+                        <span class="material-symbols-outlined text-secondary text-3xl">star</span>
+                    </div>
+                    <h3 class="font-headline-md text-white mb-4">World Class Service</h3>
+                    <p class="text-white/90 text-body-md mb-8 flex-1">Our dedicated concierge team is available around
+                        the clock to cater to your every need, ensuring a seamless journey.</p>
+                    <a class="text-white font-bold text-sm border-b border-white/30 hover:border-white transition-colors uppercase tracking-wider"
+                        href="#">LEARN MORE</a>
+                </div>
+                <!-- Card 3: Best Price Guarantee -->
+                <div
+                    class="relative bg-white rounded-2xl p-10 pt-16 border border-outline-variant shadow-sm hover:shadow-xl transition-shadow flex flex-col items-center text-center">
+                    <div
+                        class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-secondary rounded-full flex items-center justify-center shadow-lg">
+                        <span class="material-symbols-outlined text-white text-3xl">star</span>
+                    </div>
+                    <h3 class="font-headline-md text-primary mb-4">Best Price Guarantee</h3>
+                    <p class="text-on-surface-variant text-body-md mb-8 flex-1">Enjoy the luxury of peace of mind. We
+                        promise the most competitive rates for all our curated elite travel experiences.</p>
+                    <a class="text-secondary font-bold text-sm border-b border-secondary/30 hover:border-secondary transition-colors uppercase tracking-wider"
+                        href="#">LEARN MORE</a>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ Section -->
+        <section class="max-w-container-max mx-auto px-margin-desktop py-16 border-t border-outline-variant">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-10">Frequently Asked Questions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-4">Q. How to book a hotel online with
+                        Indikosh Travels?</h3>
+                    <p class="text-on-surface-variant text-body-md leading-relaxed">Booking a hotel online is easy
+                        through Indikosh Travels. All you need to do first is to download our app on your Android or iOS
+                        device or simply use your computer. On the app, tap on the Hotels section and enter the details
+                        of the city, the area or the hotel. Fill out the check-in and check-out dates, along with the
+                        other details and tap Search. Use the Sort &amp; Filter options so that you can book one as per
+                        your convenience.</p>
+                </div>
+                <div>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-4">Q. How to find the best hotels near
+                        me?</h3>
+                    <p class="text-on-surface-variant text-body-md leading-relaxed">If you are travelling to a city for
+                        the first time and are looking for hotels in the best areas, it is easy to find them on our
+                        website and our app. Once you have hit the Search option, you will find a list of all the hotels
+                        near the city’s major business districts, tourist areas and transportation hubs. You can even
+                        find out which of the areas are ideal for couples and families.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- BottomNavBar (Mobile Only) -->
+    <nav
+        class="fixed bottom-0 w-full z-50 md:hidden bg-surface dark:bg-surface-dark border-t border-outline-variant bg-surface/95 backdrop-blur-md shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+        <div class="flex justify-around items-center h-16 pb-safe px-4">
+            <div
+                class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant active:bg-surface-container-high transition-transform scale-110 duration-200">
+                <span class="material-symbols-outlined">home</span>
+                <span class="font-label-caps text-label-caps">Home</span>
+            </div>
+            <div
+                class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim bg-secondary-container/20 rounded-xl px-3 py-1 transition-transform scale-110 duration-200">
+                <span class="material-symbols-outlined">travel_explore</span>
+                <span class="font-label-caps text-label-caps">Bookings</span>
+            </div>
+            <div
+                class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant active:bg-surface-container-high transition-transform scale-110 duration-200">
+                <span class="material-symbols-outlined">local_offer</span>
+                <span class="font-label-caps text-label-caps">Offers</span>
+            </div>
+            <div
+                class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant active:bg-surface-container-high transition-transform scale-110 duration-200">
+                <span class="material-symbols-outlined">contact_support</span>
+                <span class="font-label-caps text-label-caps">Support</span>
+            </div>
+            <div
+                class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant active:bg-surface-container-high transition-transform scale-110 duration-200">
+                <span class="material-symbols-outlined">person</span>
+                <span class="font-label-caps text-label-caps">Account</span>
+            </div>
+        </div>
+    </nav>
+    <!-- Footer -->
+    <footer
+        class="w-full py-12 border-t bg-white text-on-surface border-outline-variant shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto w-full">
+            <div>
+                <img alt="Indikosh Travels" class="h-10 w-auto object-contain block mb-6"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN6tH_-SKu1AdL_eyVXHM_9MrdJ1Cagyon024s6rQuwoqXNGrlORx2J0vcimB1JqT8dtHX-5bhD4xwHF4OL-qQd0t8FhMZjA7dK2iWaNgvOBNhHWcX0swUdBxtZOYPTQTKCcRtcWlrfr85C_6aAAnoY_-h_0Bgw-STEh1rkfc-mMRWYYZNiv0LNPpy6sSRje3ZvYg7xSDih4l2T6kyO0R64xeeB6EjzyWaCAZyyPzmNj2-ZfB9UDUxFATqOBoW--u4j-aL_6kV3ww">
+                <p class="text-body-md mb-6 text-on-surface-variant">Elevating your journey with sophisticated
+                    exploration and elite stay collections across the globe.</p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full border flex items-center justify-center transition-colors border-outline-variant hover:bg-surface"
+                        href="#">
+                    </a>
+                    <a class="w-10 h-10 rounded-full border flex items-center justify-center transition-colors border-outline-variant hover:bg-surface"
+                        href="#">
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-elite-gold mb-6 uppercase tracking-wider text-xs">Services</h4>
+                <ul class="space-y-4 text-on-surface-variant">
+                    <li class=""><a class="hover:underline transition-all hover:opacity-100" href="#">Hotels &amp;
+                            Stays</a></li>
+                    <li class=""><a class="hover:underline transition-all hover:opacity-100" href="#">Flight
+                            Bookings</a></li>
+                    <li class=""><a class="hover:underline transition-all hover:opacity-100" href="#">Tour Packages</a>
+                    </li>
+                    <li class=""><a class="hover:underline transition-all hover:opacity-100" href="#">Visa
+                            Assistance</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-elite-gold mb-6 uppercase tracking-wider text-xs">Company</h4>
+                <ul class="space-y-4 text-on-surface-variant">
+                    <li class=""><a class="hover:underline transition-all hover:opacity-100" href="#">About Us</a></li>
+                    <li class=""><a class="hover:underline transition-all hover:opacity-100" href="#">Careers</a></li>
+                    <li class=""><a class="hover:underline transition-all hover:opacity-100" href="#">Partner with
+                            Us</a></li>
+                    <li class=""><a class="hover:underline transition-all hover:opacity-100" href="#">Terms of
+                            Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-elite-gold mb-6 uppercase tracking-wider text-xs">Support</h4>
+                <ul class="space-y-4 text-on-surface-variant">
+                    <li class=""><a class="hover:underline transition-all hover:opacity-100" href="#">Help Center</a>
+                    </li>
+                    <li class=""><a class="hover:underline transition-all hover:opacity-100" href="#">Privacy Policy</a>
+                    </li>
+                    <li class=""><a class="hover:underline transition-all hover:opacity-100" href="#">Contact Us</a>
+                    </li>
+                    <li class=""><a class="hover:underline transition-all hover:opacity-100" href="#">Mobile App</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="max-w-container-max mx-auto px-margin-desktop w-full mt-12 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 border-outline-variant">
+            <p class="text-xs text-on-surface-variant">© 2026 Indikosh Travels Limited. All rights reserved.</p>
+            <div class="flex gap-6 text-xs text-on-surface-variant">
+                <span class="">English (US)</span>
+                <span class="">$ USD</span>
+            </div>
+        </div>
+    </footer>
+    <!-- Login Modal (Hidden by default) -->
+    <div class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm"
+        id="loginModal">
+        <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl p-8 relative">
+            <button class="absolute top-4 right-4 text-on-surface-variant hover:text-primary"
+                onclick="document.getElementById('loginModal').classList.add('hidden')">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <h2 class="font-headline-lg text-[24px] text-primary text-center mb-6 leading-tight">Login now to get FLAT
+                25% OFF* on your first hotel booking</h2>
+            <div class="space-y-4">
+                <div class="space-y-1">
+                    <label class="text-xs font-bold text-on-surface-variant uppercase">Email or Mobile Number</label>
+                    <input class="w-full border-outline-variant rounded-lg p-3 focus:ring-primary focus:border-primary"
+                        placeholder="Enter email or mobile number" type="text">
+                </div>
+                <button
+                    class="w-full bg-surface-container-high text-on-surface-variant py-4 rounded-lg font-bold">CONTINUE</button>
+                <div class="relative py-4">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-outline-variant"></div>
+                    </div>
+                    <div class="relative flex justify-center text-xs"><span
+                            class="bg-white px-2 text-on-surface-variant">Or Login/Signup With</span></div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <button
+                        class="border border-outline-variant p-3 rounded-lg flex items-center justify-center gap-2 hover:bg-surface transition-colors">
+                        <img alt="Google" class=""
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTnVLw4KAZNhuzms5SDlojR9F8FQG1q4BJ6ABDDX5vVVFdz5jtH_gplWRocks6bzRWeb7tZ0V2kRWUDwcWWPf8w_8gjiofTGSzliBFJmmboWmlWXRmCW_ztX7CxCY6ANBVFrdRdlH6qg7LXiMSHIVqAwMDiy_XQ82k7OqMR_sO6mCNYv0TkyZD2ECpgReBdastBRX5NG-v5JEMEjrzSu4eM-hOyfhw9TyDvzBKzYnBWVp9a6I5bebCwR5lOOhlJh_YQ44OYDfGETc">
+                        <span class="text-sm font-bold">Google</span>
+                    </button>
+                    <button
+                        class="border border-outline-variant p-3 rounded-lg flex items-center justify-center gap-2 hover:bg-surface transition-colors">
+                        <img alt="Apple" class=""
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUj0wSzD-8qF_aUVVPajjC1BFNgrsN6YJfIWaDm6j7-l-npiEMpkvA1PF2_6_O-Q-Yn9hxujtn9QWCCLkdOxY7-0IN0DTdC2uJNJ0P94PH1fkr6g5yq8XOszIN3h0XQz8m683qs6CadUVKtLwCFnKn0-0FH-KhzC7cR_msOthUkbfuMaVi33Rv1vAig1c09spFjrzbebL_bec33FWK3co_GL0mbfmx2kfY4it8zO9emWn5H67tnIui-vgMQO3h-muF1BKVlxBb0tA">
+                        <span class="text-sm font-bold">Apple</span>
+                    </button>
+                </div>
+                <div class="space-y-4 mt-8">
+                    <label class="flex items-start gap-3 cursor-pointer">
+                        <input class="mt-1 rounded text-primary focus:ring-primary" type="checkbox">
+                        <span class="text-[11px] text-on-surface-variant">By signing in or creating an account, you
+                            agree to Indikosh's <a class="text-primary font-bold underline" href="#">Privacy Policy</a>,
+                            <a class="text-primary font-bold underline" href="#">User Agreement</a> and <a
+                                class="text-primary font-bold underline" href="#">T&amp;Cs</a></span>
+                    </label>
+                    <label class="flex items-start gap-3 cursor-pointer">
+                        <input class="mt-1 rounded text-primary focus:ring-primary" type="checkbox">
+                        <span class="text-[11px] text-on-surface-variant">I hereby allow Indikosh Travels to contact me
+                            regarding travel services, that may be of interest to me</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Trigger modal after small delay for demo
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const modal = document.getElementById('loginModal');
+                // Remove hidden to show modal on load (optional for this specific task)
+                // modal.classList.remove('hidden'); 
+            }, 3000);
+        });
+
+        // Click search simulation
+        const searchBtn = document.querySelector('button.bg-gradient-to-r');
+        if (searchBtn) {
+            searchBtn.addEventListener('click', () => {
+                searchBtn.innerText = "Searching...";
+                setTimeout(() => {
+                    searchBtn.innerText = "Search";
+                }, 1500);
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>
